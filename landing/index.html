@@ -1,0 +1,1252 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Let's connect!</title>
+<link rel="stylesheet" href="css/bootstrap.css" type="text/css">
+<link rel="stylesheet" href="css/style.css" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-151042094-1"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '{{ site.google_analytics }}');
+      </script>
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '533705557364323');
+  fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=533705557364323&ev=PageView&noscript=1"
+/></noscript>
+
+<script>
+
+function validateEmail(email) {
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+}
+
+function onSuccess(result) {
+    $("#question").hide()
+    $("#answer").show()
+    $("#a_firstName").html(result.firstName)
+    $("#a_email").html(result.email)
+    setTimeout(
+  function()
+  {
+    $(location).attr('href',"https://kodekonveyor.com/");
+  }, 3000);
+}
+
+function onError(xhr,status,error) {
+	alert("An error occured: " + xhr.status + " " + xhr.statusText);
+}
+function submit() {
+  firstName = $("#firstName").val();
+  email = $("#email").val();
+  interest = $("#interest").val();
+  if(!validateEmail(email)) {
+  	alert("Please give us an email address!");
+    return;
+  }
+  if(firstName.length < 1) {
+  	alert("Please give your first name!");
+    return
+  }
+  $.ajax({
+  	url: "https://market.kodekonveyor.com/market/lead",
+    type: "POST",
+    data: {"email": email,"firstName": firstName, "interest": interest},
+    success: onSuccess,
+    error: onError
+  });
+}
+</script>
+<style>
+    
+body{
+margin:0px;
+font-family: 'Open Sans', sans-serif;
+padding:0px;
+}
+#top-header {
+
+    border-bottom: 1px solid 
+
+    #f3f3f3;
+
+}
+.top-ban {
+
+    text-align: center;
+    padding: 20px 0px 40px;
+
+}
+
+.top-ban h1 {
+    display: inline-block;
+    text-align: center;
+    color:#259ca7;
+    font-weight: bold;
+}
+.top-ban p {
+    color: #8d8e9f;
+    font-size: 24px;
+    text-align: center;
+}
+
+#banner{
+background:url(../images/bg.png) no-repeat;
+background-size:cover;
+position:relative;
+}
+#banner h2{
+font-family: 'Open Sans', sans-serif;
+font-size:45px;
+font-weight:700;
+line-height: 57px;
+color:#000;
+}
+#banner p {
+
+    font-family: 'Open Sans', sans-serif;
+
+color: #777;
+
+font-size: 16px;
+
+font-weight: 300;
+
+display: inline-block;
+
+padding: 20px;
+
+}
+.bannertext{
+padding: 18% 0% 12%;
+}
+
+.banner-text li {
+    
+font-size: 18px;
+
+color: #777;
+
+line-height: 29px;
+}
+
+
+.logo{
+margin-top: 20px;
+
+margin-bottom: 30px;
+}
+.formstyle {
+
+    background: 
+
+rgb(40, 41, 54);
+
+padding: 0px 40px 40px;
+
+position: relative;
+
+top: 0px;
+
+border: 0px solid
+
+    #ffffff54;
+    box-shadow: none;
+
+}
+
+.heading {
+
+    font-size: 15px;
+    font-family: 'Open Sans', sans-serif;
+    color: 
+
+#fff;
+
+font-size: 21px;
+
+font-weight: 700;
+
+background:
+
+    rgb(37, 156, 167);
+    padding: 10px;
+    text-align: center;
+
+}
+
+.formstyle label{
+font-family: 'Open Sans', sans-serif;
+color: #fff;
+font-size: 14px;
+font-weight: 400;
+margin-top:12px;
+}
+.field {
+height:40px;
+border-radius: 0px;
+box-shadow: inset 2px 2px 2px #ccc;
+font-size: 14px;
+}
+.submit{
+background: rgb(228, 79, 61);
+border: 0px;
+width: 100%;
+height: 50px;
+color: #fff;
+font-size: 18px;
+text-transform: uppercase;
+font-family: 'Open Sans', sans-serif;
+font-weight: 700;
+margin-top: 26px;
+}
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+font-family: 'Open Sans', sans-serif;
+}
+::-moz-placeholder { /* Firefox 19+ */
+font-family: 'Open Sans', sans-serif;
+}
+:-ms-input-placeholder { /* IE 10+ */
+font-family: 'Open Sans', sans-serif;
+}
+:-moz-placeholder { /* Firefox 18- */
+font-family: 'Open Sans', sans-serif;
+}
+#benefits{
+margin:10px 0px;
+}
+#benefits h2{
+font-family: 'Open Sans', sans-serif;
+font-size:35px;
+font-weight:700;
+line-height:45px;
+text-align:center;
+margin-bottom:15px;
+margin-top:0px;
+color:#000;	
+}
+#benefits .heading {
+
+    font-size: 15px;
+    font-family: 'Open Sans', sans-serif;
+    color: 
+
+#259ca7;
+
+font-size: 21px;
+
+text-align: left;
+
+margin-bottom: 10px;
+
+font-weight: 700;
+
+background:
+
+    #fff;
+    padding: 0px;
+
+}
+#benefits p{
+font-family: 'Open Sans', sans-serif;
+font-size:15px;
+font-weight:400;
+line-height:24px;
+text-align:left;
+}
+.mgb {
+
+    margin-bottom: 25px;
+    width: 100%;
+
+}
+.box {
+
+    margin-top: 0px;
+    background: 
+
+    #fff;
+    padding: 35px 0px 25px 0px;
+    box-shadow: none;
+
+}
+#mainquat {
+
+    background: 
+
+    rgb(37, 156, 167);
+        background-attachment: scroll;
+        background-size: auto;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 20px 0px;
+
+}
+#mainquat h2 {
+
+    font-family: 'Open Sans', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 57px;
+    text-align: center;
+    margin-bottom: 15px;
+    margin: 0px;
+    color: 
+
+    #fff;
+
+}
+#hosting{
+margin:75px 0px;
+}
+.imgborder{
+border:1px solid #ccc;
+padding:10px;
+background: #fff;
+}
+#hosting p {
+font-family: 'Open Sans', sans-serif;
+font-size: 45px;
+font-weight: 300;
+margin: 120px 0px;
+line-height: 57px;
+text-align: left;
+color: #000;
+}
+.right{
+float:right;
+}
+#hosting h2 {
+font-family: 'Open Sans', sans-serif;
+font-size: 35px;
+font-weight: 700;
+line-height: 57px;
+margin-bottom:0px;
+padding-bottom:10px;
+margin-top: 0px;
+color: #000;
+}
+.gap{
+height:50px;
+}
+.points .fa{
+color:#d2472a;
+margin-right:5px;
+}
+.points{
+margin:25px 0px 0px 0px;
+padding:0px;
+}
+.points ul{
+margin:0px;
+padding: 0px 0px;
+}
+.points ul li{
+font-family: 'Open Sans', sans-serif;
+list-style-type: none;
+font-size: 15px;
+line-height: 26px;
+padding: 9px 0px;
+width: 43%;
+float: left;
+border-bottom:1px solid #e4e4e4;
+margin-right: 35px;
+}
+.points ul li:last-child{
+border-bottom:0px;
+}
+.points2 .fa{
+color:#d2472a;
+margin-right:5px;
+}
+.points2{
+margin:10px 0px 0px 0px;
+padding:0px;
+}
+.points2 ul{
+margin:0px;
+padding: 0px 0px;
+}
+.points2 ul li{
+font-family: 'Open Sans', sans-serif;
+list-style-type: none;
+font-size: 24px;
+line-height: 26px;
+padding: 27px 0px;
+border-bottom: 1px solid #fff;
+margin-right:0px;
+font-weight:400;
+}
+.points2 ul li:last-child{
+border-bottom:0px;
+}
+#callaction {
+background: url(../images/bg3.png) no-repeat;
+background-size: cover;
+background-attachment: fixed;
+padding: 75px 0px;
+}
+#callaction h2 {
+font-family: 'Open Sans', sans-serif;
+font-size: 43px;
+font-weight: 700;
+line-height: 57px;
+text-align: center;
+margin-bottom:35px;
+color: #fff;
+margin-top:0px;
+}
+.call {
+background: #00baf2;
+height: 50px;
+line-height: 50px;
+text-align: center;
+display: block;
+width: 320px;
+margin: 0px auto;
+
+}
+.call a {
+border: 0px;
+width: 100%;
+color: #fff !important;
+font-size: 18px;
+display:block;
+text-transform: uppercase;
+font-family: 'Open Sans', sans-serif;
+font-weight: 700;
+text-decoration: none !important;
+transition:0.2s;
+}
+.call a:hover{
+background:#d2472a;
+}
+
+#tutor{
+margin:75px 0px;
+}
+#tutor h2{
+font-family: 'Open Sans', sans-serif;
+font-size:35px;
+font-weight:700;
+line-height:45px;
+text-align:center;
+margin-bottom:15px;
+margin-top:0px;
+color:#000;	
+}
+#tutor .heading {
+font-size: 15px;
+font-family: 'Open Sans', sans-serif;
+color: #000;
+font-size: 21px;
+text-align:center;
+margin-bottom:10px;
+font-weight: 700;
+}
+#tutor p{
+font-family: 'Open Sans', sans-serif;
+font-size:15px;
+font-weight:400;
+line-height:26px;
+text-align:center;
+}
+.mgb{
+margin-bottom:25px;
+}
+.box2{
+margin-top: 50px;
+min-height: 365px;
+background: #f4f4f4;
+padding: 35px 10px 25px 15px;
+background: #f9f9f9;
+box-shadow: 4px 5px 0px #e4e4e4;
+}
+.roundimg{
+border-radius: 50%;
+}
+#testimonial {
+background: url(../images/testimonialbg.png) no-repeat;
+background-size: cover;
+background-attachment: fixed;
+}
+#testimonial h2 {
+font-family: 'Open Sans', sans-serif;
+font-size: 17px;
+font-weight: 700;
+line-height: 28px;
+text-align: left;
+margin-bottom: 15px;
+color: #fff;
+margin-top: 0px;
+}
+#testimonial p {
+font-family: 'Open Sans', sans-serif;
+font-size: 15px;
+font-weight: 400;
+color:#fff;
+line-height: 26px;
+}
+.tp{
+position:relative;
+padding-top:80px;
+padding-bottom:50px;
+}
+.tp img{
+position:absolute;
+top:30px;
+left:0px;
+}
+.ti{
+position:relative;
+}
+.ti img{
+margin-top: 57px;
+}
+#footer{
+padding:20px 0px;
+margin:0px;
+background:rgb(40, 41, 54);
+}
+#footer ul{
+margin: 27px auto;
+padding: 0px;
+text-align: center;
+display: block;
+width: 366px;
+}
+#footer ul li{
+list-style-type: none;
+float: left;
+font-family: 'Open Sans', sans-serif;
+border-right: 1px solid #ccc;
+padding: 0px 14px;
+}
+#footer ul li:last-child{
+border-right:0;	
+}
+#footer p {
+font-family: 'Open Sans', sans-serif;
+
+font-size: 15px;
+
+font-weight: 400;
+
+line-height: 26px;
+
+color: #aaacbc;
+}
+#benifitbg {
+padding:75px 0px;
+background:url(../images/bg4.png) no-repeat;
+background-attachment:fixed;
+background-size:cover;
+}
+#benifitbg h2 {
+font-family: 'Open Sans', sans-serif;
+font-size: 35px;
+font-weight: 700;
+line-height: 57px;
+margin-bottom: 0px;
+padding-bottom: 10px;
+margin-top: 0px;
+color: #000;
+}
+.fl{
+margin-bottom:20px;
+}
+.left{
+	float:left;
+}
+
+.sent-msg
+{
+width: 100%;
+    float: left;
+    padding-top: 33%;
+    text-align: center;
+}
+.fail
+{
+width: 100%;
+    float: left;
+    background: red;
+    padding: 10px;
+}
+.success
+{
+width: 100%;
+    float: left;
+    background: #00baf2;
+    padding: 10px;
+}
+.fail-msg
+{
+    width: 100%;
+    float: left;
+    padding-top: 33%;
+    text-align: center;
+}
+@media(max-width:1024px) {
+.formstyle .heading {
+font-size: 16px;
+}
+#banner p {
+font-size: 30px;
+
+}
+.submit {
+font-size: 14px;
+}
+#mainquat h2 {
+font-size: 34px;
+}
+#hosting p {
+font-size: 38px;
+margin:0px;
+}
+.points ul li {
+    font-size: 13px;
+    width: 43%;
+    float: left;
+    margin-right:14px;
+}
+.points2 ul li {
+    font-size: 16px;
+    line-height: 26px;
+    padding: 19px 0px;
+}
+#callaction h2 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 34px;
+}
+.ti img {
+    margin-top: 87px;
+}
+}
+@media(max-width:990px) {
+	.box {
+    margin-top: 50px !important;
+    background: #f9f9f9;
+    padding: 35px 10px 25px 15px;
+    box-shadow: 4px 5px 0px #e4e4e4;
+    width:65%;
+    margin: 0px auto;
+    margin-bottom: 35px;
+}
+	.box2 {
+    margin-top: 50px !important;
+      width:65%;
+    margin: 0px auto;
+    margin-bottom: 35px;
+}
+.bannertext {
+    padding: 18% 0% 0%;
+}
+#banner h2 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 35px;
+    font-weight: 700;
+    line-height: 45px;
+    color: #fff;
+}
+#banner p {
+    font-size: 26px;
+}
+.formstyle {
+    padding: 18px 17px 33px;
+	margin-top: 40px !important;
+    top: 0;
+    position: inherit;
+	    width: 69%;
+		margin:0px auto;
+}
+#banner {
+    padding-bottom: 50px;
+}
+#benefits h2 {
+    font-size: 27px;
+}
+#hosting h2 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 34px;
+}
+.points ul li {
+    width:48%;
+	font-size: 14px;
+}
+.right {
+    float: left;
+    width: 100%;
+}
+.points2 ul li {
+    font-size: 14px;
+    line-height: 26px;
+    padding: 13px 0px;
+}
+#benifitbg h2 {
+    font-size: 29px;
+}
+.call {
+    width: 291px;
+}
+.call a {
+	font-size:14px;
+}
+#callaction h2 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 34px;
+    line-height: 44px;
+}
+#tutor h2 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 30px;
+	line-height:40px;
+}
+#footer ul {
+    width: auto;
+}
+#footer ul li {
+      float: none;
+    font-family: 'Open Sans', sans-serif;
+    border-right: 0px;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+    padding: 12px 0px;
+}
+.imgborder {
+    border: 1px solid #ccc;
+    padding: 10px;
+    background: #fff;
+    margin: 0px auto;
+    margin-bottom: 30px;
+}
+#hosting p {
+    font-size: 38px;
+    margin: 0px;
+    text-align: center;
+}
+.ti img {
+    margin-top: 87px;
+	
+}
+.tp {
+    position: relative;
+    padding-top: 80px;
+    padding-bottom: 0;
+}
+
+}
+@media only screen and (min-width:902px) and (max-width:1200px)
+{
+.sent-msg
+{
+padding-top:40%;
+}
+.fail-msg
+{
+padding-top:40%;
+}
+}
+
+@media(max-width:768px) {
+
+.points ul li {
+    width:47%;
+}
+.formstyle {
+	    width:100%;
+}
+}
+@media only screen and (min-width:601px) and (max-width:991px)
+{
+.sent-msg
+{
+padding-top:3%;
+}
+.fail-msg
+{
+padding-top:3%;
+}
+}
+@media(max-width:600px) {
+.points ul li {
+    width:100%;
+}
+	.box {
+    width:100%;
+}
+	.box2 {
+    width:100%;
+}
+.sent-msg
+{
+padding-top:10%;
+}
+.fail-msg
+{
+padding-top:10%;
+}
+}    
+    
+.thankyou {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    font-weight: 1000;
+    line-height: 57px;
+    color: rgb(37, 156, 167);
+}
+    
+.resp-sharing-button__link,
+.resp-sharing-button__icon {
+  display: inline-block
+}
+
+.resp-sharing-button__link {
+  text-decoration: none;
+  color: #fff;
+  margin: 0.5em
+}
+
+.resp-sharing-button {
+  border-radius: 5px;
+  transition: 25ms ease-out;
+  padding: 0.5em 0.75em;
+  font-family: Helvetica Neue,Helvetica,Arial,sans-serif
+}
+
+.resp-sharing-button__icon svg {
+  width: 1em;
+  height: 1em;
+  margin-right: 0.4em;
+  vertical-align: top
+}
+
+.resp-sharing-button--small svg {
+  margin: 0;
+  vertical-align: middle
+}
+
+/* Non solid icons get a stroke */
+.resp-sharing-button__icon {
+  stroke: #fff;
+  fill: none
+}
+
+/* Solid icons get a fill */
+.resp-sharing-button__icon--solid,
+.resp-sharing-button__icon--solidcircle {
+  fill: #fff;
+  stroke: none
+}
+
+.resp-sharing-button--twitter {
+  background-color: #55acee
+}
+
+.resp-sharing-button--twitter:hover {
+  background-color: #2795e9
+}
+
+.resp-sharing-button--pinterest {
+  background-color: #bd081c
+}
+
+.resp-sharing-button--pinterest:hover {
+  background-color: #8c0615
+}
+
+.resp-sharing-button--facebook {
+  background-color: #3b5998
+}
+
+.resp-sharing-button--facebook:hover {
+  background-color: #2d4373
+}
+
+.resp-sharing-button--tumblr {
+  background-color: #35465C
+}
+
+.resp-sharing-button--tumblr:hover {
+  background-color: #222d3c
+}
+
+.resp-sharing-button--reddit {
+  background-color: #5f99cf
+}
+
+.resp-sharing-button--reddit:hover {
+  background-color: #3a80c1
+}
+
+.resp-sharing-button--google {
+  background-color: #dd4b39
+}
+
+.resp-sharing-button--google:hover {
+  background-color: #c23321
+}
+
+.resp-sharing-button--linkedin {
+  background-color: #0077b5
+}
+
+.resp-sharing-button--linkedin:hover {
+  background-color: #046293
+}
+
+.resp-sharing-button--email {
+  background-color: #777
+}
+
+.resp-sharing-button--email:hover {
+  background-color: #5e5e5e
+}
+
+.resp-sharing-button--xing {
+  background-color: #1a7576
+}
+
+.resp-sharing-button--xing:hover {
+  background-color: #114c4c
+}
+
+.resp-sharing-button--whatsapp {
+  background-color: #25D366
+}
+
+.resp-sharing-button--whatsapp:hover {
+  background-color: #1da851
+}
+
+.resp-sharing-button--hackernews {
+background-color: #FF6600
+}
+.resp-sharing-button--hackernews:hover, .resp-sharing-button--hackernews:focus {   background-color: #FB6200 }
+
+.resp-sharing-button--vk {
+  background-color: #507299
+}
+
+.resp-sharing-button--vk:hover {
+  background-color: #43648c
+}
+
+.resp-sharing-button--facebook {
+  background-color: #3b5998;
+  border-color: #3b5998;
+}
+
+.resp-sharing-button--facebook:hover,
+.resp-sharing-button--facebook:active {
+  background-color: #2d4373;
+  border-color: #2d4373;
+}
+
+.resp-sharing-button--twitter {
+  background-color: #55acee;
+  border-color: #55acee;
+}
+
+.resp-sharing-button--twitter:hover,
+.resp-sharing-button--twitter:active {
+  background-color: #2795e9;
+  border-color: #2795e9;
+}
+
+.resp-sharing-button--tumblr {
+  background-color: #35465C;
+  border-color: #35465C;
+}
+
+.resp-sharing-button--tumblr:hover,
+.resp-sharing-button--tumblr:active {
+  background-color: #222d3c;
+  border-color: #222d3c;
+}
+
+.resp-sharing-button--email {
+  background-color: #777777;
+  border-color: #777777;
+}
+
+.resp-sharing-button--email:hover,
+.resp-sharing-button--email:active {
+  background-color: #5e5e5e;
+  border-color: #5e5e5e;
+}
+
+.resp-sharing-button--pinterest {
+  background-color: #bd081c;
+  border-color: #bd081c;
+}
+
+.resp-sharing-button--pinterest:hover,
+.resp-sharing-button--pinterest:active {
+  background-color: #8c0615;
+  border-color: #8c0615;
+}
+
+</style>
+
+
+</head>
+<body>
+    
+<section id="top-header">
+    
+    <div class="container">
+<div class="row">
+    
+    <div class="col-md-12">
+
+<div class="col-md-6">
+<img src="images/logo-unbounce.png" class="img-responsive logo">  
+</div>
+
+<div class="col-md-6">
+
+<h2 style="float: right">
+<span style="font-size: 12px;">We make quality software development available for everyone</span>
+</h2>
+</div>
+    
+    
+</div>
+
+</div>
+</div>
+    
+</section>    
+
+<div class="container">
+<div class="row">
+
+<div class="top-ban">
+<h1>Join Kodekonveyor's Tidy Up Development</h1>
+<p>Start earning by solving small development task</p>
+</div>
+
+</div>
+</div>
+
+
+
+
+    
+    
+<section id="banner">
+    
+<div class="container">
+<div class="row">
+<div class="clearfix"></div>
+
+
+
+<div style="padding: 0px;" class="col-md-8">
+<img style="float: right;" src="images/banner-top.png" class="img-responsive logo11">  
+<div class="bannertext">
+<p>Our company develops software using TDD (test-driven development). Using a strong architecture design phase we produce small tasks for developers, which can be coded without knowing the whole environment. You, as a coder, after understanding our system, will be able:</p>
+    
+    <ol>
+        <li>Take a task and code it in a short time (0,5-4 hours);</li>
+        <li>Get paid based on the number of test cases, get paid in a short time (within a week);</li>
+        <li>Work from anywhere in the world (in your home or at a beach),</li>
+        <li>Generate extra income while keeping your job, studying as a student or taking care of your child;</li>
+    </ol>
+
+</div>
+</div>
+
+
+
+
+<div class="col-md-4">
+
+<div class="heading">Join our community</div>
+<div id="question">
+<form class="formstyle" method="post" id="post" action="javascript:submit()">
+    <span style="color:#fff;display: inline-block;padding: 30px 0px;font-size: 11px;text-align: justify;">This form is prepared to collect information either to be able to keep you up to date on Kode Konveyor or
+collect information necessary for working together</span>
+
+<label>First Name *</label>
+<input type="text" id="firstName"class="form-control field" placeholder="" required>
+<label>Email id *</label>
+<input type="email" id="email" class="form-control field" placeholder="" required>
+<label>What are you interested in?</label>
+<select class="form-control field" id="interest" name="interest">
+      <option>Please Choose</option>
+      <option value="To receive update on Kodekonveyor">To receive update on Kodekonveyor </option>
+      <option value="To work with Kodekonveyor">To work with Kodekonveyor</option>
+    </select>
+<input type="submit" name="submit" value="Join our community" class="submit">
+<span style="color:#fff;display: inline-block;padding: 30px 0px 0px;font-size: 14px;text-align: center;width: 100%;">100% Privacy Guaranteed.</span>
+
+</form>
+</div>
+<div class="thankyou" style="display:none" id="answer">
+<p class="thankyou">
+<span class="thankyou">Thank you, <span id="a_firstName"></span>!</span></p><p class="thankyou">
+<span class="thankyou">We will contact you at <span id="a_email"></span></span>.
+</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="mainquat">
+<div class="container">
+<div class="row">
+<div class="col-md-12">
+<h2>Benefits Of  Kode Konveyor</h2>
+</div>
+</div>
+</div>
+</section> 
+
+
+<div class="clearfix"></div>
+<section id="benefits">
+<div class="container">
+<div class="row">
+
+<div class="col-md-4">
+<div class="box clearfix">
+<center><img src="images/1-1.jpg" class="img-responsive mgb"></center>
+<div class="heading">Free Education</div>
+<p>Kode Konveyor team has created two types of education packages one for beginners and the second one is for experienced developers. The idea behind this is to enable everyone to work alone using java language on TDD & CDD.</p>
+</div>
+</div>
+<div class="col-md-4">
+<div class="box clearfix">
+<center><img src="images/2.jpg" class="img-responsive mgb"></center>
+<div class="heading">Free Mentorship</div>
+<p>At Kode Konveyor we have a pool of mentors ready to help you start your career as a software developer. When you start working on any task you will be assigned to a mentor who will help you in understanding the task and process to be used.</p>
+</div>
+</div>
+<div class="col-md-4">
+<div class="box clearfix">
+<center><img src="images/3.jpg" class="img-responsive mgb"></center>
+<div class="heading">Freelance work </div>
+<p>It’s not like any other freelance work where you have a struggle a lot to get a job. At Kode Konveyor, you will be provided with an ample amount of tasks to work on with your comfort.</p>
+</div>
+</div>
+</div>
+
+
+<div class="row">
+
+<div class="col-md-4">
+<div class="box clearfix">
+<center><img src="images/4.jpg" class="img-responsive mgb"></center>
+<div class="heading">Global Community</div>
+<p>We are a global company creating a global product that is going to restructure software development industry. We have developers from more than 15 countries. Here you will get a chance to interact, network & work with developers from any part of the world.</p>
+</div>
+</div>
+<div class="col-md-4">
+<div class="box clearfix">
+<center><img src="images/5.jpg" class="img-responsive mgb"></center>
+<div class="heading">Flexibility to work</div>
+<p>At Kode Konveyor, we assure that all the developers registered with us get tasks to work on. And it’s totally up to them to choose which task they want to and how many hours of work they are ready to do. So while working on a full-time job you can do some tasks in free time and earn extra</p>
+</div>
+</div>
+<div class="col-md-4">
+<div class="box clearfix">
+<center><img src="images/6.jpg" class="img-responsive mgb"></center>
+<div class="heading">Innovative approach to work </div>
+<p>We have created some great tools which all the developers can use in software development.</p>
+</div>
+</div>
+</div>
+
+
+
+</div>
+</section>
+<div class="clearfix"></div>
+<section style="background:rgba(228,79,61,1);" id="mainquat">
+<div class="container">
+<div class="row">
+<div class="col-md-12">
+<h2>100% Freelance Work Guranteed</h2>
+</div>
+</div>
+</div>
+</section>
+<div class="clearfix"></div>
+
+<section id="footer">
+<div class="container">
+<div class="row">
+<div class="col-md-12">
+<div class="col-md-6">
+<p>Kodekonveyor © Copyright 2019 </p>
+</div>
+
+<div class="col-md-6">
+<!-- Sharingbutton Facebook -->
+<a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=https%3A%2F%2Fkodekonveyor.com" target="_blank" rel="noopener" aria-label="Share on Facebook">
+  <div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--large"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--circle">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="11.5"/><path d="M15.84 9.5H13.5V8.48c0-.53.35-.65.6-.65h1.4v-2.3h-2.35c-2.3 0-2.65 1.7-2.65 2.8V9.5h-2v2h2v7h3v-7h2.1l.24-2z"/></svg>
+    </div>Share on Facebook</div>
+</a>
+
+<!-- Sharingbutton Twitter -->
+<a class="resp-sharing-button__link" href="https://twitter.com/intent/tweet/?text=We%20make%20quality%20software%20development%20available%20for%20everyone&amp;url=https%3A%2F%2Fkodekonveyor.com" target="_blank" rel="noopener" aria-label="Share on Twitter">
+  <div class="resp-sharing-button resp-sharing-button--twitter resp-sharing-button--large"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--circle">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.5 7.4l-2 .2c-.4-.5-1-.8-2-.8C13.3 6.8 12 8 12 9.4v.6c-2 0-4-1-5.4-2.7-.2.4-.3.8-.3 1.3 0 1 .4 1.7 1.2 2.2-.5 0-1 0-1.2-.3 0 1.3 1 2.3 2 2.6-.3.4-.7.4-1 0 .2 1.4 1.2 2 2.3 2-1 1-2.5 1.4-4 1 1.3 1 2.7 1.4 4.2 1.4 4.8 0 7.5-4 7.5-7.5v-.4c.5-.4.8-1.5 1.2-2z"/><circle cx="12" cy="12" r="11.5"/></svg>
+    </div>Share on Twitter</div>
+</a>
+
+<!-- Sharingbutton Tumblr -->
+<a class="resp-sharing-button__link" href="https://www.tumblr.com/widgets/share/tool?posttype=link&amp;title=We%20make%20quality%20software%20development%20available%20for%20everyone&amp;caption=We%20make%20quality%20software%20development%20available%20for%20everyone&amp;content=https%3A%2F%2Fkodekonveyor.com&amp;canonicalUrl=https%3A%2F%2Fkodekonveyor.com&amp;shareSource=tumblr_share_button" target="_blank" rel="noopener" aria-label="Share on Tumblr">
+  <div class="resp-sharing-button resp-sharing-button--tumblr resp-sharing-button--large"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--circle">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="11.5"/><path d="M12.5 4.5v3h2v2h-2v3.72c0 2.47 1.48 2.7 3 1.7v2.7c-4.1 1.92-6-.62-6-3.6V9.5h-2V8.14c.55-.18 1.24-.43 1.63-.77.4-.33.7-.73.94-1.2.24-.46.4-.95.5-1.67h1.93z"/></svg>
+    </div>Share on Tumblr</div>
+</a>
+
+<!-- Sharingbutton E-Mail -->
+<a class="resp-sharing-button__link" href="mailto:?subject=We%20make%20quality%20software%20development%20available%20for%20everyone&amp;body=https%3A%2F%2Fkodekonveyor.com" target="_self" rel="noopener" aria-label="Share by E-Mail">
+  <div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--large"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--circle">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.5 16c0 .8-.7 1.5-1.5 1.5H6c-.8 0-1.5-.7-1.5-1.5V8c0-.8.7-1.5 1.5-1.5h12c.8 0 1.5.7 1.5 1.5v8zm-2-7.5L12 13 6.5 8.5m11 6l-4-2.5m-7 2.5l4-2.5"/><circle cx="12" cy="12" r="11.5"/></svg></div>Share by E-Mail</div>
+</a>
+
+<!-- Sharingbutton Pinterest -->
+<a class="resp-sharing-button__link" href="https://pinterest.com/pin/create/button/?url=https%3A%2F%2Fkodekonveyor.com&amp;media=https%3A%2F%2Fkodekonveyor.com&amp;description=We%20make%20quality%20software%20development%20available%20for%20everyone" target="_blank" rel="noopener" aria-label="Share on Pinterest">
+  <div class="resp-sharing-button resp-sharing-button--pinterest resp-sharing-button--large"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--circle">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="11.5"/><path d="M8 11.2c-.15-.32-.25-.72-.25-1.22 0-2.32 1.74-4.4 4.53-4.4 2.47 0 3.82 1.5 3.82 3.52 0 2.64-1.17 4.88-2.9 4.88-.97 0-1.7-.8-1.46-1.77.28-1.14.8-2.4.8-3.23 0-.76-.4-1.38-1.23-1.38-.95 0-1.74 1-1.74 2.37 0 .86.3 1.45.3 1.45l-1.2 5c-.34 1.5-.04 3.33-.02 3.5.02.1.16.15.22.06.1-.12 1.26-1.56 1.66-3l.66-2.53c.32.6 1.25 1.14 2.24 1.14 2.95 0 4.95-2.7 4.95-6.3 0-2.73-2.3-5.27-5.82-5.27-4.36 0-6.57 3.14-6.57 5.75 0 .85.18 1.64.53 2.28l1.5-.8z"/></svg>
+    </div>Share on Pinterest</div>
+</a>
+
+
+</div>
+
+</div>
+</div>
+</div>
+</section>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="js/bootstrap.js"></script>
+</body>
+</html>
