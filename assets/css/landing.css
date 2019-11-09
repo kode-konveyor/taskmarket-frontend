@@ -1,3 +1,4 @@
+    
 body{
 margin:0px;
 font-family: 'Open Sans', sans-serif;
@@ -11,7 +12,10 @@ padding:0px;
 
 }
 .top-ban {
+
     text-align: center;
+    padding: 20px 0px 40px;
+
 }
 
 .top-ban h1 {
@@ -27,7 +31,6 @@ padding:0px;
 }
 
 #banner{
-background:url(../images/bg.png) no-repeat;
 background-size:cover;
 position:relative;
 }
@@ -42,8 +45,7 @@ color:#000;
 
     font-family: 'Open Sans', sans-serif;
 
-color:
-#777;
+color: #777;
 
 font-size: 16px;
 
@@ -55,31 +57,66 @@ padding: 20px;
 
 }
 .bannertext{
-padding: 18% 0% 33%;
+padding: 18% 0% 12%;
 }
+
+.banner-text li {
+    
+font-size: 18px;
+
+color: #777;
+
+line-height: 29px;
+}
+
+
 .logo{
 margin-top: 20px;
 
 margin-bottom: 30px;
 }
 .formstyle {
-background:#ffffffcf;
-padding: 18px 27px 33px;
+
+    background: 
+
+rgb(40, 41, 54);
+
+padding: 0px 40px 40px;
+
 position: relative;
-top: 106px;
-box-shadow: 5px 5px 0px #a70a04;
-border: 13px solid #ffffff54;
+
+top: 0px;
+
+border: 0px solid
+
+    #ffffff54;
+    box-shadow: none;
+
 }
-.formstyle .heading {
-font-size: 15px;
-font-family: 'Open Sans', sans-serif;
-color: #000;
+
+.heading {
+
+    font-size: 15px;
+    font-family: 'Open Sans', sans-serif;
+    color: 
+
+#fff;
+
 font-size: 21px;
+
 font-weight: 700;
+
+background:
+
+    rgb(37, 156, 167);
+    padding: 10px;
+    text-align: center;
+
 }
+
 .formstyle label{
 font-family: 'Open Sans', sans-serif;
-color: #000;
+color: #fff;
 font-size: 14px;
 font-weight: 400;
 margin-top:12px;
@@ -91,7 +128,7 @@ box-shadow: inset 2px 2px 2px #ccc;
 font-size: 14px;
 }
 .submit{
-background: #00baf2;
+background: rgb(228, 79, 61);
 border: 0px;
 width: 100%;
 height: 50px;
@@ -115,7 +152,7 @@ font-family: 'Open Sans', sans-serif;
 font-family: 'Open Sans', sans-serif;
 }
 #benefits{
-margin:75px 0px;
+margin:10px 0px;
 }
 #benefits h2{
 font-family: 'Open Sans', sans-serif;
@@ -128,45 +165,75 @@ margin-top:0px;
 color:#000;	
 }
 #benefits .heading {
-font-size: 15px;
-font-family: 'Open Sans', sans-serif;
-color: #000;
+
+    font-size: 15px;
+    font-family: 'Open Sans', sans-serif;
+    color: 
+
+#259ca7;
+
 font-size: 21px;
-text-align:center;
-margin-bottom:10px;
+
+text-align: left;
+
+margin-bottom: 10px;
+
 font-weight: 700;
+
+background:
+
+    #fff;
+    padding: 0px;
+
 }
 #benefits p{
 font-family: 'Open Sans', sans-serif;
 font-size:15px;
 font-weight:400;
-line-height:26px;
-text-align:center;
+line-height:24px;
+text-align:left;
 }
-.mgb{
-margin-bottom:25px;
+.mgb {
+
+    margin-bottom: 25px;
+    width: 100%;
+
 }
-.box{
-margin-top: 50px;
-background: #f9f9f9;
-padding: 35px 10px 25px 15px;
-box-shadow: 4px 5px 0px #e4e4e4;
+.box {
+
+    margin-top: 0px;
+    background: 
+
+    #fff;
+    padding: 35px 0px 25px 0px;
+    box-shadow: none;
+
 }
-#mainquat{
-background:url(../images/bg3.png) no-repeat;
-background-size:cover;
-background-attachment:fixed;
-padding:75px 0px;
+#mainquat {
+
+    background: 
+
+    rgb(37, 156, 167);
+        background-attachment: scroll;
+        background-size: auto;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 20px 0px;
+
 }
-#mainquat h2{
-font-family: 'Open Sans', sans-serif;
-font-size:43px;
-font-weight:700;
-line-height: 57px;
-text-align:center;
-margin-bottom:15px;
-margin: 0px;
-color:#fff;	
+#mainquat h2 {
+
+    font-family: 'Open Sans', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 57px;
+    text-align: center;
+    margin-bottom: 15px;
+    margin: 0px;
+    color: 
+
+    #fff;
+
 }
 #hosting{
 margin:75px 0px;
@@ -253,7 +320,7 @@ font-weight:400;
 border-bottom:0px;
 }
 #callaction {
-background: url(../images/bg3.png) no-repeat;
+background: url(../img/bg3.png) no-repeat;
 background-size: cover;
 background-attachment: fixed;
 padding: 75px 0px;
@@ -338,7 +405,7 @@ box-shadow: 4px 5px 0px #e4e4e4;
 border-radius: 50%;
 }
 #testimonial {
-background: url(../images/testimonialbg.png) no-repeat;
+background: url(../img/testimonialbg.png) no-repeat;
 background-size: cover;
 background-attachment: fixed;
 }
@@ -376,9 +443,9 @@ position:relative;
 margin-top: 57px;
 }
 #footer{
-padding:50px 0px;
+padding:20px 0px;
 margin:0px;
-background:#f4f4f4;
+background:rgb(40, 41, 54);
 }
 #footer ul{
 margin: 27px auto;
@@ -399,13 +466,18 @@ border-right:0;
 }
 #footer p {
 font-family: 'Open Sans', sans-serif;
+
 font-size: 15px;
+
 font-weight: 400;
+
 line-height: 26px;
+
+color: #aaacbc;
 }
 #benifitbg {
 padding:75px 0px;
-background:url(../images/bg4.png) no-repeat;
+background:url(../img/bg4.png) no-repeat;
 background-attachment:fixed;
 background-size:cover;
 }
@@ -654,4 +726,204 @@ padding-top:10%;
 {
 padding-top:10%;
 }
+}    
+    
+.thankyou {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    font-weight: 1000;
+    line-height: 57px;
+    color: rgb(37, 156, 167);
 }
+    
+.resp-sharing-button__link,
+.resp-sharing-button__icon {
+  display: inline-block
+}
+
+.resp-sharing-button__link {
+  text-decoration: none;
+  color: #fff;
+  margin: 0.5em
+}
+
+.resp-sharing-button {
+  border-radius: 5px;
+  transition: 25ms ease-out;
+  padding: 0.5em 0.75em;
+  font-family: Helvetica Neue,Helvetica,Arial,sans-serif
+}
+
+.resp-sharing-button__icon svg {
+  width: 1em;
+  height: 1em;
+  margin-right: 0.4em;
+  vertical-align: top
+}
+
+.resp-sharing-button--small svg {
+  margin: 0;
+  vertical-align: middle
+}
+
+/* Non solid icons get a stroke */
+.resp-sharing-button__icon {
+  stroke: #fff;
+  fill: none
+}
+
+/* Solid icons get a fill */
+.resp-sharing-button__icon--solid,
+.resp-sharing-button__icon--solidcircle {
+  fill: #fff;
+  stroke: none
+}
+
+.resp-sharing-button--twitter {
+  background-color: #55acee
+}
+
+.resp-sharing-button--twitter:hover {
+  background-color: #2795e9
+}
+
+.resp-sharing-button--pinterest {
+  background-color: #bd081c
+}
+
+.resp-sharing-button--pinterest:hover {
+  background-color: #8c0615
+}
+
+.resp-sharing-button--facebook {
+  background-color: #3b5998
+}
+
+.resp-sharing-button--facebook:hover {
+  background-color: #2d4373
+}
+
+.resp-sharing-button--tumblr {
+  background-color: #35465C
+}
+
+.resp-sharing-button--tumblr:hover {
+  background-color: #222d3c
+}
+
+.resp-sharing-button--reddit {
+  background-color: #5f99cf
+}
+
+.resp-sharing-button--reddit:hover {
+  background-color: #3a80c1
+}
+
+.resp-sharing-button--google {
+  background-color: #dd4b39
+}
+
+.resp-sharing-button--google:hover {
+  background-color: #c23321
+}
+
+.resp-sharing-button--linkedin {
+  background-color: #0077b5
+}
+
+.resp-sharing-button--linkedin:hover {
+  background-color: #046293
+}
+
+.resp-sharing-button--email {
+  background-color: #777
+}
+
+.resp-sharing-button--email:hover {
+  background-color: #5e5e5e
+}
+
+.resp-sharing-button--xing {
+  background-color: #1a7576
+}
+
+.resp-sharing-button--xing:hover {
+  background-color: #114c4c
+}
+
+.resp-sharing-button--whatsapp {
+  background-color: #25D366
+}
+
+.resp-sharing-button--whatsapp:hover {
+  background-color: #1da851
+}
+
+.resp-sharing-button--hackernews {
+background-color: #FF6600
+}
+.resp-sharing-button--hackernews:hover, .resp-sharing-button--hackernews:focus {   background-color: #FB6200 }
+
+.resp-sharing-button--vk {
+  background-color: #507299
+}
+
+.resp-sharing-button--vk:hover {
+  background-color: #43648c
+}
+
+.resp-sharing-button--facebook {
+  background-color: #3b5998;
+  border-color: #3b5998;
+}
+
+.resp-sharing-button--facebook:hover,
+.resp-sharing-button--facebook:active {
+  background-color: #2d4373;
+  border-color: #2d4373;
+}
+
+.resp-sharing-button--twitter {
+  background-color: #55acee;
+  border-color: #55acee;
+}
+
+.resp-sharing-button--twitter:hover,
+.resp-sharing-button--twitter:active {
+  background-color: #2795e9;
+  border-color: #2795e9;
+}
+
+.resp-sharing-button--tumblr {
+  background-color: #35465C;
+  border-color: #35465C;
+}
+
+.resp-sharing-button--tumblr:hover,
+.resp-sharing-button--tumblr:active {
+  background-color: #222d3c;
+  border-color: #222d3c;
+}
+
+.resp-sharing-button--email {
+  background-color: #777777;
+  border-color: #777777;
+}
+
+.resp-sharing-button--email:hover,
+.resp-sharing-button--email:active {
+  background-color: #5e5e5e;
+  border-color: #5e5e5e;
+}
+
+.resp-sharing-button--pinterest {
+  background-color: #bd081c;
+  border-color: #bd081c;
+}
+
+.resp-sharing-button--pinterest:hover,
+.resp-sharing-button--pinterest:active {
+  background-color: #8c0615;
+  border-color: #8c0615;
+}
+

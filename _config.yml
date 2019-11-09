@@ -1,0 +1,8 @@
+theme: jekyll-theme-cayman
+title: Kode Konveyor
+description: We develop a task market to help all stakeholders of the industry to enjoy fast, cheap, and quality software development, using a well-defined process, supported by strict quality assurance,
+google_analytics: UA-151042094-1
+
+exclude:
+        - tools
+        - Gemfile
