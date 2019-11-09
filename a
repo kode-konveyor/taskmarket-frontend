@@ -1,0 +1,26 @@
+	function login() {
+		current = window.location.pathname
+		window.location.assign("/market/member/login?next="+current)
+	}
+
+	function showLogin_onSuccess(result) {
+	    $("#login").html("Hello, "+result.login)
+	    $("#login").attr("href","#")
+	}
+	
+	function showlogin_onError(xhr,status,error) {
+		if(xhr.status == 401) 
+			return
+		else
+	        	alert("An error occured: " + xhr.status + " " + xhr.statusText);
+	}
+	function showLoginName() {
+	  $.ajax({
+	        url: "/market/member/user",
+	    type: "GET",
+	    success: showLogin_onSuccess,
+	    error: showlogin_onError
+	  });
+	}
+	
+	$( document ).ready(showLoginName);

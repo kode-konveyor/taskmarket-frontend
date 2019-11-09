@@ -2,4 +2,4 @@
 
 Welcome to the Kode konveyor task market!
 
-<a href="/market/member/user">We store this information of you</a>
+<a href="https://repository.kodekonveyor.com/TaskMarket/kode-konveyor/develop/taskmarket-implementedBehaviours.html">Documentation</a>
