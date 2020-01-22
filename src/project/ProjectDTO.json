@@ -1,0 +1,13 @@
+{
+    "type": "object",
+    "title": "Create a project",
+    "required": [
+        "name"
+    ],
+    "properties": {
+        "name": {
+            "type": "string",
+            "title": "Project name"
+        }
+    }
+}

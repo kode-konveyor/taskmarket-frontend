@@ -1,2 +1,5 @@
 Gemfile.lock
 _site
+build
+package-lock.json
+node_modules

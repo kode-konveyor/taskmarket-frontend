@@ -1,0 +1,13 @@
+.add-button {
+    position: absolute;
+    input[type="button"] {
+        border: solid 4px #151;
+        border-radius: 50%;
+        width: 4rem;
+        height: 4rem;
+        color: #382;
+        background: #9c9;
+        font-size: 3rem;
+        font-weight: bold;
+    }
+}
