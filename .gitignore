@@ -21,3 +21,6 @@ model.richescape
 model.stubs
 model.testdata
 model/
+build
+package-lock.json
+node_modules
