@@ -7,3 +7,4 @@ repository: kode-konveyor/taskmarket-frontend
 exclude:
         - tools
         - Gemfile
+        - modelparts

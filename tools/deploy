@@ -1,3 +1,8 @@
 git pull
+#cp /etc/taskmarket-frontend/* src/config/
+#npm install
+#npm run build
 bundle exec jekyll build
-cp -r _site/* /var/www/market
+#cp -r build _site/taskmarket
+#cp -r build/static _site
+rsync -arv --delete _site/ /var/www/market/

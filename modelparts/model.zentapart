@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?><zenta:model xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:zenta="http://magwas.rulez.org/zenta" name="Task Market frontend" id="64e19627-dd23-4332-8493-4c1189473bef" version="2.2.1">
+  
+  
+  
+  
+  <folder name="Frontend" id="18e77fe5-2f45-4d8c-a40a-2c0734739767">
+    <element xsi:type="zenta:ZentaDiagramModel" name="Frontend design" id="f4ea4264-ec02-46e7-9280-e82146d4d1f1">
+      <child xsi:type="zenta:DiagramObject" id="4d0852bd-418d-4052-baf4-88f71d27b0da" zentaElement="f9e928c5-a7ca-4df9-9bc2-ffa6e79007e9">
+        <bounds x="255" y="168" width="178" height="73"/>
+        <sourceConnection xsi:type="zenta:Connection" id="41a841e7-5424-4d6e-9d47-fba088a63a7f" source="4d0852bd-418d-4052-baf4-88f71d27b0da" target="cff92614-7b33-47be-b308-a044d6d8ad9c" relationship="418b3fb3-4ff0-4c6b-9322-4a4b549039c4"/>
+      </child>
+      <child xsi:type="zenta:DiagramObject" id="cff92614-7b33-47be-b308-a044d6d8ad9c" targetConnections="41a841e7-5424-4d6e-9d47-fba088a63a7f" zentaElement="e7509a62-6775-4286-adfc-507fb69a6fd1">
+        <bounds x="275" y="336" width="137"/>
+        <sourceConnection xsi:type="zenta:Connection" id="251b7087-979d-4da0-a88f-0a0e7659c6a1" source="cff92614-7b33-47be-b308-a044d6d8ad9c" target="106e472b-12a6-4a6e-bddd-0cf4e465ad19" relationship="e78316bb-3f96-476f-a736-6db9aa4a22a4"/>
+        <sourceConnection xsi:type="zenta:Connection" id="4733f658-5524-4792-b8fa-55e2e9155591" source="cff92614-7b33-47be-b308-a044d6d8ad9c" target="038a5ea1-db56-43f4-bc0b-dcaf34e8aec2" relationship="238009a2-a83a-4c3a-af3a-055084c643a8"/>
+      </child>
+      <child xsi:type="zenta:DiagramObject" id="038a5ea1-db56-43f4-bc0b-dcaf34e8aec2" targetConnections="4733f658-5524-4792-b8fa-55e2e9155591" zentaElement="0b88bb83-d09b-4808-89c2-040655feccc8">
+        <bounds x="635" y="339" width="170"/>
+      </child>
+      <child xsi:type="zenta:DiagramObject" id="106e472b-12a6-4a6e-bddd-0cf4e465ad19" targetConnections="251b7087-979d-4da0-a88f-0a0e7659c6a1" zentaElement="27d97202-87a4-47ca-bde4-1c96ff39dc7e">
+        <bounds x="72" y="360" width="-1" height="-1"/>
+      </child>
+    </element>
+    <element xsi:type="zenta:BasicObject" name="RegistrationForm" id="e7509a62-6775-4286-adfc-507fb69a6fd1" ancestor="4753b1bb-fc45-4aa1-821d-f08baf8a1766"/>
+    <element xsi:type="zenta:BasicRelationship" id="418b3fb3-4ff0-4c6b-9322-4a4b549039c4" ancestor="3dd7b0b1-bd9f-4a13-b5d9-9db0200af5b8" source="f9e928c5-a7ca-4df9-9bc2-ffa6e79007e9" target="e7509a62-6775-4286-adfc-507fb69a6fd1"/>
+    <element xsi:type="zenta:BasicRelationship" id="e78316bb-3f96-476f-a736-6db9aa4a22a4" ancestor="299a71b1-61d7-4be0-aa8d-f5994a6c9e5e" source="e7509a62-6775-4286-adfc-507fb69a6fd1" target="27d97202-87a4-47ca-bde4-1c96ff39dc7e"/>
+    <element xsi:type="zenta:BasicRelationship" id="238009a2-a83a-4c3a-af3a-055084c643a8" ancestor="13ae853d-2b5f-4bb3-bd5d-27daa768c1c0" source="e7509a62-6775-4286-adfc-507fb69a6fd1" target="0b88bb83-d09b-4808-89c2-040655feccc8"/>
+  </folder>
+  <folder name="Frontend framework" id="99306354-84f0-4a7a-bac5-30f67ea75c73">
+    <element xsi:type="zenta:BasicObject" name="Form" id="27d97202-87a4-47ca-bde4-1c96ff39dc7e" ancestor="4753b1bb-fc45-4aa1-821d-f08baf8a1766"/>
+  </folder>
+  <property key="modelDependency" value="metamodel/analysis"/>
+  <property key="modelDependency" value="metamodel/design"/>
+  <property key="modelDependency" value="taskmarket/backend_design"/>
+  <property key="modelDependency" value="taskmarket/analysis"/>
+  <property key="documentationMarkup" value="MediaWiki"/>
+</zenta:model>
