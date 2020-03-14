@@ -2,3 +2,5 @@ Gemfile.lock
 _site
 inputs
 model.zenta
+model.zenta.bak
+modelparts/metamodel/
