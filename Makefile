@@ -3,9 +3,9 @@ export REPO_NAME=taskmarket-frontend
 export GITHUB_ORGANIZATION=kode-konveyor
 export CONSISTENCY_INPUTS=model.rich shippable/behaviours.xml
 LANGUAGE=java
-BEFORE_ALL=runapache
+BEFORE_ALL=
 
-include /usr/local/toolchain/rules.java
+include /usr/local/toolchain/rules.zenta
 
 runapache:
 	tools/runApache
