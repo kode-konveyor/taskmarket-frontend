@@ -12,7 +12,7 @@ runapache:
 	touch runapache
 
 setgithubkey:
-	pwd;find -ls
+	ssh -v github.com
 	cp tools/github_ssh_config ~/.ssh/config
 
 delink:
