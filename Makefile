@@ -12,8 +12,8 @@ runapache:
 	touch runapache
 
 setgithubkey:
-	ssh -v github.com
 	cp tools/github_ssh_config ~/.ssh/config
+	find /tmp/ssh -ls
 
 delink:
 	zenta-xslt-runner -xsl:xslt/delink.xslt -s:$(MODEL_BASENAME).zenta -o:modelparts/$(MODEL_BASENAME).zentapart -im:delink
