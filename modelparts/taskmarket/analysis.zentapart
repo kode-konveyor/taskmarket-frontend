@@ -2659,6 +2659,10 @@ details is a '/' separated string of the needed details. its content depends on 
                id="a621e1b2-1e69-4f8d-b43b-edbfc1d316d9"
                ancestor="267f4d47-e1e6-4af4-8677-3cf65fc8db86"/>
       <element xsi:type="zenta:BasicObject"
+               name="User input"
+               id="d716e9aa-2e1a-46b4-93da-e00a06990bc4"
+               ancestor="267f4d47-e1e6-4af4-8677-3cf65fc8db86"/>
+      <element xsi:type="zenta:BasicObject"
                name="Bill"
                id="5da051ec-c7b1-4ae4-8404-0bd3570336b0"
                ancestor="267f4d47-e1e6-4af4-8677-3cf65fc8db86"/>
@@ -2687,10 +2691,6 @@ details is a '/' separated string of the needed details. its content depends on 
       <element xsi:type="zenta:BasicObject"
                name="work reference"
                id="8ea0bb6f-4cde-44b7-b12e-05b590d63372"
-               ancestor="267f4d47-e1e6-4af4-8677-3cf65fc8db86"/>
-      <element xsi:type="zenta:BasicObject"
-               name="User input"
-               id="d716e9aa-2e1a-46b4-93da-e00a06990bc4"
                ancestor="267f4d47-e1e6-4af4-8677-3cf65fc8db86"/>
    </folder>
    <folder name="4. milestones" id="375647e7-71d8-4384-a61d-9c3a14557825">
