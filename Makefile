@@ -18,7 +18,8 @@ setgithubkey:
 delink:
 	zenta-xslt-runner -xsl:xslt/delink.xslt -s:$(MODEL_BASENAME).zenta -o:modelparts/$(MODEL_BASENAME).zentapart -im:delink
 
-$(MODEL_BASENAME).zenta: inputs
+$(MODEL_BASENAME).zenta: 
+	mkdir -p inputs
 	./tools/clonearchrepos
 	zenta-xslt-runner -xsl:xslt/delink.xslt -o:$(MODEL_BASENAME).zenta -s:modelparts/$(MODEL_BASENAME).zentapart -im:link
 
