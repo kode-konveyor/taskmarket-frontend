@@ -12,7 +12,7 @@ describe('../../api/AddToRoleController', () => {
     beforeEach(() => {
         httpPut.mockClear()
 
-        AddToRoleController(PROJECT, ROLE, USERNAME)
+        AddToRoleController(PROJECT, ROLE)
     })
 
     it ('uses PUT method', () => {
@@ -25,6 +25,6 @@ describe('../../api/AddToRoleController', () => {
     })
 
     it ('combines data into request body', () => {
-        expect(httpPut.mock.calls[0][1]).toEqual({projectName: PROJECT, roleName: ROLE, userName: USERNAME})
+        expect(httpPut.mock.calls[0][1]).toEqual({projectName: PROJECT, roleName: ROLE})
     })
 })

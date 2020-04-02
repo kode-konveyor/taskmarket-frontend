@@ -8,7 +8,6 @@ describe('/reducers/addRoleForm', () => {
     
     const initialState = {projectId: '', visible: false} 
     const MY_PROJECT = 'MY-PROJECT'
-    const USER = 'User Béla'
     const ADMIN = 'Admin'
 
     beforeEach(() => {
@@ -53,9 +52,9 @@ describe('/reducers/addRoleForm', () => {
     })
 
     it('sends data when the action is SUBMIT without existing status', () => {
-        const action = {type: ADD_ROLE_FORM_ACTIONS.SUBMIT, formData: {formData: {user: USER, role: ADMIN}}}
+        const action = {type: ADD_ROLE_FORM_ACTIONS.SUBMIT, formData: {formData: {role: ADMIN}}}
         const state = {projectId: MY_PROJECT, visible: true}
         addRoleForm(state, action)
-        expect(AddToRoleController).toHaveBeenCalledWith(MY_PROJECT, ADMIN, USER);
+        expect(AddToRoleController).toHaveBeenCalledWith(MY_PROJECT, ADMIN);
     })
 })

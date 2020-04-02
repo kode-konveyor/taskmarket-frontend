@@ -2,11 +2,10 @@ import { httpPut } from "./http/PutRequest"
 
 const ADD_TO_ROLE_URI = '/member/addprojectrole'
 
-export function AddToRoleController(projectName, roleName, userName) {
+export function AddToRoleController(projectName, roleName) {
     let data = {
         projectName: projectName,
-        roleName: roleName,
-        userName: userName
+        roleName: roleName
     }
     
     return httpPut(ADD_TO_ROLE_URI, data)

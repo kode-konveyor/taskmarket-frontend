@@ -11,8 +11,7 @@ const addRoleForm = (state = { visible: false, projectId: '' }, action) => {
     const close = () => (INITIAL_STATE)
 
     const submit = () => {
-        const formData = action.formData.formData;
-        AddToRoleController(state.projectId, formData.role, formData.user);
+        AddToRoleController(state.projectId, action.formData.formData.role);
         return INITIAL_STATE
     }
     const actionMap = new Map([

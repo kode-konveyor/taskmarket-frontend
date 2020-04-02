@@ -1,18 +1,13 @@
 {
     "type": "object",
     "required": [
-        "user",
         "role"
     ],
     "properties": {
-        "user": {
-            "type": "string",
-            "title": "Username"
-        },
         "role": {
             "type": "string",
             "title": "Role",
-            "enum": ["Admin", "Bernigger"]
+            "minLength": 1
         }
     }
 }
