@@ -1,12 +1,11 @@
 import React from 'react';
 import './App.css';
-import AddButton from './uiElements/buttons/AddButton'
-import ProjectFormContainer from './project/ProjectFormContainer';
+import ProjectList from './project/list/ProjectList';
 
 function App() {
   return (
     <div className="App">
-      <AddButton Form={ProjectFormContainer}/>
+      <ProjectList/>
     </div>
   );
 }

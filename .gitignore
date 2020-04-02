@@ -22,5 +22,9 @@ model.stubs
 model.testdata
 model/
 build
+reports/
 package-lock.json
 node_modules
+
+# stryker temp files
+.stryker-tmp

@@ -1,0 +1,40 @@
+.add-role-form-wrapper {
+    float: left;
+    width: 18rem;
+    border: dotted 1px #a3a3a3;
+    background-color: azure;
+    border-radius: 1rem;
+    box-shadow: 0.2rem 0.2rem 0.5rem cadetblue;
+    margin: 1rem;
+
+    h1 {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 14pt;
+    }
+
+    fieldset {
+        border: none;
+        display: block;
+        text-align: center;
+
+        .form-group {
+            margin-bottom: 1rem;
+            float: left;
+
+            label {
+                display: inline-block;
+                text-align: left;
+                width: 5rem;
+            }
+
+            input,select {
+                display: inline-block;
+                width: 10rem;
+            }
+        }
+    }
+
+    button {
+        margin-block-end: 1rem;
+    }
+}
