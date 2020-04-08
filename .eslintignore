@@ -1,0 +1,8 @@
+coverage/**/*
+node_modules/**/*
+public/**/*
+reports/**/*
+build/**/*
+assets/**/*
+_site/**/*
+

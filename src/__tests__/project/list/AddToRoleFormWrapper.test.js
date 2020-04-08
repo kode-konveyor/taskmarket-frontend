@@ -2,12 +2,19 @@ import React from 'react'
 import { shallow } from 'enzyme'
 import AddToRoleFormWrapper from '../../../project/list/AddToRoleFormWrapper'
 import Form from 'react-jsonschema-form'
+import PropTypes from 'prop-types'
 
 describe('/project/list/AddToRoleFormWrapper', () => {
 
     let renderedComponent
     let onSubmitMock
     const PROJECT_ID = "MY-PROJECT"
+
+    const expectedPropTypes = {
+        className: PropTypes.string,
+        onSubmit: PropTypes.func,
+        onCancel: PropTypes.func
+    }
 
     beforeEach(() => {
         onSubmitMock = jest.fn()
@@ -21,5 +28,9 @@ describe('/project/list/AddToRoleFormWrapper', () => {
     it('forwards onSubmitEvent', () => {
         renderedComponent.find(Form).simulate('submit')
         expect(onSubmitMock).toHaveBeenCalled()
+    })
+
+    it('has the right propTypes', () => {
+        expect(AddToRoleFormWrapper.propTypes).toMatchObject(expectedPropTypes)
     })
 })

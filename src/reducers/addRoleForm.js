@@ -1,17 +1,16 @@
 import { ADD_ROLE_FORM_ACTIONS } from "../actions"
 import { AddToRoleController } from "../api/AddToRoleController";
 
+const INITIAL_STATE = { projectId: '' }
 
-const addRoleForm = (state = { visible: false, projectId: '' }, action) => {
+const addRoleForm = (state = INITIAL_STATE, action) => {
 
-    const INITIAL_STATE = { visible: false, projectId: '' }
-
-    const open = () => ({ visible: true, projectId: action.projectId })
+    const open = () => ({ projectId: action.projectId })
 
     const close = () => (INITIAL_STATE)
 
     const submit = () => {
-        AddToRoleController(state.projectId, action.formData.formData.role);
+        AddToRoleController(action.projectId, action.formData.formData.role);
         return INITIAL_STATE
     }
     const actionMap = new Map([

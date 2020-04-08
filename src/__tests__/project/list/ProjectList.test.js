@@ -2,7 +2,6 @@ import React from 'react'
 
 import { shallow } from 'enzyme'
 import ProjectList from '../../../project/list/ProjectList'
-import AddToRoleForm from '../../../project/list/AddToRoleForm'
 import ProjectListBox from '../../../project/list/ProjectListBox'
 
 describe('/project/list/ProjectList', () => {
@@ -15,9 +14,5 @@ describe('/project/list/ProjectList', () => {
 
     it('contains ProjectListBox', () => {
         expect(renderedComponent.find(ProjectListBox).length).toBe(1)
-    })
-
-    it('contains AddToRoleForm', () => {
-        expect(renderedComponent.find(AddToRoleForm).length).toBe(1)
     })
 })

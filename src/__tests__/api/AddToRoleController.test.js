@@ -7,7 +7,6 @@ describe('../../api/AddToRoleController', () => {
 
     const PROJECT = 'PROJECT'
     const ROLE = 'Admin'
-    const USERNAME = 'KovacsBela69'
 
     beforeEach(() => {
         httpPut.mockClear()

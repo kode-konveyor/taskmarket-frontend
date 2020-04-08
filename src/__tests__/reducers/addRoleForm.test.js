@@ -6,7 +6,7 @@ jest.mock('../../api/AddToRoleController')
 
 describe('/reducers/addRoleForm', () => {
     
-    const initialState = {projectId: '', visible: false} 
+    const initialState = {projectId: ''} 
     const MY_PROJECT = 'MY-PROJECT'
     const ADMIN = 'Admin'
 
@@ -26,19 +26,19 @@ describe('/reducers/addRoleForm', () => {
 
     it('updates status when the action is OPEN', () => {
         const action = {type: ADD_ROLE_FORM_ACTIONS.OPEN, projectId: MY_PROJECT}
-        const expectedState = {projectId: MY_PROJECT, visible: true}
+        const expectedState = {projectId: MY_PROJECT}
         expect(addRoleForm(initialState, action)).toEqual(expectedState);
     })
 
     it('updates status when the action is OPEN without existing status', () => {
         const action = {type: ADD_ROLE_FORM_ACTIONS.OPEN, projectId: MY_PROJECT}
-        const expectedState = {projectId: MY_PROJECT, visible: true}
+        const expectedState = {projectId: MY_PROJECT}
         expect(addRoleForm(undefined, action)).toEqual(expectedState);
     })
 
     it('updates status when the action is CLOSE', () => {
         const action = {type: ADD_ROLE_FORM_ACTIONS.CLOSE}
-        expect(addRoleForm({projectId: 'PROJECT', visible: true}, action)).toEqual(initialState);
+        expect(addRoleForm({projectId: 'PROJECT'}, action)).toEqual(initialState);
     })
 
     it('updates status when the action is CLOSE without existing status', () => {
@@ -47,13 +47,13 @@ describe('/reducers/addRoleForm', () => {
     })
 
     it('updates status when the action is SUBMIT without existing status', () => {
-        const action = {type: ADD_ROLE_FORM_ACTIONS.SUBMIT, formData: {formData: {}}}
+        const action = {type: ADD_ROLE_FORM_ACTIONS.SUBMIT, formData: {formData: {}}, projectId: MY_PROJECT}
         expect(addRoleForm(undefined, action)).toEqual(initialState);
     })
 
     it('sends data when the action is SUBMIT without existing status', () => {
-        const action = {type: ADD_ROLE_FORM_ACTIONS.SUBMIT, formData: {formData: {role: ADMIN}}}
-        const state = {projectId: MY_PROJECT, visible: true}
+        const action = {type: ADD_ROLE_FORM_ACTIONS.SUBMIT, formData: {formData: {role: ADMIN}}, projectId: MY_PROJECT}
+        const state = {projectId: MY_PROJECT}
         addRoleForm(state, action)
         expect(AddToRoleController).toHaveBeenCalledWith(MY_PROJECT, ADMIN);
     })

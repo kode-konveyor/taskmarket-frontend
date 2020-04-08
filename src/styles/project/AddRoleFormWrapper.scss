@@ -1,20 +1,18 @@
-.add-role-form-wrapper {
-    float: left;
-    width: 18rem;
-    border: dotted 1px #a3a3a3;
-    background-color: azure;
-    border-radius: 1rem;
-    box-shadow: 0.2rem 0.2rem 0.5rem cadetblue;
-    margin: 1rem;
+.add-to-role-form-wrapper {
+    width: 100%;
+    margin-top: 1rem;
 
-    h1 {
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
-        font-size: 14pt;
+    form {
+        display: flex;
+    }
+
+    form > div {
+        display: inline-block;
     }
 
     fieldset {
         border: none;
-        display: block;
+        display: inline-block;
         text-align: center;
 
         .form-group {
@@ -35,6 +33,29 @@
     }
 
     button {
-        margin-block-end: 1rem;
+        margin-block-start: 0.75rem;
+        margin-left: 0.5rem;
+        border: none;
+        width: 1.5rem;
+        height: 1.5rem;
+        border-radius: 50%;
+        color: black;
+        font-weight: bolder;
     }
+
+    button[type="submit"] {
+        font-size: 14pt;
+        background-color: #aaeeaa;
+        
+    }
+
+    button[type="submit"]:hover {
+        background-color: lightgreen;
+        font-weight: bold;
+        box-shadow: lime 0px 0px 5px;
+    }
+}
+
+.add-to-role-form-wrapper.hidden {
+    display: none;
 }
