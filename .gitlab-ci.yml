@@ -1,0 +1,42 @@
+image: node:12
+
+stages:
+    - install
+    - quality
+    - deploy
+
+install: 
+    stage: install
+    script:
+        - npm install
+    artifacts:
+        name: "artifacts"
+        untracked: true
+        expire_in: 60 mins
+        paths:
+          - .npm/
+          - node_modules/
+
+
+    dependencies: install
+
+linting:
+    stage: quality
+    script:
+        - npm run lint
+    dependencies: install
+
+testing:
+    stage: quality
+    script:
+        - CI=true npm run test
+    dependencies: install
+
+mutation:
+    stage: quality
+    script:
+        - npm run mutate
+    dependencies: install
+
+
+
