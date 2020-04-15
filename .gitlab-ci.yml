@@ -18,25 +18,26 @@ install:
           - node_modules/
 
 
-    dependencies: install
-
 linting:
     stage: quality
     script:
         - npm run lint
-    dependencies: install
+    dependencies:
+        - install
 
 testing:
     stage: quality
     script:
         - CI=true npm run test
-    dependencies: install
+    dependencies:
+        - install
 
 mutation:
     stage: quality
     script:
         - npm run mutate
-    dependencies: install
+    dependencies:
+        - install
 
 
 
