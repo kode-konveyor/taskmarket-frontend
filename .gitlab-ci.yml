@@ -57,5 +57,4 @@ deploy-test:
         url: 
     stage: deploy
     script:
-        - npm install -g serve
-        - serve -s build
+        - serve -s build &
