@@ -42,8 +42,6 @@ mutation:
 
 build:
     stage: build
-    tags:
-        - test-server
     script:
         - npm run build
     dependencies:
@@ -56,5 +54,11 @@ deploy-test:
         name: test-server
         url: 
     stage: deploy
+    dependencies:
+        - testing
+        - mutation
+        - linting
+        - build
     script:
+        - npm run build
         - serve -s build &
