@@ -62,4 +62,4 @@ deploy-test:
     script:
         - npm install
         - npm run build
-        - serve -s build &
+        - pm2 start npm -- run production

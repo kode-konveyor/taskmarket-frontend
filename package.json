@@ -20,7 +20,8 @@
     "test": "react-scripts test",
     "mutate": "stryker run",
     "eject": "react-scripts eject",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "production": "serve -s build"
   },
   "eslintConfig": {
     "extends": "react-app"
