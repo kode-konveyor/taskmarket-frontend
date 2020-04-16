@@ -50,12 +50,12 @@ build:
         - install
 
 deploy-test:
-    tags: test-server
+    tags:
+        - test-server
     environment:
         name: test-server
         url: 
     stage: deploy
+    script:
         - npm install -g serve
         - serve -s build
-
-
