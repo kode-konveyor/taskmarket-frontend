@@ -2,6 +2,7 @@ image: node:12
 
 stages:
     - install
+    - build
     - quality
     - deploy
 
@@ -39,5 +40,22 @@ mutation:
     dependencies:
         - install
 
+build:
+    stage: build
+    tags:
+        - test-server
+    script:
+        - npm run build
+    dependencies:
+        - install
+
+deploy-test:
+    tags: test-server
+    environment:
+        name: test-server
+        url: 
+    stage: deploy
+        - npm install -g serve
+        - serve -s build
 
 
