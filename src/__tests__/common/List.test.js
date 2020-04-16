@@ -24,7 +24,7 @@ it('renders node with correct class name', () => {
 })
 
 it('renders as many children as the length of input list', () => {
-  expect(renderedComponent.find(Person).length).toBe(persons.length)
+  expect(renderedComponent.find(Person).length).toBe(persons.length+1)
 })
 
 it('renders empty list when data is not an array', () => {
