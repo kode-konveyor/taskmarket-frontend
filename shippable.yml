@@ -1,12 +1,4 @@
 build_image: node:12
-language: javascript
-
-integrations:
-  key:
-    - integrationName: kodekonveyor
-      type: sshKey
-  generic:
-    - integrationName: kkpipeline
 
 build:
   ci:
