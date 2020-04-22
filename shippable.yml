@@ -1,7 +1,6 @@
-build_image: kodekonveyor/toolchain:0.1.14
-language: python
-python:
-  - 2.7
+build_image: node:12
+language: javascript
+
 integrations:
   key:
     - integrationName: kodekonveyor
@@ -11,8 +10,7 @@ integrations:
 
 build:
   ci:
-    - /usr/local/toolchain/tools/Script
-  on_success:
-    - /usr/local/toolchain/tools/publish
-  on_failure:
-    - /usr/local/toolchain/tools/publish
+    - npm install
+    - npm run lint
+    - CI=true npm run test
+    - npm run mutate
