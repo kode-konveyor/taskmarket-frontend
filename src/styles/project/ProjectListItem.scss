@@ -1,0 +1,24 @@
+.projectListItem {
+    text-align: left;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+    line-height: 2rem;
+
+    span {
+        display: inline-block;
+    }
+    
+    .projectId {
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-weight: 700;
+        font-size: 14px;
+        width: 8rem;
+        padding-left: 1rem;
+    }
+
+    .projectName {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        width: 10rem;
+    }
+
+}

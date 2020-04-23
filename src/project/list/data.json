@@ -1,0 +1,5 @@
+[
+    {"projectId": "KK-TIDY", "name": "TidyUp"},
+    {"projectId": "KK-TASK-BE", "name": "TaskMarket back-end"},
+    {"projectId": "KK-TASK-FE", "name": "TaskMarket front-end"}
+]

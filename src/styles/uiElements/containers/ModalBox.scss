@@ -1,0 +1,14 @@
+.modal-box.hidden {
+    display: none;
+}
+
+.modal-box.visible {
+    display: inline-block;
+    width: auto;
+    float: right;
+    position: relative;
+
+    form {
+        display: inline-block;
+    }
+}

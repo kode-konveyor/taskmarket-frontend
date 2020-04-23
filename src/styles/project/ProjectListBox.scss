@@ -1,0 +1,16 @@
+.projectListBox {
+        float: left;
+        list-style: none;
+        border: 1px dotted #a3a3a3;
+        padding: 1rem;
+        display: inline-block;
+
+        li {
+            border-bottom: 1px dashed #e2e2e2
+        }
+
+        li:nth-child(odd) {
+            background-color: azure;
+        }
+
+}

@@ -1,0 +1,61 @@
+.add-to-role-form-wrapper {
+    width: 100%;
+    margin-top: 1rem;
+
+    form {
+        display: flex;
+    }
+
+    form > div {
+        display: inline-block;
+    }
+
+    fieldset {
+        border: none;
+        display: inline-block;
+        text-align: center;
+
+        .form-group {
+            margin-bottom: 1rem;
+            float: left;
+
+            label {
+                display: inline-block;
+                text-align: left;
+                width: 5rem;
+            }
+
+            input,select {
+                display: inline-block;
+                width: 10rem;
+            }
+        }
+    }
+
+    button {
+        margin-block-start: 0.75rem;
+        margin-left: 0.5rem;
+        border: none;
+        width: 1.5rem;
+        height: 1.5rem;
+        border-radius: 50%;
+        color: black;
+        font-weight: bolder;
+    }
+
+    button[type="submit"] {
+        font-size: 14pt;
+        background-color: #aaeeaa;
+        
+    }
+
+    button[type="submit"]:hover {
+        background-color: lightgreen;
+        font-weight: bold;
+        box-shadow: lime 0px 0px 5px;
+    }
+}
+
+.add-to-role-form-wrapper.hidden {
+    display: none;
+}
