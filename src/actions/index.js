@@ -1,0 +1,5 @@
+export const ADD_ROLE_FORM_ACTIONS = {
+    OPEN:'OPEN_ADD_ROLE_FORM',
+    CLOSE: 'CLOSE_ADD_ROLE_FORM',
+    SUBMIT: 'SUBMIT'
+}
