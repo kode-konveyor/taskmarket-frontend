@@ -1,0 +1,51 @@
+{
+    "type": "object",
+    "required": [
+        "personalName",
+        "legalForm",
+        "legalAddress",
+        "email",
+        "isTermsAccepted"
+    ],
+    "properties": {
+        "personalName": {
+            "type": "string",
+            "title": "Full Name"
+        },
+        "legalForm": {
+            "type": "object",
+            "title": "Legal Form",
+            "required": [
+                "country",
+                "legalFormName"
+            ],
+            "properties": {
+                "legalFormName": {
+                    "type": "string",
+                    "title": "name"
+                },
+                "country": {
+                    "type": "string",
+                    "title": "country"
+                }
+            }
+        },
+        "legalName": {
+            "type": "string",
+            "title": "Company Name"
+        },
+        "legalAddress": {
+            "type": "string",
+            "title": "Address"
+        },
+        "email": {
+            "type": "string",
+            "title": "E-mail"
+        },
+        "isTermsAccepted": {
+            "type": "boolean",
+            "title": "Accept terms and consitions"
+        }
+
+    }
+}
