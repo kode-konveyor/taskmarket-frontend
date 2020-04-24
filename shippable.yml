@@ -1,5 +1,4 @@
-build_image: node:12
-
+build_image: kodekonveyor/toolchain:2.0
 build:
   ci:
     - npm install

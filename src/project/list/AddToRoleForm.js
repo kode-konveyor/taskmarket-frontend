@@ -1,36 +1,47 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import AddToRoleFormWrapper from './AddToRoleFormWrapper'
-import { ADD_ROLE_FORM_ACTIONS } from '../../actions'
+import AddRoleToFormDTO from './AddRoleToFormDTO'
 import PropTypes from 'prop-types'
 
 
 export function AddToRoleForm({ projectId, visible, onSubmit, onCancel }) {
     let className = "add-to-role-form-wrapper" + (visible ? "" : " hidden")
+
     return (
         <div>
-            <AddToRoleFormWrapper className={className} onSubmit={(formData) => { onSubmit(formData, projectId) }}
-                onCancel={onCancel} />
+
+            <div className={className}>
+                <Form schema={AddRoleToFormDTO} onSubmit={(formData) => { onSubmit(formData, projectId) }} className='add-to-role-form'>
+                    <button type="submit">+</button>
+                    <button type="button" onClick={onCancel}>X</button>
+                </Form>
+            </div>
         </div>
     )
 }
 
-const submitAddToRole = (formData, projectId) => ({
-    type: ADD_ROLE_FORM_ACTIONS.SUBMIT,
-    projectId: projectId,
-    formData
-})
+AddToRoleForm.ACTIONS = {
+    OPEN: 'OPEN_ADD_ROLE_FORM',
+    CLOSE: 'CLOSE_ADD_ROLE_FORM',
+    ON_SUBMIT: 'SUBMIT_ADD_ROLE_FORM'
+}
 
-const mapDispatchToProps = dispatch => {
+function mapDispatchToProps(dispatch) {
     return {
-        onSubmit: (formData, projectId) => dispatch(submitAddToRole(formData, projectId)),
-        onCancel: () => dispatch({ type: ADD_ROLE_FORM_ACTIONS.CLOSE })
+        onSubmit: (formData, projectId) => dispatch({
+            type: AddToRoleForm.ACTIONS.ON_SUBMIT,
+            projectId: projectId,
+            formData: formData.formData
+        }),
+        onCancel: () => dispatch({ type: AddToRoleForm.ACTIONS.CLOSE })
     }
 }
+
 
 const mapStateToProps = (state, ownProps) => {
     return { visible: state.addRoleForm.projectId === ownProps.projectId }
 }
+
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(AddToRoleForm)
