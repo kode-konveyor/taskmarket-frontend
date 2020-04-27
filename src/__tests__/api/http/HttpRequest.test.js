@@ -1,44 +1,44 @@
+import { httpRequest, HTTP } from "../../../api/http/HttpRequest";
+import apiBaseRoot from "../../../config/apiBaseRoot";
 
-import { httpRequest, HTTP } from '../../../api/http/HttpRequest'
-import apiBaseRoot from '../../../config/apiBaseRoot'
+describe("/api/http/HttpRequest", () => {
+  const data = [{ _id: 1, name: "Janos Ader", role: "Poo with mustache" }];
 
-
-describe('/api/http/HttpRequest', () => {
-  const data = [{ _id: 1, name: 'Janos Ader', role: 'Poo with mustache' }]
-
-  let fetchMock
+  let fetchMock;
 
   beforeEach(() => {
-    jest.clearAllMocks()
-    fetchMock = jest.spyOn(global, 'fetch')
-    fetchMock.mockReturnValue(() => {() =>{() => "" }})
-    
-    httpRequest(HTTP.POST, '/test', data).then().catch()
-  })
+    jest.clearAllMocks();
+    fetchMock = jest.spyOn(global, "fetch");
+    fetchMock.mockReturnValue(() => {
+      () => {
+        () => "";
+      };
+    });
 
-  it('calls the right url', () => {
-    expect(getParam(fetchMock).href).toBe(apiBaseRoot + '/test')
-  })
+    httpRequest(HTTP.POST, "/test", data).then().catch();
+  });
 
-  it('sends POST request', () => {
-    expect(getParam(fetchMock, 1).method).toBe('POST')
-  })
+  it("calls the right url", () => {
+    expect(getParam(fetchMock).href).toBe(apiBaseRoot + "/test");
+  });
 
-  it('sends proper headers', () => {
+  it("sends POST request", () => {
+    expect(getParam(fetchMock, 1).method).toBe("POST");
+  });
+
+  it("sends proper headers", () => {
     const expectedHeaders = {
-      Accept: 'application/json',
-      'Content-Type': 'application/json'
-    }
-    expect(getParam(fetchMock, 1).headers).toEqual(expectedHeaders)
-  })
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    };
+    expect(getParam(fetchMock, 1).headers).toEqual(expectedHeaders);
+  });
 
-  it('sends data in body', () => {
-    expect(getParam(fetchMock, 1).body).toBe(JSON.stringify(data))
-  })
-
-})
+  it("sends data in body", () => {
+    expect(getParam(fetchMock, 1).body).toBe(JSON.stringify(data));
+  });
+});
 
 function getParam(fetchMock, index = 0) {
   return fetchMock.mock.calls[0][index];
 }
-

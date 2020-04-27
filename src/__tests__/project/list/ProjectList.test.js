@@ -1,18 +1,17 @@
-import React from 'react'
+import React from "react";
 
-import { shallow } from 'enzyme'
-import ProjectList from '../../../project/list/ProjectList'
-import ProjectListBox from '../../../project/list/ProjectListBox'
+import { shallow } from "enzyme";
+import ProjectList from "../../../project/list/ProjectList";
+import ProjectListBox from "../../../project/list/ProjectListBox";
 
-describe('/project/list/ProjectList', () => {
+describe("/project/list/ProjectList", () => {
+  let renderedComponent = {};
 
-    let renderedComponent = {}
+  beforeEach(() => {
+    renderedComponent = shallow(<ProjectList />);
+  });
 
-    beforeEach(() => {
-        renderedComponent = shallow(<ProjectList/>)
-    })
-
-    it('contains ProjectListBox', () => {
-        expect(renderedComponent.find(ProjectListBox).length).toBe(1)
-    })
-})
+  it("contains ProjectListBox", () => {
+    expect(renderedComponent.find(ProjectListBox).length).toBe(1);
+  });
+});
