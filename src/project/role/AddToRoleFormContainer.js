@@ -1,5 +1,5 @@
 import { CLOSE, SUBMIT } from "./AddToRoleFormActions";
-import AddToRoleForm from "./AddToRoleForm";
+import AddToRoleFormUI from "./AddToRoleFormUI";
 import { connect } from "react-redux";
 
 function mapDispatchToProps(dispatch) {
@@ -15,7 +15,10 @@ function mapDispatchToProps(dispatch) {
 }
 
 const mapStateToProps = (state, ownProps) => {
-  return { visible: state.addRoleForm.projectId === ownProps.projectId };
+  return {
+    visible:
+      state.AddRoleFormVisibilityService.projectId === ownProps.projectId,
+  };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(AddToRoleForm);
+export default connect(mapStateToProps, mapDispatchToProps)(AddToRoleFormUI);

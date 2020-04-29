@@ -1,10 +1,10 @@
 import { combineReducers } from "redux";
-import SubmitAddRoleService from "./SubmitAddRoleService";
-import addRoleForm from "./addRoleForm";
-import registrationForm from "./registrationForm";
+import SubmitAddRoleService from "../project/role/SubmitAddRoleService";
+import AddRoleFormVisibilityService from "../project/role/AddRoleFormVisibilityService";
+import RegistrationService from "../registration/RegistrationService";
 
 export default combineReducers({
-  addRoleForm,
+  AddRoleFormVisibilityService,
   SubmitAddRoleService,
-  registrationForm,
+  RegistrationService,
 });

@@ -1,10 +1,11 @@
-import { SUBMIT } from "./RegistrationActions.json";
-import { REGISTRATION_URI } from "../api/URLMapping";
+import RegistrationActions from "./RegistrationActions.json";
+import URLMapping from "../api/URLMapping";
 import { httpPost } from "../api/http/PostRequest";
 
 export default function RegistrationService(state = {}, action) {
-  if (action.type === SUBMIT) {
-    state = httpPost(REGISTRATION_URI, action.formData.formData);
+  console.log(action);
+  if (action.type === RegistrationActions.SUBMIT) {
+    state = httpPost(URLMapping.REGISTRATION_URI, action.formData);
   }
 
   return state;

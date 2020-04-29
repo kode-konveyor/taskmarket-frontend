@@ -21,7 +21,7 @@ describe("/reducers/registrationForm", () => {
   });
 
   it("sends data when the action is SUBMIT", () => {
-    const action = { type: SUBMIT, formData: { formData: DATA } };
+    const action = { type: SUBMIT, formData: DATA };
     RegistrationService(initialState, action);
     expect(httpPost).toHaveBeenCalledWith(apiUri, DATA);
   });

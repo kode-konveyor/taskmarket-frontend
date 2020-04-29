@@ -1,9 +1,9 @@
 import React from "react";
 import { shallow } from "enzyme";
-import AddRoleToProjectButton from "../../../project/role/AddRoleToProjectButton";
+import AddRoleToProjectButtonUI from "../../../project/role/AddRoleToProjectButtonUI";
 import PropTypes from "prop-types";
 
-describe("/project/list/AddRoleToProjectButton", () => {
+describe("/project/list/AddRoleToProjectButtonUI", () => {
   let renderedComponent, onAddRoleMock;
   const PROJECT_ID = "COVID-19";
 
@@ -15,7 +15,7 @@ describe("/project/list/AddRoleToProjectButton", () => {
   beforeEach(() => {
     onAddRoleMock = jest.fn();
     renderedComponent = shallow(
-      <AddRoleToProjectButton
+      <AddRoleToProjectButtonUI
         onAddRole={onAddRoleMock}
         projectId={PROJECT_ID}
       />
@@ -28,6 +28,6 @@ describe("/project/list/AddRoleToProjectButton", () => {
   });
 
   it("has the right propTypes", () => {
-    expect(AddRoleToProjectButton.propTypes).toMatchObject(expectedPropTypes);
+    expect(AddRoleToProjectButtonUI.propTypes).toMatchObject(expectedPropTypes);
   });
 });

@@ -1,10 +1,10 @@
 import React from "react";
 import { shallow } from "enzyme";
-import AddToRoleForm from "../../../project/role/AddToRoleForm";
+import AddToRoleFormUI from "../../../project/role/AddToRoleFormUI";
 import PropTypes from "prop-types";
 import Form from "react-jsonschema-form";
 
-describe("/project/list/AddToRoleForm", () => {
+describe("/project/list/AddToRoleFormUI", () => {
   let renderedComponent, onSubmitMock;
   const PROJECT_ID = "PROJECT-ID";
 
@@ -18,7 +18,7 @@ describe("/project/list/AddToRoleForm", () => {
   beforeEach(() => {
     onSubmitMock = jest.fn();
     renderedComponent = shallow(
-      <AddToRoleForm
+      <AddToRoleFormUI
         projectId={PROJECT_ID}
         visible={true}
         onSubmit={onSubmitMock}
@@ -37,7 +37,7 @@ describe("/project/list/AddToRoleForm", () => {
 
   it("adds hidden class when visible is false", () => {
     let hiddenComponent = shallow(
-      <AddToRoleForm
+      <AddToRoleFormUI
         projectId={PROJECT_ID}
         visible={false}
         onSubmit={onSubmitMock}
@@ -50,7 +50,7 @@ describe("/project/list/AddToRoleForm", () => {
 
   it("doesn't add hidden class when visible is true", () => {
     let hiddenComponent = shallow(
-      <AddToRoleForm
+      <AddToRoleFormUI
         projectId={PROJECT_ID}
         visible={true}
         onSubmit={onSubmitMock}
@@ -62,6 +62,6 @@ describe("/project/list/AddToRoleForm", () => {
   });
 
   it("has the right propTypes", () => {
-    expect(AddToRoleForm.propTypes).toMatchObject(expectedPropTypes);
+    expect(AddToRoleFormUI.propTypes).toMatchObject(expectedPropTypes);
   });
 });

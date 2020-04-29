@@ -1,12 +1,17 @@
 import React from "react";
 import Form from "react-jsonschema-form";
 import RegistrationFormDTO from "./RegistrationFormDTO";
-import CountriesDTO from "./Countries";
+import LegalForms from "./LegalFormsDTO";
 import PropTypes from "prop-types";
 
 export default function RegistrationFormWrapper({ onSubmit, className }) {
   let schema = RegistrationFormDTO;
-  schema.properties.legalForm.properties.country.enum = CountriesDTO;
+  let legalFormsSchema = LegalForms.map((legalform) => ({
+    type: "number",
+    title: legalform.legalFormName + " - " + legalform.country,
+    enum: [legalform.id],
+  }));
+  schema.properties.legalForm.anyOf = legalFormsSchema;
 
   return (
     <div className={className}>

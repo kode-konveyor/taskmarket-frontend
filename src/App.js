@@ -1,12 +1,12 @@
 import React from "react";
 import "./App.css";
-import ProjectList from "./project/list/ProjectList";
 import RegistrationFormContainer from "./registration/RegistrationFormContainer";
+import ProjectListUI from "./project/list/ProjectListUI";
 
 function App() {
   return (
     <div className="App">
-      <ProjectList />
+      <ProjectListUI />
       <RegistrationFormContainer />
     </div>
   );

@@ -13,22 +13,8 @@
             "title": "Full Name"
         },
         "legalForm": {
-            "type": "object",
-            "title": "Legal Form",
-            "required": [
-                "country",
-                "legalFormName"
-            ],
-            "properties": {
-                "legalFormName": {
-                    "type": "string",
-                    "title": "name"
-                },
-                "country": {
-                    "type": "string",
-                    "title": "country"
-                }
-            }
+            "type": "number",
+            "title": "Legal Form"
         },
         "legalName": {
             "type": "string",

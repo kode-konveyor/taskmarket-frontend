@@ -3,7 +3,7 @@ import AddRoleToFormDTO from "./AddRoleToFormDTO";
 import PropTypes from "prop-types";
 import Form from "react-jsonschema-form";
 
-export default function AddToRoleForm({
+export default function AddToRoleFormUI({
   projectId,
   visible,
   onSubmit,
@@ -31,7 +31,7 @@ export default function AddToRoleForm({
   );
 }
 
-AddToRoleForm.propTypes = {
+AddToRoleFormUI.propTypes = {
   projectId: PropTypes.string,
   visible: PropTypes.bool,
   onSubmit: PropTypes.func,

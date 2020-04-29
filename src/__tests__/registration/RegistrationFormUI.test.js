@@ -1,10 +1,10 @@
 import React from "react";
 import { shallow } from "enzyme";
-import RegistrationForm from "../../registration/RegistrationForm";
 import Form from "react-jsonschema-form";
 import PropTypes from "prop-types";
+import RegistrationFormUI from "../../registration/RegistrationFormUI";
 
-describe("/registration/RegistrationForm", () => {
+describe("/registration/RegistrationFormUI", () => {
   let renderedComponent;
   let onSubmitMock;
   const USER_LOGIN = "useR";
@@ -17,7 +17,7 @@ describe("/registration/RegistrationForm", () => {
   beforeEach(() => {
     onSubmitMock = jest.fn();
     renderedComponent = shallow(
-      <RegistrationForm onSubmit={onSubmitMock} userLogin={USER_LOGIN} />
+      <RegistrationFormUI onSubmit={onSubmitMock} userLogin={USER_LOGIN} />
     );
   });
 
@@ -31,6 +31,6 @@ describe("/registration/RegistrationForm", () => {
   });
 
   it("has the right propTypes", () => {
-    expect(RegistrationForm.propTypes).toMatchObject(expectedPropTypes);
+    expect(RegistrationFormUI.propTypes).toMatchObject(expectedPropTypes);
   });
 });

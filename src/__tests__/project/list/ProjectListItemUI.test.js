@@ -1,10 +1,10 @@
 import React from "react";
 import { shallow } from "enzyme";
-import ProjectListItem from "../../../project/list/ProjectListItem";
+import ProjectListItemUI from "../../../project/list/ProjectListItemUI";
 import AddRoleToProjectButtonContainer from "../../../project/role/AddRoleToProjectButtonContainer";
 import PropTypes from "prop-types";
 
-describe("/project/list/ProjectListItem", () => {
+describe("/project/list/ProjectListItemUI", () => {
   let renderedComponent = {};
   const name = "MY PROJECT";
   const projectId = "KK-TM";
@@ -16,7 +16,7 @@ describe("/project/list/ProjectListItem", () => {
 
   beforeEach(() => {
     renderedComponent = shallow(
-      <ProjectListItem projectId={projectId} name={name} />
+      <ProjectListItemUI projectId={projectId} name={name} />
     );
   });
 
@@ -35,6 +35,6 @@ describe("/project/list/ProjectListItem", () => {
   });
 
   it("has the right propTypes", () => {
-    expect(ProjectListItem.propTypes).toMatchObject(expectedPropTypes);
+    expect(ProjectListItemUI.propTypes).toMatchObject(expectedPropTypes);
   });
 });
