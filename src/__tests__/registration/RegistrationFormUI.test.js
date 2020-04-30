@@ -27,28 +27,38 @@ describe("/registration/RegistrationFormUI", () => {
 
   it("contains right schema", () => {
     const expectedSchema = {
-      "properties": {
-        "email": {"title": "E-mail", "type": "string"},
-        "isTermsAccepted": {"title": "Accept terms and consitions", "type": "boolean"},
-        "legalAddress": {"title": "Address", "type": "string"},
-        "legalForm": {
-          "anyOf": [
-            {"enum": [1], "title": "Freelance - Hungary", "type": "number"},
-            {"enum": [2], "title": "KFT - Hungary", "type": "number"},
-            {"enum": [3], "title": "Freelance - Germany", "type": "number"},
-            {"enum": [4], "title": "Gmbh - Germany", "type": "number"},
-            {"enum": [5], "title": "Freelance - India", "type": "number"}
-          ],
-          "title": "Legal Form", "type": "number"
+      properties: {
+        email: { title: "E-mail", type: "string" },
+        isTermsAccepted: {
+          title: "Accept terms and consitions",
+          type: "boolean",
         },
-        "legalName": {"title": "Company Name", "type": "string"},
-        "personalName": {"title": "Full Name", "type": "string"}
+        legalAddress: { title: "Address", type: "string" },
+        legalForm: {
+          anyOf: [
+            { enum: [1], title: "Freelance - Hungary", type: "number" },
+            { enum: [2], title: "KFT - Hungary", type: "number" },
+            { enum: [3], title: "Freelance - Germany", type: "number" },
+            { enum: [4], title: "Gmbh - Germany", type: "number" },
+            { enum: [5], title: "Freelance - India", type: "number" },
+          ],
+          title: "Legal Form",
+          type: "number",
+        },
+        legalName: { title: "Company Name", type: "string" },
+        personalName: { title: "Full Name", type: "string" },
       },
-      "required": ["personalName", "legalForm", "legalAddress", "email", "isTermsAccepted"],
-      "type": "object"
-    }
-    expect(renderedComponent.find(Form).prop('schema')).toEqual(expectedSchema)
-  })
+      required: [
+        "personalName",
+        "legalForm",
+        "legalAddress",
+        "email",
+        "isTermsAccepted",
+      ],
+      type: "object",
+    };
+    expect(renderedComponent.find(Form).prop("schema")).toEqual(expectedSchema);
+  });
 
   it("forwards onSubmitEvent", () => {
     renderedComponent.find(Form).simulate("submit");
