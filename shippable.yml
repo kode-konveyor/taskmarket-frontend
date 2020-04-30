@@ -1,5 +1,4 @@
 build_image: node:12
-
 build:
   ci:
     - npm install
