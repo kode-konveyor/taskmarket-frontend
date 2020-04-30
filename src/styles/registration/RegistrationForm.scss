@@ -1,0 +1,53 @@
+.registrationForm {
+    display: table;
+
+        fieldset {
+            float: left;
+            border: none;
+
+            .form-group {
+                display: table-row;
+                margin-bottom: 1rem;
+
+                label, legend {
+                    display: table-cell;
+                    height: 2rem;
+                    font-family: Verdana, Geneva, Tahoma, sans-serif;
+                    font-size: 14pt;
+                    text-align: left;
+                    width: 10rem;
+
+                    span.required {
+                        display: none;
+                    }
+                }
+
+                label + * {
+                    display: table-cell;
+                    text-align: right;
+                    width: 13rem;
+                }
+            }
+
+            .form-group.field-object {
+                display: inline;
+                fieldset {
+                    display: inline-table;
+                    padding: 0px;
+                    label {
+                        padding-left: 1rem;
+                        width: 9rem;
+                    }
+                }
+            }
+
+            .form-group.field-boolean {
+                display: block;
+                label {
+                    display: block;
+                    width: 20rem;
+                    text-align: center;
+                }
+            }
+        }
+}

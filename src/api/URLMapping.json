@@ -1,0 +1,4 @@
+{
+    "REGISTRATION_URI": "/member/register",
+    "ADD_ROLE_TO_PROJECT_URI": "member/addprojectrole"
+}
