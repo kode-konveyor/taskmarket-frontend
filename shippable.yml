@@ -6,13 +6,9 @@ build:
     - CI=true npm run test
     - npm run mutate
 
-deploy:
-  branches:
-    only:
-      - develop
-  docker:
+  on_success:
     - docker build ./ -t kode-konveyor/taskmarket-frontend:$BUILD_NUMBER
-    - docker push kode-konveyor/taskmarket-frontend:$BUILD_NUMBER
+    - docker push kode-konveyor/taskmarket-frontend:$BUILD_NUMBER    
 
 integrations:
   hub:
