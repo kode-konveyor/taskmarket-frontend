@@ -6,9 +6,12 @@ describe("/config/ConfigLoaderService", () => {
 
   beforeEach(() => {
     fetchMock = jest.spyOn(global, "fetch");
+    fetchMock.mockReset();
 
     localStorageMock = jest.spyOn(window.localStorage.__proto__, "setItem");
+    localStorageMock.mockReset();
     errorMock = jest.spyOn(console, "error");
+    errorMock.mockReset();
   });
 
   it("fetches the config.json file", async () => {
@@ -29,7 +32,7 @@ describe("/config/ConfigLoaderService", () => {
     );
 
     await ConfigLoaderService();
-    expect(localStorageMock).toHaveBeenCalled();
+    expect(localStorageMock).toHaveBeenCalledWith("BACKEND_URL", MY_BACKEND);
   });
 
   it("sets BACKEND_URL in localStorage", async () => {
