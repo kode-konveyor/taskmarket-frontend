@@ -14,6 +14,7 @@ export async function httpRequest(method, dataTarget, data) {
       "Content-Type": "application/json",
     },
   };
+
   const api = localStorage.getItem("BACKEND_URL");
   const url = new URL(dataTarget, api);
 
