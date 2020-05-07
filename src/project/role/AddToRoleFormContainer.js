@@ -14,11 +14,11 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-const mapStateToProps = (state, ownProps) => {
+function mapStateToProps(state, ownProps) {
   return {
     visible:
       state.AddRoleFormVisibilityService.projectId === ownProps.projectId,
   };
-};
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(AddToRoleFormUI);

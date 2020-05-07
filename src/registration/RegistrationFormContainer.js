@@ -1,8 +1,10 @@
 import { connect } from "react-redux";
 import RegistrationActions from "./RegistrationActions.json";
 import RegistrationFormUI from "./RegistrationFormUI";
+import LegalFormActions from "./LegalFormActions";
 
 function mapDispatchToProps(dispatch) {
+  dispatch({ type: LegalFormActions.LIST });
   return {
     onSubmit: (formData) =>
       dispatch({
@@ -12,4 +14,10 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default connect(undefined, mapDispatchToProps)(RegistrationFormUI);
+function mapStateToProps(state) {
+  return {
+    legalForms: state.LegalFormService.legalForms,
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(RegistrationFormUI);

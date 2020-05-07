@@ -14,10 +14,18 @@ describe("/registration/RegistrationFormUI", () => {
     onSubmit: PropTypes.func,
   };
 
+  const legalForms = [
+    { id: 1, country: "Hungary", legalFormName: "Freelance" },
+  ];
+
   beforeEach(() => {
     onSubmitMock = jest.fn();
     renderedComponent = shallow(
-      <RegistrationFormUI onSubmit={onSubmitMock} userLogin={USER_LOGIN} />
+      <RegistrationFormUI
+        onSubmit={onSubmitMock}
+        userLogin={USER_LOGIN}
+        legalForms={legalForms}
+      />
     );
   });
 
@@ -35,13 +43,7 @@ describe("/registration/RegistrationFormUI", () => {
         },
         legalAddress: { title: "Address", type: "string" },
         legalForm: {
-          anyOf: [
-            { enum: [1], title: "Freelance - Hungary", type: "number" },
-            { enum: [2], title: "KFT - Hungary", type: "number" },
-            { enum: [3], title: "Freelance - Germany", type: "number" },
-            { enum: [4], title: "Gmbh - Germany", type: "number" },
-            { enum: [5], title: "Freelance - India", type: "number" },
-          ],
+          anyOf: [{ enum: [1], title: "Freelance - Hungary", type: "number" }],
           title: "Legal Form",
           type: "number",
         },

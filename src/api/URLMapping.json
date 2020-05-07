@@ -1,4 +1,5 @@
 {
     "REGISTRATION_URI": "/member/register",
-    "ADD_ROLE_TO_PROJECT_URI": "/member/addprojectrole"
+    "ADD_ROLE_TO_PROJECT_URI": "/member/addprojectrole",
+    "LEGAL_FORM_LIST_URI": "/legalform"
 }
