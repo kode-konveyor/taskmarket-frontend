@@ -17,9 +17,6 @@ export async function httpRequest(method, dataTarget, data) {
     },
   };
   const url = new URL(dataTarget, apiBaseRoot);
-  console.log(
-    "Request sent: \n" + JSON.stringify({ url: url, request: request })
-  );
 
   const response = await global.fetch(url, request);
   return response.json;
