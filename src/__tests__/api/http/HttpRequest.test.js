@@ -1,5 +1,7 @@
 import { httpRequest, HTTP } from "../../../api/http/HttpRequest";
-import apiBaseRoot from "../../../config/apiBaseRoot";
+
+const apiBaseRoot = "http://localhost";
+localStorage.setItem("BACKEND_URL", apiBaseRoot);
 
 describe("/api/http/HttpRequest", () => {
   const data = [{ _id: 1, name: "Janos Ader", role: "Poo with mustache" }];

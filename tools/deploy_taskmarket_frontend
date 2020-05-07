@@ -1,0 +1,21 @@
+#! /bin/bash
+
+while getopts ":v:b:" opt; do
+  case $opt in
+    v) VERSION="$OPTARG"
+    ;;
+    b) BACKEND_URL="$OPTARG"
+    ;;
+    \?) echo "Invalid option -$opt" >&2
+    ;;
+  esac
+done
+
+if [ -z $VERSION ] || [ -z $BACKEND_URL ]; then
+        echo "Usage: $0 -b BACKEND_URL -v VERSION"
+        exit 1
+fi
+
+CONTAINER_ID=`docker container ls | grep taskmarket-frontend | awk '{ print $1 }'`
+docker container stop $CONTAINER_ID
+docker run -p 5000:5000 -d -e BACKEND_URL=$BACKEND_URL -it szirbucz/taskmarket-frontend:$VERSION
