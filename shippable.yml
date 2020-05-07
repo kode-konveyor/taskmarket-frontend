@@ -1,7 +1,20 @@
-build_image: node:12
+language: node_js,
 build:
   ci:
     - npm install
     - npm run lint
     - CI=true npm run test
     - npm run mutate
+
+deploy:
+  branches:
+    only:
+      - develop
+  docker:
+    - docker build ./ -t kode-konveyor/taskmarket-frontend:$BUILD_NUMBER
+    - docker push kode-konveyor/taskmarket-frontend:$BUILD_NUMBER
+
+integrations:
+  hub:
+    - integrationName: docker
+      type: dockerRegistryLogin
