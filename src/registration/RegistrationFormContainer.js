@@ -15,8 +15,10 @@ function mapDispatchToProps(dispatch) {
 }
 
 function mapStateToProps(state) {
+  let legalForms = [];
+  if (state.LegalFormService) legalForms = state.LegalFormService.legalForms;
   return {
-    legalForms: state.LegalFormService.legalForms,
+    legalForms: legalForms,
   };
 }
 

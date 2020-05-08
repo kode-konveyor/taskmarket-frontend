@@ -35,4 +35,10 @@ describe("/registration/RegistrationFormContainer", () => {
       renderedComponent.find(RegistrationFormUI).prop("legalForms")
     ).toEqual(legalForms);
   });
+
+  it("maps empty array when state is not existing", () => {
+    let store = mockStore({});
+    let component = shallow(<RegistrationFormContainer store={store} />);
+    expect(component.find(RegistrationFormUI).prop("legalForms")).toEqual([]);
+  });
 });
