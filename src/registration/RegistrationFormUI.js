@@ -9,8 +9,14 @@ export default function RegistrationFormUI({
   legalForms,
 }) {
   const schema = RegistrationFormDTO;
-  const legalFormsSchema = legalForms.map(convertLegalFormToSchema);
-  schema.properties.legalForm.anyOf = legalFormsSchema;
+  if (legalForms) {
+    const legalFormsSchema = legalForms.map(convertLegalFormToSchema);
+    schema.properties.legalForm.anyOf = legalFormsSchema;
+  } else {
+    schema.properties.legalForm.anyOf = [
+      { type: "number", title: "No data", enum: [-1] },
+    ];
+  }
 
   return (
     <div className={className}>

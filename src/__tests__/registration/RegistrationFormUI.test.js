@@ -62,6 +62,15 @@ describe("/registration/RegistrationFormUI", () => {
     expect(renderedComponent.find(Form).prop("schema")).toEqual(expectedSchema);
   });
 
+  it("adds No Data when gets no legalForm", () => {
+    const renderedComponent = shallow(
+      <RegistrationFormUI onSubmit={onSubmitMock} userLogin={USER_LOGIN} />
+    );
+    expect(
+      renderedComponent.find(Form).prop("schema").properties.legalForm.anyOf[0]
+    ).toEqual({ enum: [-1], title: "No data", type: "number" });
+  });
+
   it("forwards onSubmitEvent", () => {
     renderedComponent.find(Form).simulate("submit");
     expect(onSubmitMock).toHaveBeenCalled();
