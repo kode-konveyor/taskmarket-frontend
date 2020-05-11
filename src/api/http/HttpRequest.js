@@ -1,5 +1,3 @@
-import apiBaseRoot from "../../config/apiBaseRoot";
-
 export const HTTP = {
   GET: "GET",
   POST: "POST",
@@ -16,7 +14,9 @@ export async function httpRequest(method, dataTarget, data) {
       "Content-Type": "application/json",
     },
   };
-  const url = new URL(dataTarget, apiBaseRoot);
+
+  const api = localStorage.getItem("BACKEND_URL");
+  const url = new URL(dataTarget, api);
 
   const response = await global.fetch(url, request);
   return response.json;
