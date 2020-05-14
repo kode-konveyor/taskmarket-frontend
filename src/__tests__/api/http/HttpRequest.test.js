@@ -1,6 +1,6 @@
 import { httpRequest, HTTP } from "../../../api/http/HttpRequest";
 
-const apiBaseRoot = "http://localhost";
+const apiBaseRoot = "http://localhost/market";
 
 describe("/api/http/HttpRequest", () => {
   const data = [{ _id: 1, name: "Janos Ader", role: "Poo with mustache" }];
