@@ -5,7 +5,6 @@ export const HTTP = {
   DELETE: "DELETE",
 };
 
-
 export async function httpRequest(method, dataTarget, data) {
   const request = {
     method: method,
