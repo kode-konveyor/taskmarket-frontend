@@ -6,7 +6,6 @@ jest.mock("../../api/http/PostRequest");
 
 describe("/reducers/registrationForm", () => {
   const initialState = { initial: "state" };
-  const apiUri = "/member/register";
 
   const DATA = { formData: { personalName: "Gizi" } };
   beforeEach(() => {
@@ -20,9 +19,10 @@ describe("/reducers/registrationForm", () => {
     );
   });
 
-  it("sends data when the action is SUBMIT", () => {
-    const action = { type: SUBMIT, formData: DATA };
-    RegistrationService(initialState, action);
-    expect(httpPost).toHaveBeenCalledWith(apiUri, DATA);
+  it("sets state when the action is SUBMIT", () => {
+    const action = { type: SUBMIT, response: DATA };
+    expect(RegistrationService(initialState, action)).toEqual({
+      response: DATA,
+    });
   });
 });

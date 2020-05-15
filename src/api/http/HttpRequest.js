@@ -18,6 +18,5 @@ export async function httpRequest(method, dataTarget, data) {
   const api = localStorage.getItem("BACKEND_URL");
   const url = new URL(api + dataTarget);
 
-  const response = await global.fetch(url, request);
-  return response.json;
+  return await global.fetch(url, request);
 }
