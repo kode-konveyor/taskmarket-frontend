@@ -6,7 +6,7 @@ import { fetchLegalForms } from "./LegalFormService.js";
 function mapDispatchToProps(dispatch) {
   dispatch(fetchLegalForms());
   return {
-    onSubmit: (formData) => dispatch(submitRegistrationForm(formData)),
+    onSubmit: (formData) => dispatch(submitRegistrationForm(formData.formData)),
   };
 }
 
