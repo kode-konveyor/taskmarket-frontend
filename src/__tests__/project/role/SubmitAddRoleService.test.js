@@ -1,7 +1,7 @@
 import SubmitAddRoleService from "../../../project/role/SubmitAddRoleService";
 import { httpPut } from "../../../api/http/PutRequest";
 import { SUBMIT } from "../../../project/role/AddToRoleFormActions.json";
-import { ADD_TO_ROLE_URI } from "../../../api/URLMapping.json";
+import { ADD_ROLE_TO_PROJECT_URI } from "../../../api/URLMapping.json";
 
 jest.mock("../../../api/http/PutRequest");
 
@@ -24,7 +24,7 @@ describe("/project/list/SubmitAddRoleService", () => {
       projectId: PROJECT_ID,
     };
     SubmitAddRoleService({}, action);
-    expect(httpPut).toHaveBeenCalledWith(ADD_TO_ROLE_URI, {
+    expect(httpPut).toHaveBeenCalledWith(ADD_ROLE_TO_PROJECT_URI, {
       roleName: ROLE_NAME,
       projectName: PROJECT_ID,
     });

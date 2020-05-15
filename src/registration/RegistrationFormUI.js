@@ -8,8 +8,8 @@ export default function RegistrationFormUI({
   className,
   legalForms,
 }) {
-  const schema = RegistrationFormDTO;
-  if (legalForms) {
+  let schema = RegistrationFormDTO;
+  if (!!legalForms && legalForms.length > 0) {
     const legalFormsSchema = legalForms.map(convertLegalFormToSchema);
     schema.properties.legalForm.anyOf = legalFormsSchema;
   } else {

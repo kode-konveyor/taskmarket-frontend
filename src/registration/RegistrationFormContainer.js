@@ -1,21 +1,17 @@
 import { connect } from "react-redux";
-import RegistrationActions from "./RegistrationActions.json";
 import RegistrationFormUI from "./RegistrationFormUI";
-import LegalFormActions from "./LegalFormActions";
+import { submitRegistrationForm } from "./RegistrationService.js";
+import { fetchLegalForms } from "./LegalFormService.js";
 
 function mapDispatchToProps(dispatch) {
-  dispatch({ type: LegalFormActions.LIST });
+  dispatch(fetchLegalForms());
   return {
-    onSubmit: (formData) =>
-      dispatch({
-        type: RegistrationActions.SUBMIT,
-        formData: formData.formData,
-      }),
+    onSubmit: (formData) => dispatch(submitRegistrationForm(formData)),
   };
 }
 
 function mapStateToProps(state) {
-  let legalForms = [];
+  let legalForms;
   if (state.LegalFormService) legalForms = state.LegalFormService.legalForms;
   return {
     legalForms: legalForms,
