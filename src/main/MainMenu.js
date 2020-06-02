@@ -19,7 +19,7 @@ export default function MainMenu() {
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto">
-          <Nav.Link href="/landing/index.html">Landing Page</Nav.Link>
+          <Nav.Link href={process.env.PUBLIC_URL + "/landing"}>Landing Page</Nav.Link>
           <LinkContainer to="/landing/list">
             <Nav.Link>List leads</Nav.Link>
           </LinkContainer>
