@@ -3,7 +3,6 @@ import SubmitAddRoleService from "../project/role/SubmitAddRoleService";
 import AddRoleFormVisibilityService from "../project/role/AddRoleFormVisibilityService";
 import RegistrationService from "../registration/RegistrationService";
 import LegalFormService from "../registration/LegalFormService";
-import LeadSubmissionService from "../landing/LeadSubmissionService";
 import LeadLoadService from "../lead/LeadLoadService";
 
 export default combineReducers({
@@ -11,6 +10,5 @@ export default combineReducers({
   SubmitAddRoleService,
   RegistrationService,
   LegalFormService,
-  LeadSubmissionService,
   LeadLoadService,
 });
