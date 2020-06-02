@@ -7,7 +7,6 @@ import { LEAD_LIST } from "./LeadTestData";
 import PropTypes from "prop-types";
 
 describe("/lead/ListLeadUI", () => {
-
   const expectedPropTypes = {
     leadList: PropTypes.array,
     loading: PropTypes.bool,
