@@ -7,6 +7,13 @@ import { LEAD_LIST } from "./LeadTestData";
 import PropTypes from "prop-types";
 
 describe("/lead/ListLeadUI", () => {
+
+  const expectedPropTypes = {
+    leadList: PropTypes.array,
+    loading: PropTypes.bool,
+    onLoad: PropTypes.func,
+  };
+
   const renderedComponent = shallow(
     <ListLeadUI leadList={LEAD_LIST} loading={false} />
   );
@@ -70,11 +77,6 @@ describe("/lead/ListLeadUI", () => {
   });
 
   it("has right prop-types", () => {
-    const expectedPropTypes = {
-      leadList: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.object)),
-      loading: PropTypes.bool,
-      onLoad: PropTypes.func,
-    };
-    expect(ListLeadUI.propTypes).toEqual(expectedPropTypes);
+    expect(ListLeadUI.propTypes).toMatchObject(expectedPropTypes);
   });
 });

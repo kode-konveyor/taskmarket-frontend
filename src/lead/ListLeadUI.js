@@ -42,7 +42,7 @@ export default function ListLeadUI({ leadList, loading = true, onLoad }) {
 }
 
 ListLeadUI.propTypes = {
-  leadList: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.object)),
+  leadList: PropTypes.array,
   loading: PropTypes.bool,
   onLoad: PropTypes.func,
 };

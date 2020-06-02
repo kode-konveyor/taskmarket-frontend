@@ -6,7 +6,6 @@ import DashboardUI from "../dashboard/DashboardUI";
 import LeadListPageUI from "../lead/LeadListPageUI";
 
 jest.mock("../dashboard/DashboardUI", () => "DashboardUI");
-jest.mock("../landing/LandingPageUI", () => "LandingPageUI");
 jest.mock("../lead/LeadListPageUI", () => "LeadListPageUI");
 
 test("renders dashboard at root", () => {
