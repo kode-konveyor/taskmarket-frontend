@@ -9,6 +9,8 @@ jest.mock("react-router-dom", () => ({
   useLocation: () => ({ pathname: "random/path/where/i/am" }),
 }));
 
+process.env = { PUBLIC_URL: "https://market.kodekonveyor.com" };
+
 const loginBasePath = "/market/member/login?next=";
 
 describe("/main/MainMenu", () => {
@@ -26,6 +28,12 @@ describe("/main/MainMenu", () => {
   it("login url is correct", () => {
     expect(renderedComponent.find({ href: loginBasePath + path }).length).toBe(
       1
+    );
+  });
+
+  it("landing url is correct", () => {
+    expect(renderedComponent.find("#landing-link").prop("href")).toBe(
+      "https://market.kodekonveyor.com/landing"
     );
   });
 });
