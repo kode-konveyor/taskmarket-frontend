@@ -1,5 +1,6 @@
 import React from "react";
 import { Row, Col } from "react-bootstrap";
+import PropTypes from "prop-types";
 
 export default function LeadUI({ firstName, email, interest }) {
   return (
@@ -14,5 +15,5 @@ export default function LeadUI({ firstName, email, interest }) {
 LeadUI.propTypes = {
   firstName: PropTypes.string,
   email: PropTypes.string,
-  interest: PropTypes.string
-}
+  interest: PropTypes.string,
+};

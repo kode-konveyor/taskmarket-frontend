@@ -26,7 +26,7 @@ describe("/lead/LeadUI", () => {
     const expectedPropTypes = {
       firstName: PropTypes.string,
       email: PropTypes.string,
-      interest: PropTypes.string
+      interest: PropTypes.string,
     };
     expect(LeadUI.propTypes).toEqual(expectedPropTypes);
   });
