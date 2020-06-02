@@ -6,7 +6,8 @@
     "!src/**/*@(.test|.spec|Spec).js?(x)",
     "!src/serviceWorker.js",
     "!src/setupTests.js",
-    "!src/**/index.js"
+    "!src/**/index.js",
+    "!src/tests/**"
   ],
   "mutator": "javascript",
   "testRunner": "jest",

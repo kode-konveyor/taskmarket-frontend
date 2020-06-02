@@ -1,22 +1,22 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./styles/index.scss";
-import App from "./App";
 import { Provider } from "react-redux";
 import { createStore, applyMiddleware } from "redux";
 import rootReducer from "./reducers";
 import * as serviceWorker from "./serviceWorker";
 import thunk from "redux-thunk";
-import ReactGA from 'react-ga';
+import ReactGA from "react-ga";
+import MainPage from "./main/MainPage";
 
-ReactGA.initialize('UA-151042094-1');
+ReactGA.initialize("UA-151042094-1");
 ReactGA.pageview(window.location.pathname + window.location.search);
 
 const store = createStore(rootReducer, applyMiddleware(thunk));
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <MainPage />
   </Provider>,
   document.getElementById("root")
 );

@@ -1,0 +1,198 @@
+
+.landing-page {
+
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    text-align: left;
+
+    .top-ban {
+        text-align: center;
+        width: 100%;
+        padding: 20px 0px 40px;
+
+        h1 {
+            display: inline-block;
+            text-align: center;
+            color: #259ca7;
+            font-weight: bold;
+            font-size: 36px;
+        }
+    }
+
+    #banner {
+        img {
+            padding: 0px;
+            float: right;
+        }
+
+        .bannertext {
+            padding: 18% 0% 12%;
+        }
+
+        p {
+            font-family: 'Open Sans', sans-serif;
+            color: #777;
+            font-size: 16px;
+            font-weight: 300;
+            display: inline-block;
+            padding: 20px;
+        }
+    }
+
+    #benefits{
+        margin:10px 0px;
+        padding: 35px 0px 25px 0px;
+    }
+
+    .mainquat {
+
+        background: rgb(37, 156, 167);
+        background-attachment: scroll;
+        background-size: auto;
+        background-size: cover;
+        background-attachment: fixed;
+        padding: 20px 0px;
+        width: 100%;
+
+        &.footer-separator {
+            background:rgba(228,79,61,1);
+        }
+    
+        h2 {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 30px;
+            font-weight: 700;
+            line-height: 57px;
+            text-align: center;
+            margin-bottom: 15px;
+            margin: 0px;
+            color: #fff;
+        }
+    }
+
+    #footer {
+        padding: 20px 0px;
+        margin: 0px;
+        background: rgb(40, 41, 54);
+
+        p {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 15px;
+            font-weight: 400;
+            line-height: 26px;    
+            color: #aaacbc;
+        }
+
+        .link-container {
+            text-align: right;
+        }
+
+        .share {
+            text-align: right;
+            float:left;
+
+            .resp-sharing-button__link,
+            .resp-sharing-button__icon {
+                display: inline-block;
+                text-align: left;
+            }
+
+            .resp-sharing-button__link {
+                text-decoration: none;
+                color: #fff;
+                width: 170px;
+                margin: 0.5em;
+            }
+
+            .resp-sharing-button {
+                border-radius: 5px;
+                transition: 25ms ease-out;
+                padding: 0.5em 0.75em;
+                font-family: Helvetica Neue,Helvetica,Arial,sans-serif
+            }
+
+            .resp-sharing-button__icon svg {
+                width: 1em;
+                height: 1em;
+                margin-right: 0.4em;
+                vertical-align: top
+            }
+
+            .resp-sharing-button--small svg {
+                margin: 0;
+                vertical-align: middle
+            }
+
+            /* Non solid icons get a stroke */
+            .resp-sharing-button__icon {
+                stroke: #fff;
+                fill: none
+            }
+
+            /* Solid icons get a fill */
+            .resp-sharing-button__icon--solid,.resp-sharing-button__icon--solidcircle {
+                fill: #fff;
+                stroke: none
+            }
+
+            .resp-sharing-button--facebook {
+                background-color: #3b5998;
+                border-color: #3b5998;
+            }
+
+            .resp-sharing-button--facebook:hover,.resp-sharing-button--facebook:active {
+                background-color: #2d4373;
+                border-color: #2d4373;
+            }
+
+            .resp-sharing-button--twitter {
+                background-color: #55acee;
+                border-color: #55acee;
+            }
+
+            .resp-sharing-button--twitter:hover,
+            .resp-sharing-button--twitter:active {
+                background-color: #2795e9;
+                border-color: #2795e9;
+            }
+
+            .resp-sharing-button--tumblr {
+                background-color: #35465C;
+                border-color: #35465C;
+            }
+
+            .resp-sharing-button--tumblr:hover,
+            .resp-sharing-button--tumblr:active {
+                background-color: #222d3c;
+                border-color: #222d3c;
+            }
+
+            .resp-sharing-button--email {
+                background-color: #777777;
+                border-color: #777777;
+            }
+
+            .resp-sharing-button--email:hover,
+            .resp-sharing-button--email:active {
+                background-color: #5e5e5e;
+                border-color: #5e5e5e;
+            }
+
+            .resp-sharing-button--pinterest {
+                background-color: #bd081c;
+                border-color: #bd081c;
+            }
+
+            .resp-sharing-button--pinterest:hover,
+            .resp-sharing-button--pinterest:active {
+                background-color: #8c0615;
+                border-color: #8c0615;
+            }
+        }
+    }
+
+    .col-md-4,.col-md-8 {
+        float: left;
+    }
+
+}

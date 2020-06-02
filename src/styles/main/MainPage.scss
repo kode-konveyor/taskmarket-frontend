@@ -1,0 +1,42 @@
+@font-face {
+    font-family: 'Showbad';
+    src: url(/fonts/SHOWBAD.otf) format('opentype');
+}
+
+.main-page {
+    max-width: 100%;
+
+    .main {
+        max-width: 100%;
+    }
+    #top-header {
+
+        border-bottom: 1px solid #f3f3f3;
+        width: 100%;
+
+        .logo{
+            margin-top: 20px; 
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            float: right;
+            margin-top: 20px;
+            margin-bottom: 10px;
+
+            span {
+                font-family: 'Showbad';
+                line-height: 35.2px;
+                font-size: 34px;
+            }
+        }
+
+        .col-lg-4,.col-lg-8,.col-lg-12,.col-md-6 {
+            float: left;
+        }
+    }
+
+    #main-menu {
+        margin-bottom: 1rem;
+    }
+}

@@ -1,15 +1,19 @@
 import React from "react";
 import "./App.css";
-import RegistrationFormContainer from "./registration/RegistrationFormContainer";
-import ProjectListUI from "./project/list/ProjectListUI";
 import ConfigLoaderService from "./config/ConfigLoaderService";
+import { Switch, Route } from "react-router-dom";
+import DashboardUI from "./dashboard/DashboardUI";
+import LeadListPageUi from "./lead/LeadListPageUI";
 
 function App() {
   ConfigLoaderService();
   return (
     <div className="App">
-      <ProjectListUI />
-      <RegistrationFormContainer />
+      <Switch>
+        <Route exact path="/" component={DashboardUI} />
+
+        <Route exact path="/landing/list" component={LeadListPageUi} />
+      </Switch>
     </div>
   );
 }

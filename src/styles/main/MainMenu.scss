@@ -1,0 +1,7 @@
+.main-menu.navbar-dark .navbar-nav a.active.nav-link {
+        color: rgba(255,255,255,.5);
+
+        &:hover {
+            color: rgba(255,255,255,.75);
+        }
+}
