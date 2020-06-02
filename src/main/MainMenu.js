@@ -22,6 +22,7 @@ export default function MainMenu() {
           <Nav.Link
             href={process.env.PUBLIC_URL + "/landing"}
             id="landing-link"
+            target="_blank"
           >
             Landing Page
           </Nav.Link>
