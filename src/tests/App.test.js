@@ -27,7 +27,11 @@ test("renders leads page at /landing/list", () => {
 });
 
 test("reload at /landing", () => {
-  jest.spyOn(window.location, "reload");
+  Object.defineProperty(window, "location", {
+    writable: true,
+    value: { reload: jest.fn() },
+  });
+
   mount(
     <MemoryRouter initialEntries={["/landing"]}>
       <App />
