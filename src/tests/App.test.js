@@ -25,3 +25,14 @@ test("renders leads page at /landing/list", () => {
   );
   expect(renderedComponent.find(LeadListPageUI).length).toBe(1);
 });
+
+test("reload at /landing", () => {
+  jest.spyOn(window.location, "reload");
+  mount(
+    <MemoryRouter initialEntries={["/landing"]}>
+      <App />
+    </MemoryRouter>
+  );
+
+  expect(window.location.reload).toHaveBeenCalled();
+});
