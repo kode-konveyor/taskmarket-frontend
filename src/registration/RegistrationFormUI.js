@@ -20,7 +20,7 @@ export default function RegistrationFormUI({
 
   return (
     <div className={className}>
-      <Form schema={schema} onSubmit={onSubmit} className="registrationForm" />
+      <Form schema={{...schema}} onSubmit={onSubmit} className="registrationForm" />
     </div>
   );
 }
