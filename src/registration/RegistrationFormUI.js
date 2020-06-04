@@ -24,7 +24,11 @@ export default function RegistrationFormUI({
         schema={{ ...schema }}
         onSubmit={onSubmit}
         className="registrationForm"
-      />
+      >
+        <a href="/docs/KodeKonveyor_Terms_and_Conditions.pdf">
+          Terms and Conditions (pdf)
+        </a>
+      </Form>
     </div>
   );
 }
