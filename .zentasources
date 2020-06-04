@@ -1,5 +1,5 @@
 <sources>
-	<source name="metamodel" type="github" repo="kode-konveyor/metamodel" branch="0.5" path="modelparts/metamodel/"/>
+	<source name="metamodel" type="github" repo="kode-konveyor/metamodel" branch="4.1" path="modelparts/metamodel/"/>
 	<source name="taskmarket" type="github" repo="kode-konveyor/taskmarket" branch="develop" path="modelparts/taskmarket"/>
 	<source name="frontend" type="folder" uri="modelparts/frontend"/>
 </sources>
