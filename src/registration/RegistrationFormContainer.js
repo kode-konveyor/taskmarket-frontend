@@ -2,6 +2,7 @@ import { connect } from "react-redux";
 import RegistrationFormUI from "./RegistrationFormUI";
 import { submitRegistrationForm } from "./RegistrationService.js";
 import { fetchLegalForms } from "./LegalFormService.js";
+import RegistrationFormDTO from "./RegistrationFormDTO";
 
 function mapDispatchToProps(dispatch) {
   dispatch(fetchLegalForms());
@@ -11,10 +12,25 @@ function mapDispatchToProps(dispatch) {
 }
 
 function mapStateToProps(state) {
-  let legalForms;
-  if (state.LegalFormService) legalForms = state.LegalFormService.legalForms;
+  let { legalForms } = state.LegalFormService || {};
+  if (legalForms)
+    return {
+      schema: generateSchema(legalForms),
+    };
+  return {};
+}
+
+function generateSchema(legalForms) {
+  let schema = RegistrationFormDTO;
+  schema.properties.legalForm.anyOf = legalForms.map(convertLegalFormToSchema);
+  return schema;
+}
+
+function convertLegalFormToSchema(legalForm) {
   return {
-    legalForms: legalForms,
+    type: "number",
+    title: legalForm.legalFormName + " - " + legalForm.country,
+    enum: [legalForm.id],
   };
 }
 

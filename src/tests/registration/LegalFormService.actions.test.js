@@ -16,7 +16,7 @@ describe("/registration/LegalFormService", () => {
 
   beforeEach(() => {
     httpGet.mockReset();
-    store = mockStore({ legalForms: [] });
+    store = mockStore({});
   });
 
   it("creates LIST action", async () => {

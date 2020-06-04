@@ -5,6 +5,7 @@
     "src/**/*.js?(x)",
     "!src/**/*@(.test|.spec|Spec).js?(x)",
     "!src/serviceWorker.js",
+    "!src/react-auth0-spa.js",
     "!src/setupTests.js",
     "!src/**/index.js",
     "!src/tests/**"

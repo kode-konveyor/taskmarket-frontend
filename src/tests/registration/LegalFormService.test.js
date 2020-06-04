@@ -19,7 +19,7 @@ describe("/registration/LegalFormService", () => {
   });
 
   it("returns empty object on fail", () => {
-    const state = { legalForms: [] };
+    const state = {};
     expect(LegalFormService(state, errorAction)).toEqual(state);
   });
 

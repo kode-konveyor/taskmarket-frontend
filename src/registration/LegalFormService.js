@@ -8,7 +8,7 @@ export default function LegalFormService(state = {}, action) {
       return { legalForms: action.legalForms };
     case LegalFormActions.ERROR:
       console.error("Fetching Legal Forms failed");
-      return { legalForms: [] };
+      return {};
     default:
       return state;
   }

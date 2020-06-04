@@ -7,25 +7,45 @@ import RegistrationFormUI from "../../registration/RegistrationFormUI";
 describe("/registration/RegistrationFormUI", () => {
   let renderedComponent;
   let onSubmitMock;
-  const USER_LOGIN = "useR";
 
   const expectedPropTypes = {
     className: PropTypes.string,
     onSubmit: PropTypes.func,
+    schema: PropTypes.object,
   };
 
-  const legalForms = [
-    { id: 1, country: "Hungary", legalFormName: "Freelance" },
-  ];
+  const LOADING = "Loading...";
+
+  const schema = {
+    properties: {
+      email: { title: "E-mail", type: "string" },
+      isTermsAccepted: {
+        title: "Accept terms and consitions",
+        type: "boolean",
+      },
+      legalAddress: { title: "Address", type: "string" },
+      legalForm: {
+        anyOf: [{ enum: [1], title: "Freelance - Hungary", type: "number" }],
+        title: "Legal Form",
+        type: "number",
+      },
+      legalName: { title: "Company Name", type: "string" },
+      personalName: { title: "Full Name", type: "string" },
+    },
+    required: [
+      "personalName",
+      "legalForm",
+      "legalAddress",
+      "email",
+      "isTermsAccepted",
+    ],
+    type: "object",
+  };
 
   beforeEach(() => {
     onSubmitMock = jest.fn();
     renderedComponent = shallow(
-      <RegistrationFormUI
-        onSubmit={onSubmitMock}
-        userLogin={USER_LOGIN}
-        legalForms={legalForms}
-      />
+      <RegistrationFormUI onSubmit={onSubmitMock} schema={schema} />
     );
   });
 
@@ -34,54 +54,14 @@ describe("/registration/RegistrationFormUI", () => {
   });
 
   it("contains right schema", () => {
-    const expectedSchema = {
-      properties: {
-        email: { title: "E-mail", type: "string" },
-        isTermsAccepted: {
-          title: "Accept terms and consitions",
-          type: "boolean",
-        },
-        legalAddress: { title: "Address", type: "string" },
-        legalForm: {
-          anyOf: [{ enum: [1], title: "Freelance - Hungary", type: "number" }],
-          title: "Legal Form",
-          type: "number",
-        },
-        legalName: { title: "Company Name", type: "string" },
-        personalName: { title: "Full Name", type: "string" },
-      },
-      required: [
-        "personalName",
-        "legalForm",
-        "legalAddress",
-        "email",
-        "isTermsAccepted",
-      ],
-      type: "object",
-    };
-    expect(renderedComponent.find(Form).prop("schema")).toEqual(expectedSchema);
+    expect(renderedComponent.find(Form).prop("schema")).toEqual(schema);
   });
 
-  it("adds No Data when gets no legalForm", () => {
+  it("renders Loading when schema is undefined", () => {
     const renderedComponent = shallow(
-      <RegistrationFormUI onSubmit={onSubmitMock} userLogin={USER_LOGIN} />
+      <RegistrationFormUI onSubmit={onSubmitMock} />
     );
-    expect(
-      renderedComponent.find(Form).prop("schema").properties.legalForm.anyOf[0]
-    ).toEqual({ enum: [-1], title: "No data", type: "number" });
-  });
-
-  it("adds No Data when gets empty legalForm list", () => {
-    const renderedComponent = shallow(
-      <RegistrationFormUI
-        onSubmit={onSubmitMock}
-        userLogin={USER_LOGIN}
-        legalForms={[]}
-      />
-    );
-    expect(
-      renderedComponent.find(Form).prop("schema").properties.legalForm.anyOf[0]
-    ).toEqual({ enum: [-1], title: "No data", type: "number" });
+    expect(renderedComponent.text()).toEqual(LOADING);
   });
 
   it("forwards onSubmitEvent", () => {

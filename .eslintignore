@@ -5,4 +5,5 @@ reports/**/*
 build/**/*
 assets/**/*
 _site/**/*
+src/react-auth0-spa.js
 

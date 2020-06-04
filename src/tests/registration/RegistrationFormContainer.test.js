@@ -41,9 +41,13 @@ describe("/registration/RegistrationFormContainer", () => {
   });
 
   it("maps the legalForms", () => {
+    const convertedLegalForms = [
+      { enum: [1], title: "name - US", type: "number" },
+    ];
     expect(
-      renderedComponent.find(RegistrationFormUI).prop("legalForms")
-    ).toEqual(legalForms);
+      renderedComponent.find(RegistrationFormUI).prop("schema").properties
+        .legalForm.anyOf
+    ).toEqual(convertedLegalForms);
   });
 
   it("maps empty array when state is not existing", () => {

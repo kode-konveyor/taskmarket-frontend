@@ -30,7 +30,7 @@
         },
         "isTermsAccepted": {
             "type": "boolean",
-            "title": "Accept terms and consitions"
+            "title": "Accept terms and conditions"
         }
 
     }
