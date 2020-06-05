@@ -27,7 +27,7 @@ describe("/user/GetUserService", () => {
     );
     await store.dispatch(GetUserService());
 
-    expect(store.getActions()).toEqual([{ type: LOGIN, login: USER_LOGIN}]);
+    expect(store.getActions()).toEqual([{ type: LOGIN, login: USER_LOGIN }]);
   });
 
   it("Fires LOGOUT action when status is 401", async () => {
