@@ -1,10 +1,8 @@
 import React from "react";
 import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
-import { useLocation } from "react-router-dom";
+import LoginContainer from "./LoginContainer";
 export default function MainMenu() {
-  const location = useLocation();
-  console.log(location.pathname);
   return (
     <Navbar
       collapseOnSelect
@@ -54,9 +52,7 @@ export default function MainMenu() {
               Education
             </NavDropdown.Item>
           </NavDropdown>
-          <Nav.Link href={"/market/member/login?next=" + location.pathname}>
-            Login
-          </Nav.Link>
+          <LoginContainer />
         </Nav>
       </Navbar.Collapse>
     </Navbar>
