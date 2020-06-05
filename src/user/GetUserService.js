@@ -17,6 +17,9 @@ export default function GetUserService() {
           throw "Failed to load user info";
         }
       })
-      .catch((message) => dispatch({ type: ERROR, message: message }));
+      .catch((message) => {
+        dispatch({ type: ERROR, message: message });
+        console.log(message);
+      });
   };
 }
