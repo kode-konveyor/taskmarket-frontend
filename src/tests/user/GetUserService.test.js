@@ -62,4 +62,11 @@ describe("/user/GetUserService", () => {
 
     expect(store.getActions()).toEqual([{ type: ERROR, message: {} }]);
   });
+
+  it("calls the right API", async () => {
+    httpGet.mockReturnValue(Promise.reject({}));
+    await store.dispatch(GetUserService());
+
+    expect(httpGet).toHaveBeenCalledWith("/member/user");
+  });
 });
