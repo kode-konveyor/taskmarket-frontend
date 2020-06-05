@@ -21,20 +21,20 @@ describe("/user/GetUserService", () => {
     httpGet.mockReturnValue(
       Promise.resolve({
         status: 200,
-        ok: () => true,
+        ok: true,
         json: () => Promise.resolve({ login: USER_LOGIN }),
       })
     );
     await store.dispatch(GetUserService());
 
-    expect(store.getActions()).toEqual([{ type: LOGIN, login: USER_LOGIN }]);
+    expect(store.getActions()).toEqual([{ type: LOGIN, login: USER_LOGIN}]);
   });
 
   it("Fires LOGOUT action when status is 401", async () => {
     httpGet.mockReturnValue(
       Promise.resolve({
         status: 401,
-        ok: () => false,
+        ok: false,
       })
     );
     await store.dispatch(GetUserService());
@@ -46,7 +46,7 @@ describe("/user/GetUserService", () => {
     httpGet.mockReturnValue(
       Promise.resolve({
         status: 404,
-        ok: () => false,
+        ok: false,
       })
     );
     await store.dispatch(GetUserService());

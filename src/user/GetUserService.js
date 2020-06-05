@@ -6,9 +6,8 @@ export default function GetUserService() {
   return async (dispatch) => {
     await httpGet(URLMapping.USER_SHOW)
       .then((response) => {
-        if (response.ok()) {
+        if (response.ok) {
           response.json().then((json) => {
-            console.log(JSON.stringify(json));
             dispatch({ type: LOGIN, login: json.login });
           });
         } else if (response.status === 401) {
@@ -19,7 +18,6 @@ export default function GetUserService() {
       })
       .catch((message) => {
         dispatch({ type: ERROR, message: message });
-        console.log(message);
       });
   };
 }
