@@ -6,7 +6,7 @@ export default function GetUserReducer(state = { loggedIn: false }, action) {
       return {
         login: action.user.login,
         loggedIn: true,
-        registered: action.user.isTermAccepted,
+        registered: action.user.isTermsAccepted,
       };
     case LOGOUT:
       return { loggedIn: false };
