@@ -2,7 +2,7 @@ import { httpGet } from "../../api/http/GetRequest";
 import configureMockStore from "redux-mock-store";
 import thunk from "redux-thunk";
 import GetUserService from "../../user/GetUserService";
-import { LOGIN, LOGOUT, ERROR, USER_LOGIN } from "./GetUserTestData";
+import { LOGIN, LOGOUT, ERROR, USER_LOGIN, ERROR_MSG } from "./GetUserTestData";
 
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
@@ -22,12 +22,15 @@ describe("/user/GetUserService", () => {
       Promise.resolve({
         status: 200,
         ok: true,
-        json: () => Promise.resolve({ login: USER_LOGIN }),
+        json: () =>
+          Promise.resolve({ login: USER_LOGIN, isTermsAccepted: true }),
       })
     );
     await store.dispatch(GetUserService());
 
-    expect(store.getActions()).toEqual([{ type: LOGIN, login: USER_LOGIN }]);
+    expect(store.getActions()).toEqual([
+      { type: LOGIN, user: { login: USER_LOGIN, isTermsAccepted: true } },
+    ]);
   });
 
   it("Fires LOGOUT action when status is 401", async () => {
@@ -57,10 +60,10 @@ describe("/user/GetUserService", () => {
   });
 
   it("Fires ERROR on problem", async () => {
-    httpGet.mockReturnValue(Promise.reject({}));
+    httpGet.mockReturnValue(Promise.reject(new Error(ERROR_MSG)));
     await store.dispatch(GetUserService());
 
-    expect(store.getActions()).toEqual([{ type: ERROR, message: {} }]);
+    expect(store.getActions()).toEqual([{ type: ERROR, message: ERROR_MSG }]);
   });
 
   it("calls the right API", async () => {

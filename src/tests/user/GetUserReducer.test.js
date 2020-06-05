@@ -11,7 +11,10 @@ import {
 describe("/user/GetUserReducer", () => {
   it("sets login and loggedIn on LOGIN action", () => {
     expect(
-      GetUserReducer(LOGGED_OUT_STATE, { type: LOGIN, login: USER_LOGIN })
+      GetUserReducer(LOGGED_OUT_STATE, {
+        type: LOGIN,
+        user: { login: USER_LOGIN, isTermsAccepted: true },
+      })
     ).toEqual(LOGGED_IN_STATE);
   });
 

@@ -8,16 +8,16 @@ export default function GetUserService() {
       .then((response) => {
         if (response.ok) {
           response.json().then((json) => {
-            dispatch({ type: LOGIN, login: json.login });
+            dispatch({ type: LOGIN, user: json });
           });
         } else if (response.status === 401) {
           dispatch({ type: LOGOUT });
         } else {
-          throw "Failed to load user info";
+          throw new URIError("Failed to load user info");
         }
       })
-      .catch((message) => {
-        dispatch({ type: ERROR, message: message });
+      .catch((error) => {
+        dispatch({ type: ERROR, message: error.message });
       });
   };
 }
