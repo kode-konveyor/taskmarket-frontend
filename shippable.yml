@@ -1,4 +1,4 @@
-build_image: kodekonveyor/toolchain:developer-2.1-1-geb03a86
+build_image: kodekonveyor/toolchain:2.3
 language: node_js
 node_js: 12.13
 
