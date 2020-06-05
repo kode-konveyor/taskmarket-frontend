@@ -8,4 +8,9 @@ export const LOGGED_IN_STATE = {
   loggedIn: true,
   registered: true,
 };
+export const NOT_REGISTERED_STATE = {
+  login: USER_LOGIN,
+  loggedIn: true,
+  registered: false,
+};
 export const LOGGED_OUT_STATE = { loggedIn: false };

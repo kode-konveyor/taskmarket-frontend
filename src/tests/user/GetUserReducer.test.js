@@ -1,11 +1,13 @@
 import GetUserReducer from "../../user/GetUserReducer";
 import { RANDOM_ACTION } from "../CommonTestData";
+import RegistrationActions from "../../registration/RegistrationActions";
 import {
   LOGGED_IN_STATE,
   LOGGED_OUT_STATE,
   LOGIN,
   LOGOUT,
   USER_LOGIN,
+  NOT_REGISTERED_STATE,
 } from "./GetUserTestData";
 
 describe("/user/GetUserReducer", () => {
@@ -14,6 +16,14 @@ describe("/user/GetUserReducer", () => {
       GetUserReducer(LOGGED_OUT_STATE, {
         type: LOGIN,
         user: { login: USER_LOGIN, isTermsAccepted: true },
+      })
+    ).toEqual(LOGGED_IN_STATE);
+  });
+
+  it("sets registeres on registration submit", () => {
+    expect(
+      GetUserReducer(NOT_REGISTERED_STATE, {
+        type: RegistrationActions.SUBMIT,
       })
     ).toEqual(LOGGED_IN_STATE);
   });
