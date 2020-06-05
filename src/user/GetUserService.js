@@ -8,6 +8,7 @@ export default function GetUserService() {
       .then((response) => {
         if (response.ok()) {
           response.json().then((json) => {
+            console.log(JSON.stringify(json));
             dispatch({ type: LOGIN, login: json.login });
           });
         } else if (response.status === 401) {
