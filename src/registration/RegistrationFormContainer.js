@@ -1,24 +1,36 @@
 import { connect } from "react-redux";
-import RegistrationActions from "./RegistrationActions.json";
 import RegistrationFormUI from "./RegistrationFormUI";
-import LegalFormActions from "./LegalFormActions";
+import { submitRegistrationForm } from "./RegistrationService.js";
+import { fetchLegalForms } from "./LegalFormService.js";
+import RegistrationFormDTO from "./RegistrationFormDTO";
 
 function mapDispatchToProps(dispatch) {
-  dispatch({ type: LegalFormActions.LIST });
+  dispatch(fetchLegalForms());
   return {
-    onSubmit: (formData) =>
-      dispatch({
-        type: RegistrationActions.SUBMIT,
-        formData: formData.formData,
-      }),
+    onSubmit: (formData) => dispatch(submitRegistrationForm(formData.formData)),
   };
 }
 
 function mapStateToProps(state) {
-  let legalForms = [];
-  if (state.LegalFormService) legalForms = state.LegalFormService.legalForms;
+  let { legalForms } = state.LegalFormService || {};
+  if (legalForms)
+    return {
+      schema: generateSchema(legalForms),
+    };
+  return {};
+}
+
+function generateSchema(legalForms) {
+  let schema = RegistrationFormDTO;
+  schema.properties.legalForm.anyOf = legalForms.map(convertLegalFormToSchema);
+  return schema;
+}
+
+function convertLegalFormToSchema(legalForm) {
   return {
-    legalForms: legalForms,
+    type: "number",
+    title: legalForm.legalFormName + " - " + legalForm.country,
+    enum: [legalForm.id],
   };
 }
 
