@@ -1,0 +1,5 @@
+{
+    "LOAD": "LEAD_LIST_LOAD",
+    "RELOAD": "LEAD_LIST_RELOAD",
+    "ERROR": "LEAD_LIST_ERROR"
+}

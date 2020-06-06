@@ -1,0 +1,41 @@
+.lead-list {
+    font-family: 'Open Sans', sans-serif;
+
+    .row {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        text-align: left;
+    }
+
+    .buttons {
+        button {
+            margin-right: 10px;
+        }
+        
+        .reload {
+            background-color:rgb(50, 160, 60);
+            border-color: rgb(30, 100, 40);
+            &:hover,&:active {
+                background-color:rgb(40, 120, 45);
+            }
+        }
+    }
+
+    .header {
+        div {
+            padding: 10px 0 10px 10px;
+            background-color: rgb(40, 41, 54);
+            color: #fff;
+            border: 1px solid rgb(120, 124, 160);
+            margin-top: 20px;
+            text-align: left;
+            font-weight: bold;
+        }
+    }
+
+    .lead {
+            border-bottom: 1px solid rgba(128, 128, 128, 0.3);
+    }
+
+
+}
