@@ -2,16 +2,14 @@ import React from "react";
 import { shallow } from "enzyme";
 import MainMenu from "../../main/MainMenu";
 import { Nav, Navbar } from "react-bootstrap";
+import LoginContainer from "../../main/LoginContainer";
 
-const path = "random/path/where/i/am";
 jest.mock("react-router-dom", () => ({
   ...jest.requireActual("react-router-dom"),
   useLocation: () => ({ pathname: "random/path/where/i/am" }),
 }));
 
 process.env = { PUBLIC_URL: "https://market.kodekonveyor.com" };
-
-const loginBasePath = "/market/member/login?next=";
 
 describe("/main/MainMenu", () => {
   const renderedComponent = shallow(<MainMenu />);
@@ -25,10 +23,8 @@ describe("/main/MainMenu", () => {
     ).toBe("List leads");
   });
 
-  it("login url is correct", () => {
-    expect(renderedComponent.find({ href: loginBasePath + path }).length).toBe(
-      1
-    );
+  it("login is rendered", () => {
+    expect(renderedComponent.find(LoginContainer).length).toBe(1);
   });
 
   it("landing url is correct", () => {

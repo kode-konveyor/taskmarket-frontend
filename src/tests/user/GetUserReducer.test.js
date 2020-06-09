@@ -1,0 +1,48 @@
+import GetUserReducer from "../../user/GetUserReducer";
+import { RANDOM_ACTION } from "../CommonTestData";
+import RegistrationActions from "../../registration/RegistrationActions";
+import {
+  LOGGED_IN_STATE,
+  LOGGED_OUT_STATE,
+  LOGIN,
+  LOGOUT,
+  USER_LOGIN,
+  NOT_REGISTERED_STATE,
+} from "./GetUserTestData";
+
+describe("/user/GetUserReducer", () => {
+  it("sets login and loggedIn on LOGIN action", () => {
+    expect(
+      GetUserReducer(LOGGED_OUT_STATE, {
+        type: LOGIN,
+        user: { login: USER_LOGIN, isTermsAccepted: true },
+      })
+    ).toEqual(LOGGED_IN_STATE);
+  });
+
+  it("sets registeres on registration submit", () => {
+    expect(
+      GetUserReducer(NOT_REGISTERED_STATE, {
+        type: RegistrationActions.SUBMIT,
+      })
+    ).toEqual(LOGGED_IN_STATE);
+  });
+
+  it("unsets login and loggedIn on LOGOUT action", () => {
+    expect(GetUserReducer(LOGGED_IN_STATE, { type: LOGOUT })).toEqual(
+      LOGGED_OUT_STATE
+    );
+  });
+
+  it("keeps status on random action", () => {
+    expect(GetUserReducer(LOGGED_IN_STATE, { type: RANDOM_ACTION })).toEqual(
+      LOGGED_IN_STATE
+    );
+  });
+
+  it("sets logged out state on random action when state is not defined", () => {
+    expect(GetUserReducer(undefined, { type: RANDOM_ACTION })).toEqual(
+      LOGGED_OUT_STATE
+    );
+  });
+});

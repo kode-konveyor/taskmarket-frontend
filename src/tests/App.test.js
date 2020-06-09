@@ -2,10 +2,10 @@ import React from "react";
 import { mount } from "enzyme";
 import App from "../App";
 import { MemoryRouter } from "react-router-dom";
-import DashboardChooserUI from "../dashboard/DashboardChooserUI";
 import LeadListPageUI from "../lead/LeadListPageUI";
+import DashboardChooserContainer from "../dashboard/DashboardChooserContainer";
 
-jest.mock("../dashboard/DashboardChooserUI", () => "DashboardUI");
+jest.mock("../dashboard/DashboardChooserContainer", () => "DashboardUI");
 jest.mock("../lead/LeadListPageUI", () => "LeadListPageUI");
 
 test("renders dashboard at root", () => {
@@ -14,7 +14,7 @@ test("renders dashboard at root", () => {
       <App />
     </MemoryRouter>
   );
-  expect(renderedComponent.find(DashboardChooserUI).length).toBe(1);
+  expect(renderedComponent.find(DashboardChooserContainer).length).toBe(1);
 });
 
 test("renders leads page at /landing/list", () => {
