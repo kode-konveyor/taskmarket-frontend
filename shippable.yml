@@ -1,19 +1,21 @@
 build_image: kodekonveyor/toolchain:2.3
-language: node_js
-node_js: 12.13
-
-build:
-  ci:
-    - npm install
-    - npm run lint
-    - CI=true npm run test
-    - npm run mutate
-
-  on_success:
-    - docker build ./ -t kodekonveyor/taskmarket-frontend:$BUILD_NUMBER
-    - docker push kodekonveyor/taskmarket-frontend:$BUILD_NUMBER    
 
 integrations:
   hub:
     - integrationName: docker
       type: dockerRegistryLogin
+  key:
+    - integrationName: kodekonveyor
+      type: sshKey
+  generic:
+    - integrationName: kkpipeline
+
+
+build:
+  ci:
+    - /usr/local/toolchain/tools/Script
+  on_success:
+    - /usr/local/toolchain/tools/publish
+  on_failure:
+    - /usr/local/toolchain/tools/publish
+
