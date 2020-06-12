@@ -24,34 +24,17 @@ export default function MainMenu() {
           >
             Landing Page
           </Nav.Link>
-          <LinkContainer to="/landing/list">
-            <Nav.Link>List leads</Nav.Link>
+          <LinkContainer to="/lead/list">
+            <Nav.Link>Lead list</Nav.Link>
           </LinkContainer>
           <Nav.Link href="https://repository.kodekonveyor.com/TaskMarket/kode-konveyor/develop/implementedBehaviours.html">
             Documentation
           </Nav.Link>
         </Nav>
         <Nav className="justify-content-end">
-          <NavDropdown title="KodeKonveyor" id="collasible-nav-dropdown">
-            <NavDropdown.Item href="https://kodekonveyor.com">
-              Vision
-            </NavDropdown.Item>
-            <NavDropdown.Item href="https://kodekonveyor.com/about">
-              Who we are
-            </NavDropdown.Item>
-            <NavDropdown.Item href="https://kodekonveyor.com/how-we-do-it">
-              How we do it
-            </NavDropdown.Item>
-            <NavDropdown.Item href="https://kodekonveyor.com/for-developers">
-              For developers
-            </NavDropdown.Item>
-            <NavDropdown.Item href="https://kodekonveyor.com/for-customers">
-              For customers
-            </NavDropdown.Item>
-            <NavDropdown.Item href="https://kodekonveyor.com/education">
-              Education
-            </NavDropdown.Item>
-          </NavDropdown>
+          <Nav.Link href="https://kodekonveyor.com">
+            Visit our website
+          </Nav.Link>
           <LoginContainer />
         </Nav>
       </Navbar.Collapse>

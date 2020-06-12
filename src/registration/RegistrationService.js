@@ -2,16 +2,7 @@ import RegistrationActions from "./RegistrationActions.json";
 import URLMapping from "../api/URLMapping";
 import { httpPost } from "../api/http/PostRequest";
 
-export default function RegistrationService(state = {}, action) {
-  switch (action.type) {
-    case RegistrationActions.SUBMIT:
-      return { response: action.response };
-    default:
-      return state;
-  }
-}
-
-export function submitRegistrationForm(formData) {
+export default function RegistrationService(formData) {
   return async (dispatch) => {
     await httpPost(URLMapping.REGISTRATION_URI, formData)
       .then((response) => {

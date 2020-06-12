@@ -3,6 +3,7 @@ import { shallow } from "enzyme";
 import configureMockStore from "redux-mock-store";
 import DashboardChooserContainer from "../../dashboard/DashboardChooserContainer";
 import DashboardChooserUI from "../../dashboard/DashboardChooserUI";
+import {DashboardTestData} from './DashboardTestData';
 
 const mockStore = configureMockStore();
 
@@ -15,12 +16,12 @@ describe("/dashboard/DashboardChooserContainer", () => {
   );
   it("maps hasRegistration", () => {
     expect(
-      renderedComponent.find(DashboardChooserUI).prop("hasRegistration")
+      renderedComponent.find(DashboardChooserUI).prop(DashboardTestData.HAS_REGISTRATION)
     ).toBe(true);
   });
 
   it("maps hasLoggedIn", () => {
-    expect(renderedComponent.find(DashboardChooserUI).prop("hasLoggedIn")).toBe(
+    expect(renderedComponent.find(DashboardChooserUI).prop(DashboardTestData.HAS_LOGGED_IN)).toBe(
       true
     );
   });
@@ -31,7 +32,7 @@ describe("/dashboard/DashboardChooserContainer", () => {
       <DashboardChooserContainer store={store} />
     );
     expect(
-      renderedComponent.find(DashboardChooserUI).prop("hasRegistration")
+      renderedComponent.find(DashboardChooserUI).prop(DashboardTestData.HAS_REGISTRATION)
     ).toBe(false);
   });
 
@@ -40,7 +41,7 @@ describe("/dashboard/DashboardChooserContainer", () => {
     const renderedComponent = shallow(
       <DashboardChooserContainer store={store} />
     );
-    expect(renderedComponent.find(DashboardChooserUI).prop("hasLoggedIn")).toBe(
+    expect(renderedComponent.find(DashboardChooserUI).prop(DashboardTestData.HAS_LOGGED_IN)).toBe(
       false
     );
   });

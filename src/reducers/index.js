@@ -1,16 +1,16 @@
 import { combineReducers } from "redux";
 import SubmitAddRoleService from "../project/role/SubmitAddRoleService";
 import AddRoleFormVisibilityService from "../project/role/AddRoleFormVisibilityService";
-import RegistrationService from "../registration/RegistrationService";
-import LegalFormService from "../registration/LegalFormService";
-import LeadLoadService from "../lead/LeadLoadService";
+import RegistrationReducer from "../registration/RegistrationReducer";
+import LeadLoadReducer from "../registration/LegalFormReducer";
+import LeadLoadReducer from "../lead/LeadLoadReducer";
 import GetUserReducer from "../user/GetUserReducer";
 
 export default combineReducers({
   AddRoleFormVisibilityService,
   SubmitAddRoleService,
-  RegistrationService,
-  LegalFormService,
-  LeadLoadService,
+  RegistrationReducer,
+  LegalFormReducer,
+  LeadLoadReducer,
   GetUserReducer,
 });

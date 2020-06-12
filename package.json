@@ -36,8 +36,7 @@
   },
   "jest": {
     "transformIgnorePatterns": [
-      "/node_modules/",
-      ".*/__tests__/.*TestData.js"
+      "/node_modules/"
     ]
   },
   "browserslist": {

@@ -17,26 +17,11 @@ test("renders dashboard at root", () => {
   expect(renderedComponent.find(DashboardChooserContainer).length).toBe(1);
 });
 
-test("renders leads page at /landing/list", () => {
+test("renders leads page at /lead/list", () => {
   const renderedComponent = mount(
-    <MemoryRouter initialEntries={["/landing/list"]}>
+    <MemoryRouter initialEntries={["/lead/list"]}>
       <App />
     </MemoryRouter>
   );
   expect(renderedComponent.find(LeadListPageUI).length).toBe(1);
-});
-
-test("reload at /landing", () => {
-  Object.defineProperty(window, "location", {
-    writable: true,
-    value: { reload: jest.fn() },
-  });
-
-  mount(
-    <MemoryRouter initialEntries={["/landing"]}>
-      <App />
-    </MemoryRouter>
-  );
-
-  expect(window.location.reload).toHaveBeenCalled();
 });

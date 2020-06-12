@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import ListLeadUi from "./ListLeadUI";
-import { loadLeadList } from "./LeadLoadService";
+import LeadLoadService from "./LeadLoadService";
 
 function mapStateToProps(state) {
   return {
@@ -12,7 +12,7 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return {
     onLoad: () => {
-      dispatch(loadLeadList());
+      dispatch(LeadLoadService());
     },
   };
 }

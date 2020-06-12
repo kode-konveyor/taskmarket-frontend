@@ -1,10 +1,10 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import App from "../App";
-import MainMenu from "./MainMenu";
+import MainMenuUI from "./MainMenuUI";
 import { BrowserRouter } from "react-router-dom";
 
-export default function MainPage() {
+export default function MainPageUI() {
   return (
     <div className="main-page">
       <Container className="top">
@@ -31,7 +31,7 @@ export default function MainPage() {
         <Container className="menu">
           <Row id="main-menu">
             <Col md="12">
-              <MainMenu />
+              <MainMenuUI />
             </Col>
           </Row>
         </Container>

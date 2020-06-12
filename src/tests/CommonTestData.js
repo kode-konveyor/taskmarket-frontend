@@ -1,1 +1,3 @@
-export const RANDOM_ACTION = "RaNdOm";
+const RANDOM_ACTION = "RaNdOm";
+
+export const CommonTestData = { RANDOM_ACTION };

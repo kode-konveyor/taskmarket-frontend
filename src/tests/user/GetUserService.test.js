@@ -2,7 +2,7 @@ import { httpGet } from "../../api/http/GetRequest";
 import configureMockStore from "redux-mock-store";
 import thunk from "redux-thunk";
 import GetUserService from "../../user/GetUserService";
-import { LOGIN, LOGOUT, ERROR, USER_LOGIN, ERROR_MSG } from "./GetUserTestData";
+import { GetUserTestData } from "./GetUserTestData";
 
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
@@ -23,26 +23,23 @@ describe("/user/GetUserService", () => {
         status: 200,
         ok: true,
         json: () =>
-          Promise.resolve({ login: USER_LOGIN, isTermsAccepted: true }),
+          Promise.resolve({ login: GetUserTestData.USER_LOGIN, isTermsAccepted: true }),
       })
     );
     await store.dispatch(GetUserService());
 
     expect(store.getActions()).toEqual([
-      { type: LOGIN, user: { login: USER_LOGIN, isTermsAccepted: true } },
+      { type: GetUserTestData.LOGIN, user: { login: GetUserTestData.USER_LOGIN, isTermsAccepted: true } },
     ]);
   });
 
   it("Fires LOGOUT action when status is 401", async () => {
     httpGet.mockReturnValue(
-      Promise.resolve({
-        status: 401,
-        ok: false,
-      })
+      Promise.resolve(GetUserTestData.UNAUTHORISED_RESPONSE)
     );
     await store.dispatch(GetUserService());
 
-    expect(store.getActions()).toEqual([{ type: LOGOUT }]);
+    expect(store.getActions()).toEqual([GetUserTestData.LOGOUT_ACTION]);
   });
 
   it("Fires ERROR on other statuses", async () => {
@@ -55,21 +52,21 @@ describe("/user/GetUserService", () => {
     await store.dispatch(GetUserService());
 
     expect(store.getActions()).toEqual([
-      { type: ERROR, message: "Failed to load user info" },
+      GetUserTestData.ERROR_ACTION,
     ]);
   });
 
   it("Fires ERROR on problem", async () => {
-    httpGet.mockReturnValue(Promise.reject(new Error(ERROR_MSG)));
+    httpGet.mockReturnValue(Promise.reject(new Error(GetUserTestData.ERROR_MSG)));
     await store.dispatch(GetUserService());
 
-    expect(store.getActions()).toEqual([{ type: ERROR, message: ERROR_MSG }]);
+    expect(store.getActions()).toEqual([{ type: GetUserTestData.ERROR, message: GetUserTestData.ERROR_MSG }]);
   });
 
   it("calls the right API", async () => {
     httpGet.mockReturnValue(Promise.reject({}));
     await store.dispatch(GetUserService());
 
-    expect(httpGet).toHaveBeenCalledWith("/member/user");
+    expect(httpGet).toHaveBeenCalledWith(GetUserTestData.USER_PATH);
   });
 });

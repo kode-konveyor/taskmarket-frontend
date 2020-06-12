@@ -1,18 +1,18 @@
 import React from "react";
 import { shallow } from "enzyme";
-import MainPage from "../../main/MainPage";
+import MainPageUI from "../../main/MainPageUI";
 import App from "../../App";
-import MainMenu from "../../main/MainMenu";
+import MainMenuUI from "../../main/MainMenuUI";
 
-describe("/main/MainPage", () => {
-  const renderedComponent = shallow(<MainPage />);
+describe("/main/MainPageUI", () => {
+  const renderedComponent = shallow(<MainPageUI />);
 
   it("contains app", () => {
     expect(renderedComponent.find(App).length).toBe(1);
   });
 
   it("contains main menu", () => {
-    expect(renderedComponent.find(MainMenu).length).toBe(1);
+    expect(renderedComponent.find(MainMenuUI).length).toBe(1);
   });
 
   it("contains header", () => {
