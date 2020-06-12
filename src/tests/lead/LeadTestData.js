@@ -28,19 +28,11 @@ export const LeadTestData = {
   RELOAD_CLASS: ".reload",
   EXPORT_CLASS: ".export",
   FILENAME: "filename",
-  EXPECTED_CSS: "Bob,bob@unclebob.com,Working for KodeKonveyor" +
+  EXPECTED_CSS:
+    "Bob,bob@unclebob.com,Working for KodeKonveyor" +
     "\r\nMartin,martin@martinfowler.com,Working for KodeKonveyor",
   EXPECTED_FILENAME: "kk_lead_list.csv",
   LOADING_MESSAGE: "Loading...",
   CLICK_EVENT: "click",
-  HEADER_CLASS: ".header",
-  RELOAD_CLASS: ".reload",
-  EXPORT_CLASS: ".export",
-  FILENAME: "filename",
-  EXPECTED_CSS: "Bob,bob@unclebob.com,Working for KodeKonveyor" +
-    "\r\nMartin,martin@martinfowler.com,Working for KodeKonveyor",
-  EXPECTED_FILENAME: "kk_lead_list.csv",
-  LOADING_MESSAGE: "Loading...",
-  CLICK_EVENT: "click",
-  DATA: "data"
+  DATA: "data",
 };

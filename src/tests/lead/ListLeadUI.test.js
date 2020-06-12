@@ -40,7 +40,9 @@ describe("/lead/ListLeadUI", () => {
   });
 
   it("downloads the CSV file with actual data", () => {
-    expect(renderedComponent.find(CSVLink).prop(LeadTestData.DATA)).toEqual(LeadTestData.EXPECTED_CSS);
+    expect(renderedComponent.find(CSVLink).prop(LeadTestData.DATA)).toEqual(
+      LeadTestData.EXPECTED_CSS
+    );
   });
 
   it("renders Loading... when loading", () => {
@@ -68,7 +70,9 @@ describe("/lead/ListLeadUI", () => {
     const renderedComponent = shallow(
       <ListLeadUI leadList={[]} loading={false} onLoad={onLoadMock} />
     );
-    renderedComponent.find(LeadTestData.RELOAD_CLASS).simulate(LeadTestData.CLICK_EVENT);
+    renderedComponent
+      .find(LeadTestData.RELOAD_CLASS)
+      .simulate(LeadTestData.CLICK_EVENT);
     expect(onLoadMock).toHaveBeenCalled();
   });
 

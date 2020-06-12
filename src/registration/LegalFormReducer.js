@@ -1,5 +1,4 @@
 import LegalFormActions from "./LegalFormActions";
-import {LegalFormConstants} from "./LegalFormConstants";
 
 export default function LegalFormReducer(state = {}, action) {
   switch (action.type) {

@@ -1,6 +1,5 @@
-
 const USER_LOGIN = "soros";
-const LOGOUT="GET_USER_ACTIONS_LOGOUT";
+const LOGOUT = "GET_USER_ACTIONS_LOGOUT";
 const ERROR = "GET_USER_ACTIONS_ERROR";
 
 export const GetUserTestData = {
@@ -29,4 +28,4 @@ export const GetUserTestData = {
   LOGOUT_ACTION: { type: LOGOUT },
   ERROR_ACTION: { type: ERROR, message: "Failed to load user info" },
   USER_PATH: "/member/user",
-}
+};

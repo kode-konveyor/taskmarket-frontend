@@ -2,9 +2,13 @@ import LegalFormReducer from "../../registration/LegalFormReducer";
 import LegalFormActions from "../../registration/LegalFormActions";
 
 describe("/registration/LegalFormService", () => {
-  const EXPECTED_LEAD_LIST = [{ id: 1, country: "US", legalFormName: "legalForm" }];
-  const EXPECTED_ACTION = { type: LegalFormActions.LIST, legalForms: EXPECTED_LEAD_LIST };
-  const ERROR_ACTION = { type: LegalFormActions.ERROR };
+  const EXPECTED_LEAD_LIST = [
+    { id: 1, country: "US", legalFormName: "legalForm" },
+  ];
+  const EXPECTED_ACTION = {
+    type: LegalFormActions.LIST,
+    legalForms: EXPECTED_LEAD_LIST,
+  };
 
   it("keeps status when action doesn't match", () => {
     const state = { data: "MyData" };

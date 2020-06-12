@@ -22,12 +22,18 @@ describe("/lead/LeadLoadService", () => {
       Promise.resolve({ json: () => Promise.resolve(LeadTestData.LEAD_LIST) })
     );
     await store.dispatch(LeadLoadService());
-    expect(store.getActions()).toEqual([LeadTestData.RELOAD_ACTION, LeadTestData.LOAD_ACTION]);
+    expect(store.getActions()).toEqual([
+      LeadTestData.RELOAD_ACTION,
+      LeadTestData.LOAD_ACTION,
+    ]);
   });
 
   it("adds error action when fetch fails", async () => {
     httpGet.mockReturnValue(Promise.reject("error"));
     await store.dispatch(LeadLoadService());
-    expect(store.getActions()).toEqual([LeadTestData.RELOAD_ACTION, LeadTestData.ERROR_ACTION]);
+    expect(store.getActions()).toEqual([
+      LeadTestData.RELOAD_ACTION,
+      LeadTestData.ERROR_ACTION,
+    ]);
   });
 });

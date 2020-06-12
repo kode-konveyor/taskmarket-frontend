@@ -1,8 +1,8 @@
 import React from "react";
-import { Navbar, Nav, NavDropdown } from "react-bootstrap";
+import { Navbar, Nav } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
 import LoginContainer from "./LoginContainer";
-export default function MainMenu() {
+export default function MainMenuUI() {
   return (
     <Navbar
       collapseOnSelect
@@ -32,9 +32,7 @@ export default function MainMenu() {
           </Nav.Link>
         </Nav>
         <Nav className="justify-content-end">
-          <Nav.Link href="https://kodekonveyor.com">
-            Visit our website
-          </Nav.Link>
+          <Nav.Link href="https://kodekonveyor.com">Visit our website</Nav.Link>
           <LoginContainer />
         </Nav>
       </Navbar.Collapse>

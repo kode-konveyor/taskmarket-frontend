@@ -18,7 +18,10 @@ describe("/registration/RegistrationFormUI", () => {
   beforeEach(() => {
     onSubmitMock = jest.fn();
     renderedComponent = shallow(
-      <RegistrationFormUI onSubmit={onSubmitMock} schema={RegistrationTestData.SCHEMA} />
+      <RegistrationFormUI
+        onSubmit={onSubmitMock}
+        schema={RegistrationTestData.SCHEMA}
+      />
     );
   });
 
@@ -27,7 +30,9 @@ describe("/registration/RegistrationFormUI", () => {
   });
 
   it("contains right schema", () => {
-    expect(renderedComponent.find(Form).prop(RegistrationTestData.SCHEMA_PROP)).toEqual(RegistrationTestData.SCHEMA);
+    expect(
+      renderedComponent.find(Form).prop(RegistrationTestData.SCHEMA_PROP)
+    ).toEqual(RegistrationTestData.SCHEMA);
   });
 
   it("renders Loading when schema is undefined", () => {

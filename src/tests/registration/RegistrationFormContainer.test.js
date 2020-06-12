@@ -7,7 +7,7 @@ import RegistrationFormUI from "../../registration/RegistrationFormUI";
 import LegalFormActions from "../../registration/LegalFormActions";
 import LegalFormService from "../../registration/LegalFormService";
 import RegistrationService from "../../registration/RegistrationService";
-import {RegistrationTestData} from "./RegistrationTestData";
+import { RegistrationTestData } from "./RegistrationTestData";
 
 const mockStore = configureMockStore();
 
@@ -24,7 +24,9 @@ describe("/registration/RegistrationFormContainer", () => {
       type: RegistrationActions.SUBMIT,
       formData: RegistrationTestData.FORM_DATA,
     });
-    store = mockStore({ LegalFormReducer: { legalForms: RegistrationTestData.LEGAL_FORMS } });
+    store = mockStore({
+      LegalFormReducer: { legalForms: RegistrationTestData.LEGAL_FORMS },
+    });
     renderedComponent = shallow(<RegistrationFormContainer store={store} />);
   });
 
@@ -34,7 +36,10 @@ describe("/registration/RegistrationFormContainer", () => {
       .simulate("submit", { formData: RegistrationTestData.FORM_DATA });
     expect(store.getActions()).toEqual([
       { type: LegalFormActions.LIST },
-      { type: RegistrationActions.SUBMIT, formData: RegistrationTestData.FORM_DATA },
+      {
+        type: RegistrationActions.SUBMIT,
+        formData: RegistrationTestData.FORM_DATA,
+      },
     ]);
   });
 

@@ -23,13 +23,19 @@ describe("/user/GetUserService", () => {
         status: 200,
         ok: true,
         json: () =>
-          Promise.resolve({ login: GetUserTestData.USER_LOGIN, isTermsAccepted: true }),
+          Promise.resolve({
+            login: GetUserTestData.USER_LOGIN,
+            isTermsAccepted: true,
+          }),
       })
     );
     await store.dispatch(GetUserService());
 
     expect(store.getActions()).toEqual([
-      { type: GetUserTestData.LOGIN, user: { login: GetUserTestData.USER_LOGIN, isTermsAccepted: true } },
+      {
+        type: GetUserTestData.LOGIN,
+        user: { login: GetUserTestData.USER_LOGIN, isTermsAccepted: true },
+      },
     ]);
   });
 
@@ -51,16 +57,18 @@ describe("/user/GetUserService", () => {
     );
     await store.dispatch(GetUserService());
 
-    expect(store.getActions()).toEqual([
-      GetUserTestData.ERROR_ACTION,
-    ]);
+    expect(store.getActions()).toEqual([GetUserTestData.ERROR_ACTION]);
   });
 
   it("Fires ERROR on problem", async () => {
-    httpGet.mockReturnValue(Promise.reject(new Error(GetUserTestData.ERROR_MSG)));
+    httpGet.mockReturnValue(
+      Promise.reject(new Error(GetUserTestData.ERROR_MSG))
+    );
     await store.dispatch(GetUserService());
 
-    expect(store.getActions()).toEqual([{ type: GetUserTestData.ERROR, message: GetUserTestData.ERROR_MSG }]);
+    expect(store.getActions()).toEqual([
+      { type: GetUserTestData.ERROR, message: GetUserTestData.ERROR_MSG },
+    ]);
   });
 
   it("calls the right API", async () => {

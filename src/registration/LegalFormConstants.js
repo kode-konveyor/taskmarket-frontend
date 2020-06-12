@@ -1,3 +1,3 @@
 export const LegalFormConstants = {
-    ERROR_MESSAGE: "Fetching Legal Forms failed",
-}
+  ERROR_MESSAGE: "Fetching Legal Forms failed",
+};

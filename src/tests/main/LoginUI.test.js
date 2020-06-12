@@ -6,7 +6,6 @@ import { GetUserTestData } from "../user/GetUserTestData";
 import { LoginTestData } from "./LoginTestData";
 import PropTypes from "prop-types";
 
-
 jest.mock("react-router-dom", () => ({
   ...jest.requireActual("react-router-dom"),
   useLocation: () => ({ pathname: "random/path/where/i/am" }),
@@ -28,19 +27,31 @@ describe("/main/LoginUI", () => {
     const renderedComponent = shallow(
       <LoginUI loggedIn={false} onLogin={onLogin} />
     );
-    expect(renderedComponent.find(Nav.Link).text()).toEqual(LoginTestData.LOGIN_TEXT);
+    expect(renderedComponent.find(Nav.Link).text()).toEqual(
+      LoginTestData.LOGIN_TEXT
+    );
   });
 
   it("renders username when logged in", () => {
     const renderedComponent = shallow(
-      <LoginUI loggedIn={true} loginName={GetUserTestData.USER_LOGIN} onLogin={onLogin} />
+      <LoginUI
+        loggedIn={true}
+        loginName={GetUserTestData.USER_LOGIN}
+        onLogin={onLogin}
+      />
     );
-    expect(renderedComponent.find(Nav.Link).text()).toEqual(GetUserTestData.USER_LOGIN);
+    expect(renderedComponent.find(Nav.Link).text()).toEqual(
+      GetUserTestData.USER_LOGIN
+    );
   });
 
   it("calls onLogin on rendering", () => {
     shallow(
-      <LoginUI loggedIn={true} loginName={GetUserTestData.USER_LOGIN} onLogin={onLogin} />
+      <LoginUI
+        loggedIn={true}
+        loginName={GetUserTestData.USER_LOGIN}
+        onLogin={onLogin}
+      />
     );
     expect(onLogin).toHaveBeenCalledTimes(1);
   });
@@ -49,7 +60,9 @@ describe("/main/LoginUI", () => {
     const renderedComponent = shallow(
       <LoginUI loggedIn={false} onLogin={onLogin} />
     );
-    expect(renderedComponent.find(Nav.Link).prop(LoginTestData.HREF)).toEqual(LoginTestData.LOGIN_URL);
+    expect(renderedComponent.find(Nav.Link).prop(LoginTestData.HREF)).toEqual(
+      LoginTestData.LOGIN_URL
+    );
   });
 
   it("has correct PropTypes", () => {
