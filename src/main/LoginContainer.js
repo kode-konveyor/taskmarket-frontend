@@ -3,10 +3,13 @@ import LoginUI from "./LoginUI";
 import GetUserService from "../user/GetUserService";
 
 function mapStateToProps(state) {
-  const { loggedIn, login } = state.GetUserReducer || { loggedIn: false };
+  const { loggedIn, user } = state.GetUserReducer || {
+    loggedIn: false,
+    user: {},
+  };
   return {
     loggedIn: loggedIn,
-    loginName: login,
+    loginName: user.login,
   };
 }
 

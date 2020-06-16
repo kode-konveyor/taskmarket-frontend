@@ -11,11 +11,14 @@ jest.mock("../../user/GetUserService");
 
 const mockStore = configureMockStore();
 
-describe("/lead/ListLeadContainer", () => {
+describe("/main/LoginContainer", () => {
   let renderedComponent;
 
   const store = mockStore({
-    GetUserReducer: { loggedIn: true, login: GetUserTestData.USER_LOGIN },
+    GetUserReducer: {
+      loggedIn: true,
+      user: { login: GetUserTestData.USER_LOGIN },
+    },
   });
 
   beforeEach(() => {

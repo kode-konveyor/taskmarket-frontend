@@ -10,7 +10,7 @@ describe("/user/GetUserReducer", () => {
         type: GetUserTestData.LOGIN,
         user: { login: GetUserTestData.USER_LOGIN, isTermsAccepted: true },
       })
-    ).toEqual(GetUserTestData.LOGGED_IN_STATE);
+    ).toEqual(GetUserTestData.REGISTERED_STATE);
   });
 
   it("sets registeres on registration submit", () => {

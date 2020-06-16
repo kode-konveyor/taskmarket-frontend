@@ -10,17 +10,25 @@ export const GetUserTestData = {
   ERROR,
 
   ERROR_MSG: "error",
+  REGISTERED_STATE: {
+    user: { login: USER_LOGIN, isTermsAccepted: true },
+    loggedIn: true,
+    registered: true,
+  },
   LOGGED_IN_STATE: {
-    login: USER_LOGIN,
+    user: { login: USER_LOGIN },
     loggedIn: true,
     registered: true,
   },
   NOT_REGISTERED_STATE: {
-    login: USER_LOGIN,
+    user: { login: USER_LOGIN },
     loggedIn: true,
     registered: false,
   },
-  LOGGED_OUT_STATE: { loggedIn: false },
+  LOGGED_OUT_STATE: {
+    user: {},
+    loggedIn: false,
+  },
   UNAUTHORISED_RESPONSE: {
     status: 401,
     ok: false,
