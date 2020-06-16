@@ -12,7 +12,7 @@ export default function ProfileAreaUI({ marketUser }) {
     { label: ProfileConstants.EMAIL, control: marketUser.email },
     {
       label: ProfileConstants.BALANCE,
-      control: "€ " + marketUser.budgetInCents / 100.0,
+      control: "€ " + marketUser.balanceInCents / 100.0,
     },
   ];
 

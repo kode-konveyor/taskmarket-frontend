@@ -5,7 +5,7 @@ export const ProfileTestData = {
     legalName: "Open Society Foundation",
     legalAddress: "123 Washington St NY, US",
     email: "gyuriba@osf.org",
-    budgetInCents: 999999999,
+    balanceInCents: 999999999,
   },
 
   MARKET_USER_LABELS: {
