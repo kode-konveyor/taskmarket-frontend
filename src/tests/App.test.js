@@ -5,8 +5,8 @@ import { MemoryRouter } from "react-router-dom";
 import LeadListPageUI from "../lead/LeadListPageUI";
 import DashboardChooserContainer from "../dashboard/DashboardChooserContainer";
 
-jest.mock("../dashboard/DashboardChooserContainer", () => "DashboardUI");
-jest.mock("../lead/LeadListPageUI", () => "LeadListPageUI");
+jest.mock("../dashboard/DashboardChooserContainer", () => () => "DashboardUI");
+jest.mock("../lead/LeadListPageUI", () => () => "LeadListPageUI");
 
 test("renders dashboard at root", () => {
   const renderedComponent = mount(
