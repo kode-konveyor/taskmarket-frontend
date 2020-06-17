@@ -16,7 +16,6 @@ function App() {
     <div className="App">
       <Switch>
         <Route exact path="/" component={DashboardChooserContainer} />
-
         <Route exact path="/landing/list" component={LeadListPageUi} />
         <Route exact path="/landing.html" render={reload} id="landing-route" />
         <Route

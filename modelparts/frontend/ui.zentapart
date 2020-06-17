@@ -488,7 +488,6 @@
             ancestor="bbe8d388-6c76-4351-8e81-83f144f7bc9e"
             source="4482e311-d6aa-4b68-b1e1-014c606c8c83"
             target="12072ed9-0675-4b53-899d-98835d4942a2"/>
-</folder>
 <folder xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xmlns:zenta="http://magwas.rulez.org/zenta"
         name="00 - frontendRelations"
@@ -2029,7 +2028,6 @@
             ancestor="4d965db2-a259-46c7-8432-e0a8ace6901e"
             source="a2d4db20-e9ff-49aa-837a-3919dea1f26a"
             target="bf67dcd9-f235-4e7e-b7ab-56851ff85651"/>
-</folder>
 <folder xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xmlns:zenta="http://magwas.rulez.org/zenta"
         name="ProjectList"
@@ -2074,4 +2072,6 @@
          <bounds x="44" y="185" width="-1" height="-1"/>
       </child>
    </element>
+</folder>
+</folder>
 </folder>
