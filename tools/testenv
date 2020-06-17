@@ -24,5 +24,6 @@ if [ -n "$(DOCKER_CLI_EXPERIMENTAL=enabled docker manifest inspect $DOCKER_IMAGE
 fi
 docker run --rm $PORTMAP -e issuetoken -e sonarkey -e DISPLAY -e PULL_REQUEST=false -e DEVUID=${DEV_UID} -e DEVGID=${DEV_GID} -e ORG_NAME=local \
     -v $(pwd):/build -v ${DEVHOME}:/home/developer -v /tmp/.X11-unix:/tmp/.X11-unix \
+    -v /var/run/docker.sock:/var/run/docker.sock \
     -w /build $INTERACTIVE -t ${DOCKER_IMAGE} "$@"
 
