@@ -1,0 +1,28 @@
+.dashboard-tab {
+    text-align: left;
+    background: rgb(40, 41, 54);
+    font-family: 'Open Sans', sans-serif;
+    position: relative;
+    top: 0px;
+    border: 0px solid #ffffff54;
+    box-shadow: none;
+    color: #eee;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+
+    .row:first-child > .col-md-12 {
+        text-align: left;
+        border-top-left-radius: 10px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        border-top-right-radius: 10px;
+        background-color: rgb(24, 100, 110)
+    }
+
+    h1 {
+        font-size: 14px;
+        font-weight: bold;
+        margin-bottom: 0px;
+    }
+}

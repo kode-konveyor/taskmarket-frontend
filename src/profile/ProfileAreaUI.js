@@ -28,7 +28,7 @@ export default function ProfileAreaUI({ marketUser }) {
   );
 
   return (
-    <Container className="profile-area">
+    <Container className="profile-area dashboard-tab">
       <Row>
         <Col md={12}>
           <h1>Profile</h1>

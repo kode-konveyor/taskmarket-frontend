@@ -7,7 +7,7 @@ import { BrowserRouter } from "react-router-dom";
 export default function MainPageUI() {
   return (
     <div className="main-page">
-      <Container className="top">
+      <Container className="top" fluid>
         <Row id="top-header">
           <Col lg="12">
             <Col lg="4">
@@ -28,14 +28,14 @@ export default function MainPageUI() {
         </Row>
       </Container>
       <BrowserRouter>
-        <Container className="menu">
+        <Container className="menu" fluid>
           <Row id="main-menu">
             <Col md="12">
               <MainMenuUI />
             </Col>
           </Row>
         </Container>
-        <Container className="main">
+        <Container className="main" fluid>
           <Row id="content">
             <Col md="12">
               <App />
