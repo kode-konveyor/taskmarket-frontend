@@ -3,7 +3,8 @@ import { Container, Row, Col } from "react-bootstrap";
 import { ProfileConstants } from "./ProfileConstants";
 import { PropTypes } from "prop-types";
 
-export default function ProfileAreaUI({ marketUser }) {
+export default function ProfileAreaUI({ marketUser, onLoad }) {
+  onLoad();
   const rows = [
     { label: ProfileConstants.GITHUB, control: marketUser.login },
     { label: ProfileConstants.NAME, control: marketUser.personalName },
@@ -41,4 +42,5 @@ export default function ProfileAreaUI({ marketUser }) {
 
 ProfileAreaUI.propTypes = {
   marketUser: PropTypes.object,
+  onLoad: PropTypes.func,
 };

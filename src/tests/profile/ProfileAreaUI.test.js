@@ -5,8 +5,12 @@ import { PropTypes } from "prop-types";
 import { ProfileTestData } from "./ProfileTestData";
 
 describe("/profile/ProfileAreaUI", () => {
+  const onLoadMock = jest.fn();
   const renderedComponent = shallow(
-    <ProfileAreaUI marketUser={ProfileTestData.MARKET_USER} />
+    <ProfileAreaUI
+      marketUser={ProfileTestData.MARKET_USER}
+      onLoad={onLoadMock}
+    />
   );
   it("renders controls", () => {
     expect(
@@ -36,9 +40,14 @@ describe("/profile/ProfileAreaUI", () => {
     ]);
   });
 
+  it("calls onLoad", () => {
+    expect(onLoadMock).toHaveBeenCalled();
+  });
+
   it("has correct propTypes", () => {
     const expectedPropTypes = {
       marketUser: PropTypes.object,
+      onLoad: PropTypes.func,
     };
     expect(ProfileAreaUI.propTypes).toMatchObject(expectedPropTypes);
   });

@@ -1,5 +1,14 @@
 import ProfileAreaUI from "./ProfileAreaUI";
 import { connect } from "react-redux";
+import GetUserService from "../user/GetUserService";
+
+function mapDispatchToProps(dispatch) {
+  return {
+    onLoad: () => {
+      dispatch(GetUserService());
+    },
+  };
+}
 
 function mapStateToProps(state) {
   return {
@@ -7,4 +16,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps)(ProfileAreaUI);
+export default connect(mapStateToProps, mapDispatchToProps)(ProfileAreaUI);
