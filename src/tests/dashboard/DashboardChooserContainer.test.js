@@ -9,7 +9,7 @@ const mockStore = configureMockStore();
 
 describe("/dashboard/DashboardChooserContainer", () => {
   const store = mockStore({
-    GetUserReducer: { registered: true, loggedIn: true },
+    ActiveUser: { registered: true, loggedIn: true },
   });
   const renderedComponent = shallow(
     <DashboardChooserContainer store={store} />

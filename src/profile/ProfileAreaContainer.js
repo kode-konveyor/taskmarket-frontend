@@ -12,7 +12,7 @@ function mapDispatchToProps(dispatch) {
 
 function mapStateToProps(state) {
   return {
-    marketUser: state.GetUserReducer.user,
+    marketUser: state.ActiveUser.user,
   };
 }
 

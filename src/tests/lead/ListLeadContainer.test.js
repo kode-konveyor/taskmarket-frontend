@@ -14,7 +14,7 @@ describe("/lead/ListLeadContainer", () => {
   let renderedComponent;
 
   const store = mockStore({
-    LeadLoadService: { leadList: LeadTestData.LEAD_LIST, loading: true },
+    LeadList: { leadList: LeadTestData.LEAD_LIST, loading: true },
   });
   beforeEach(() => {
     LeadLoadService.mockReset();

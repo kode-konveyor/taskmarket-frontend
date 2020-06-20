@@ -17,7 +17,7 @@ GetUserService.mockReturnValue({ type: "GET_USER_ACTIONS_LOGOUT" });
 
 describe("/profile/ProfileAreaContainer", () => {
   const store = mockStore({
-    GetUserReducer: { user: ProfileTestData.MARKET_USER },
+    ActiveUser: { user: ProfileTestData.MARKET_USER },
   });
   const renderedComponent = shallow(<ProfileAreaContainer store={store} />);
   it("maps marketUser", () => {

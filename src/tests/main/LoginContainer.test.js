@@ -15,7 +15,7 @@ describe("/main/LoginContainer", () => {
   let renderedComponent;
 
   const store = mockStore({
-    GetUserReducer: {
+    ActiveUser: {
       loggedIn: true,
       user: { login: GetUserTestData.USER_LOGIN },
     },

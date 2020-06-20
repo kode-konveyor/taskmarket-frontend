@@ -25,7 +25,7 @@ describe("/registration/RegistrationFormContainer", () => {
       formData: RegistrationTestData.FORM_DATA,
     });
     store = mockStore({
-      LegalFormReducer: { legalForms: RegistrationTestData.LEGAL_FORMS },
+      LegalForms: { legalForms: RegistrationTestData.LEGAL_FORMS },
     });
     renderedComponent = shallow(<RegistrationFormContainer store={store} />);
   });

@@ -12,7 +12,7 @@ function mapDispatchToProps(dispatch) {
 }
 
 function mapStateToProps(state) {
-  let { legalForms } = state.LegalFormReducer || {};
+  let { legalForms } = state.LegalForms || {};
   if (legalForms)
     return {
       schema: generateSchema(legalForms),

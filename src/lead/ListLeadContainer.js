@@ -4,8 +4,8 @@ import LeadLoadService from "./LeadLoadService";
 
 function mapStateToProps(state) {
   return {
-    leadList: state.LeadLoadService.leadList,
-    loading: state.LeadLoadService.loading,
+    leadList: state.LeadList.leadList,
+    loading: state.LeadList.loading,
   };
 }
 
