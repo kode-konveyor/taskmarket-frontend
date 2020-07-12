@@ -1,0 +1,8 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicRelationship"
+         name="state.user.legalAddress = onChange(value)"
+         id="c1deb8fb-dedd-4f9e-a400-404421c8403b"
+         ancestor="7a4c6e7c-6069-4cd0-ae97-04418c0c5d82"
+         source="7c5d787b-c165-4f0c-a7fa-775fe63821c2"
+         target="972b3bec-3a26-4d73-bb95-c27ea1eb0216"/>

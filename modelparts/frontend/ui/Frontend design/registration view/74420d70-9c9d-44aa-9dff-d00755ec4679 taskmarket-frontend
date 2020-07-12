@@ -1,0 +1,6 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicObject"
+         name="taskmarket-frontend"
+         id="74420d70-9c9d-44aa-9dff-d00755ec4679"
+         ancestor="1fd2be20-d3ab-4f28-9171-73ef55961bd5"/>

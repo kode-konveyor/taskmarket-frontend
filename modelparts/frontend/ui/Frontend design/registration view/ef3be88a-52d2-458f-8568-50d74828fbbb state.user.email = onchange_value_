@@ -1,0 +1,8 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicRelationship"
+         name="state.user.email = onchange(value)"
+         id="ef3be88a-52d2-458f-8568-50d74828fbbb"
+         ancestor="7a4c6e7c-6069-4cd0-ae97-04418c0c5d82"
+         source="c1b6c3bc-4146-4aeb-bfb3-0d990618b2b6"
+         target="c03c8f46-ae0a-4f37-8160-7ceb17e3b4ba"/>

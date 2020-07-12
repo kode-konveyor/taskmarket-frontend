@@ -1,0 +1,46 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:ZentaDiagramModel"
+         name="registration"
+         id="67ef1968-9f94-457c-9eaf-1b26f92f5ed5">
+   <child xsi:type="zenta:DiagramObject"
+          id="fb0f61b4-7f25-4bd4-ad9f-d3b6c742515f"
+          zentaElement="d5283979-773a-43d8-b720-67725b1ceab5">
+      <bounds x="72" y="48" width="-1" height="-1"/>
+      <child xsi:type="zenta:DiagramObject"
+             id="2f0afc5d-0c09-478d-9d5d-a4d1db21982c"
+             zentaElement="97866c11-4c18-461f-9223-813eff65c48b">
+         <bounds x="12" y="324" width="220" height="37"/>
+      </child>
+      <child xsi:type="zenta:DiagramObject"
+             id="2d799592-d2e4-42e7-b223-eb7bcfaf8d91"
+             zentaElement="c1b6c3bc-4146-4aeb-bfb3-0d990618b2b6">
+         <bounds x="12" y="276" width="220" height="37"/>
+      </child>
+      <child xsi:type="zenta:DiagramObject"
+             id="aa6591c2-8b16-4718-adb2-6a723d28da22"
+             zentaElement="325e6c25-25a5-4de5-a900-56cc20b0a69b">
+         <bounds x="12" y="132" width="220" height="37"/>
+      </child>
+      <child xsi:type="zenta:DiagramObject"
+             id="ffa87b1c-ebe1-440b-857a-56e9e1bc4fc3"
+             zentaElement="7c5d787b-c165-4f0c-a7fa-775fe63821c2">
+         <bounds x="12" y="228" width="220" height="37"/>
+      </child>
+      <child xsi:type="zenta:DiagramObject"
+             id="b8f93d19-2c2d-4945-919e-32c40b0ad14d"
+             zentaElement="22d4c34d-0e44-4e4d-b909-104c90a79126">
+         <bounds x="12" y="36" width="220" height="37"/>
+      </child>
+      <child xsi:type="zenta:DiagramObject"
+             id="9dfa2a9b-2960-4de3-b216-436eacf1a61d"
+             zentaElement="0e5b5211-4fc0-406c-9a05-c1d486b5db65">
+         <bounds x="62" y="372" height="44"/>
+      </child>
+      <child xsi:type="zenta:DiagramObject"
+             id="f8deb02c-419d-4f59-b3c8-1e0f9b951705"
+             zentaElement="773f22c6-9a4e-4850-a420-0c50d4089f14">
+         <bounds x="12" y="182" width="220" height="37"/>
+      </child>
+   </child>
+</element>

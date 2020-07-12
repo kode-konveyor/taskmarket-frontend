@@ -1,0 +1,47 @@
+<index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:zenta="http://magwas.rulez.org/zenta">
+   <entry name="registration view" id="fb3ae30c-cbc1-429c-bedb-e47fccb7aca8"/>
+   <entry name="terms&amp;conditions" id="cfa1bf00-3779-4245-bf38-a9d4a6499329"/>
+   <entry id="12779fa6-2dcc-4826-9d0d-fceb93025a0d"/>
+   <entry name="taskmarket-frontend" id="74420d70-9c9d-44aa-9dff-d00755ec4679"/>
+   <entry name="user" id="6807fafa-84f5-42ae-a3bf-a89fc659bf7b"/>
+   <entry name="legal forms" id="75dcfbd2-3eba-41a7-81ee-3ff0d823a6a6"/>
+   <entry name="legalForms" id="46c27b30-7e8e-467b-8a37-53dfbb020b44"/>
+   <entry id="ca553596-983c-4408-824f-76d7e6dd2241"/>
+   <entry id="b4162103-a0d4-4f80-9e34-61280e1fe6f6"/>
+   <entry id="c1a03cc5-fa23-40ba-9b1c-f5a666c6d48f"/>
+   <entry id="1f2846ba-c2c8-4f84-8fd0-0de9e842941a"/>
+   <entry id="950584e7-1ad9-477a-8e34-3af5766181a7"/>
+   <entry id="7d64a1f5-e7aa-4c09-b522-602d32ef9c07"/>
+   <entry id="b54aa473-a69e-4b12-8bed-b84a2ff30852"/>
+   <entry id="b85a116a-b083-4921-bd22-ed1852a6c8e1"/>
+   <entry id="64018a46-28e1-4bc3-a94c-31c2d26cc550"/>
+   <entry name="state.user.personalName = onChange(value)"
+          id="35e0fe24-b71a-4df3-9537-b4394454cce7"/>
+   <entry name="user.personalName" id="a1101e24-92a6-44b1-af7e-726684c35bfd"/>
+   <entry name="state.user.legalForm" id="c94fcf11-aa41-4f1a-ad38-f2c1ef43c213"/>
+   <entry name="state.user.legalForm = onSelect(value)"
+          id="1dfa8ca7-f673-4416-8536-17cdcba1cfd2"/>
+   <entry name="state.user.legalName" id="7ae643fb-63fc-498f-8ded-4279f2130aa3"/>
+   <entry name="state.user.legalName=onChange(value)"
+          id="b2ea5659-3e5f-4496-9aee-148e5469fad4"/>
+   <entry name="state.user.legalAddress"
+          id="8b811884-65a0-42c5-8637-bbed438729ae"/>
+   <entry name="state.user.legalAddress = onChange(value)"
+          id="c1deb8fb-dedd-4f9e-a400-404421c8403b"/>
+   <entry name="state.user.email" id="8853047c-140c-4c9e-ae9b-f045cf1e494b"/>
+   <entry name="state.user.email = onchange(value)"
+          id="ef3be88a-52d2-458f-8568-50d74828fbbb"/>
+   <entry name="state.user.isTermsAccepted"
+          id="870c2c14-51d5-43ff-9046-a7a646c20836"/>
+   <entry name="state.user.isTermsAccepted = onClick(value)"
+          id="d09d9962-ea49-4d7c-baaf-8b53bdec3cc0"/>
+   <entry name="MapLegalFormsToSelections"
+          id="7277373c-0362-4bc2-8324-63f844bfaeae"/>
+   <entry name="selectionMap" id="66c1e262-cb07-497c-b58f-6c22f7625501"/>
+   <entry id="70a75bf3-77f6-4f46-8c4d-47fab39debf6"/>
+   <entry id="38e46d77-7bae-47e1-aac3-d08ae5bc1aee"/>
+   <entry name="user" id="7aa258bf-d787-444f-9023-7830ebf3d1c8"/>
+   <entry name="submitregistration" id="c1aec0d2-1b1f-45d0-ba9c-474ec8f023b0"/>
+   <entry name="onClick(iuser)" id="df70fe28-8b78-40e7-a0e3-0d64e87e450a"/>
+</index>

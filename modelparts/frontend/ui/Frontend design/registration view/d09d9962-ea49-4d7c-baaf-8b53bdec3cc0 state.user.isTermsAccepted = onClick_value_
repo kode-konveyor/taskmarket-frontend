@@ -1,0 +1,8 @@
+<element xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:zenta="http://magwas.rulez.org/zenta"
+         xsi:type="zenta:BasicRelationship"
+         name="state.user.isTermsAccepted = onClick(value)"
+         id="d09d9962-ea49-4d7c-baaf-8b53bdec3cc0"
+         ancestor="7a4c6e7c-6069-4cd0-ae97-04418c0c5d82"
+         source="97866c11-4c18-461f-9223-813eff65c48b"
+         target="1eece734-4ca7-4eae-8cef-e5d6ab40ac7a"/>

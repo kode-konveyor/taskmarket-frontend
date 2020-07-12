@@ -1,0 +1,13 @@
+<index xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:zenta="http://magwas.rulez.org/zenta">
+   <entry name="registration" id="67ef1968-9f94-457c-9eaf-1b26f92f5ed5"/>
+   <entry name="accept terms&amp;conditions"
+          id="97866c11-4c18-461f-9223-813eff65c48b"/>
+   <entry name="Address" id="7c5d787b-c165-4f0c-a7fa-775fe63821c2"/>
+   <entry name="Company Name" id="773f22c6-9a4e-4850-a420-0c50d4089f14"/>
+   <entry name="email" id="c1b6c3bc-4146-4aeb-bfb3-0d990618b2b6"/>
+   <entry name="Full name" id="22d4c34d-0e44-4e4d-b909-104c90a79126"/>
+   <entry name="legal form" id="325e6c25-25a5-4de5-a900-56cc20b0a69b"/>
+   <entry name="registration view" id="d5283979-773a-43d8-b720-67725b1ceab5"/>
+   <entry name="submit" id="0e5b5211-4fc0-406c-9a05-c1d486b5db65"/>
+</index>

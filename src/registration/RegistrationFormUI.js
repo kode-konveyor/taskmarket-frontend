@@ -6,6 +6,11 @@ import PropTypes from "prop-types";
 export default function RegistrationFormUI({ onSubmit, className, schema }) {
   if (!schema) return "Loading...";
   return (
+
+	  <Form className="{className} registrationForm">
+	  	<textEntry className="{className} fullName" onChange="valami(state.user.legalName)">
+	  	<select className="{className} fullName" onChange="valami(state.user.legalName)">
+	  </Form>
     <Container className={className}>
       <Row className="justify-content-md-center">
         <Col className="heading" md="4">
