@@ -1,5 +1,5 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { shallow, mount } from "enzyme";
 import RegistrationFormContainer from "../../registration/RegistrationFormContainer";
 import configureMockStore from "redux-mock-store";
 import RegistrationActions from "../../registration/RegistrationActions.json";
@@ -30,6 +30,10 @@ describe("/registration/RegistrationFormContainer", () => {
     renderedComponent = shallow(<RegistrationFormContainer store={store} />);
   });
 
+  it("fires an event if textentry is changed", () => {
+    let component = mount(<RegistrationFormContainer store={store}/>);
+    component.find('TextEntry.fullName').simulate("change", "hello")
+  })
   it("creates SUBMIT action on submit ", () => {
     renderedComponent
       .find(RegistrationFormUI)
