@@ -8,6 +8,7 @@ function mapDispatchToProps(dispatch) {
   dispatch(LegalFormService());
   return {
     onSubmit: (formData) => dispatch(RegistrationService(formData.formData)),
+    dispatch: dispatch
   };
 }
 

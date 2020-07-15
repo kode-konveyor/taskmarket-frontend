@@ -1,4 +1,4 @@
-build_image: kodekonveyor/toolchain:3.6
+build_image: kodekonveyor/toolchain:3.5-4-gedeb940
 
 integrations:
   hub:

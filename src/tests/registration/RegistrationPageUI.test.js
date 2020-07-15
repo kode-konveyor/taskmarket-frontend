@@ -5,7 +5,6 @@ import RegistrationFormContainer from "../../registration/RegistrationFormContai
 
 describe("/registration/RegistrationPageUI", () => {
   const renderedComponent = shallow(<RegistrationPageUI />);
-
   it("renders a RegistrationFormContainer", () => {
     expect(renderedComponent.find(RegistrationFormContainer).length).toBe(1);
   });

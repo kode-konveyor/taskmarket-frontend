@@ -8,7 +8,7 @@ const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 
 jest.mock("../../api/http/GetRequest");
-
+ 
 describe("/registration/LegalFormService", () => {
   const response = [{ id: 1, country: "US", legalFormName: "legalForm" }];
   const action = { type: LegalFormActions.LIST, legalForms: response };
