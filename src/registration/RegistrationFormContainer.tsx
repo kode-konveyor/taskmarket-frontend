@@ -1,18 +1,19 @@
-import React from "react";
-import { connect } from "react-redux";
+import React, { Dispatch } from "react";
+import { connect, DefaultRootState } from "react-redux";
 import RegistrationFormUI from "./RegistrationFormUI";
 import RegistrationService from "./RegistrationService.js";
 import LegalFormService from "./LegalFormService.js";
 import { ChangeEvent } from "react";
 import { ThunkDispatch } from "./ThunkDispatch";
 import { ReduxDispatch } from "./ReduxDispatch";
-import { GlobalState } from "./GlobalState";
 import { MarketUser } from "./MarketUser";
+import { findRenderedComponentWithType } from "react-dom/test-utils";
+import { GlobalState } from "./GlobalState";
+import { Action, AnyAction } from "redux";
 
-function valueSetter (stateName:string, value:string): CallableFunction {
-  return (dispatch:ReduxDispatch) => dispatch({ type: stateName, value: value })
+function valueSetter (stateName:string, value:string):AnyAction {
+  return({ type: stateName, value: value })
 }
-
 
 interface ITodoProps {
   user: MarketUser,
@@ -24,8 +25,7 @@ interface ITodoActionProps {
 }
 
 
-function mapDispatchToProps(dispatch:Dispatch<GlobalState>):ITodoActionProps {
-
+function mapDispatchToProps(dispatch:ReduxDispatch):ITodoActionProps {
   return {
     valueSetter: (stateName: string, value:string) => dispatch(valueSetter(stateName, value))
   };
@@ -39,4 +39,4 @@ function mapStateToProps(state:GlobalState):ITodoProps {
 }
 
 
-export default connect<ITodoProps, ITodoActionProps, {}>(mapStateToProps, mapDispatchToProps)(RegistrationFormUI);
+export default connect<ITodoProps, ITodoActionProps, {}, GlobalState>(mapStateToProps, mapDispatchToProps)(RegistrationFormUI);

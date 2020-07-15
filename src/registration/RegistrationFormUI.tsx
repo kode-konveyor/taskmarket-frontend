@@ -24,21 +24,15 @@ function Selection (props: { className: string, selectionMap: string }): JSX.Ele
 export default function RegistrationFormUI( props: {user: MarketUser, shown: boolean, valueSetter: (stateName: string, value: string) => void }): ReactElement {
   
   function setState(stateName: string) {
-    return (value: string) => valueSetter(stateName, value);
+    return (value: string) => props.valueSetter(stateName, value);
   }
 
-  if (!shown) return <Container>Loading...</Container>;
+  if (!props.shown) return <Container>Loading...</Container>;
   return (
     <Container className={'registrationView'}>
-    	<TextEntry className="registrationView fullName" value={user.personalName} onChange={setState("user.fullName")} />
+    	<TextEntry className="registrationView fullName" value={props.user.personalName} onChange={setState("user.fullName")} />
     	<Selection className="registrationView legalForm" selectionMap="MapLegalFormsToSelectionsService"/> 
     	<TextEntry className="registrationView companyName" value="user.personalName" onChange={setState("user.personalName")} />
     </Container>
   );
 }
-
-RegistrationFormUI.propTypes = {
-  className: PropTypes.string,
-  onSubmit: PropTypes.func,
-  schema: PropTypes.object,
-};

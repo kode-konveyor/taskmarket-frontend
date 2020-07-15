@@ -24,38 +24,19 @@ describe("/registration/RegistrationFormContainer", () => {
       type: RegistrationActions.SUBMIT,
       formData: RegistrationTestData.FORM_DATA,
     });
-    store = mockStore({
-      LegalForms: { legalForms: RegistrationTestData.LEGAL_FORMS },
-    });
+
+    let store = mockStore({user: "user", visibility: {registrationForm:true}});
     renderedComponent = shallow(<RegistrationFormContainer store={store} />);
   });
 
   it("fires an event if textentry is changed", () => {
+    let store = mockStore({user: "user", visibility: {registrationForm:true}});
     let component = mount(<RegistrationFormContainer store={store}/>);
     component.find('TextEntry.fullName').simulate("change", "hello")
   })
-  it("creates SUBMIT action on submit ", () => {
-    renderedComponent
-      .find(RegistrationFormUI)
-      .simulate("submit", { formData: RegistrationTestData.FORM_DATA });
-    expect(store.getActions()).toEqual([
-      { type: LegalFormActions.LIST },
-      {
-        type: RegistrationActions.SUBMIT,
-        formData: RegistrationTestData.FORM_DATA,
-      },
-    ]);
-  });
-
-  it("maps the legalForms", () => {
-    expect(
-      renderedComponent.find(RegistrationFormUI).prop("schema").properties
-        .legalForm.anyOf
-    ).toEqual(RegistrationTestData.CONVERTED_LEGAL_FORMS);
-  });
 
   it("maps undefined when state is not existing", () => {
-    let store = mockStore({});
+    let store = mockStore({user: "user", visibility: {registrationForm:true}});
     let component = shallow(<RegistrationFormContainer store={store} />);
     expect(component.find(RegistrationFormUI).prop("legalForms")).toEqual(
       undefined
