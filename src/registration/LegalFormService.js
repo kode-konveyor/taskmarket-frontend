@@ -12,4 +12,4 @@ export default function LegalFormService() {
       })
       .catch(() => dispatch({ type: LegalFormActions.ERROR }));
   };
-} 
+}

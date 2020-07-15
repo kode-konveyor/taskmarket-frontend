@@ -15,7 +15,6 @@ jest.mock("../../registration/LegalFormService");
 jest.mock("../../registration/RegistrationService");
 
 describe("/registration/RegistrationFormContainer", () => {
-  let renderedComponent;
   let store;
 
   beforeEach(() => {
@@ -25,18 +24,18 @@ describe("/registration/RegistrationFormContainer", () => {
       formData: RegistrationTestData.FORM_DATA,
     });
 
-    let store = mockStore({user: "user", visibility: {registrationForm:true}});
-    renderedComponent = shallow(<RegistrationFormContainer store={store} />);
+    store = mockStore({
+      user: "user",
+      visibility: { registrationForm: true },
+    });
   });
 
   it("fires an event if textentry is changed", () => {
-    let store = mockStore({user: "user", visibility: {registrationForm:true}});
-    let component = mount(<RegistrationFormContainer store={store}/>);
-    component.find('TextEntry.fullName').simulate("change", "hello")
-  })
+    let component = mount(<RegistrationFormContainer store={store} />);
+    component.find("TextEntry.fullName").simulate("change", "hello");
+  });
 
   it("maps undefined when state is not existing", () => {
-    let store = mockStore({user: "user", visibility: {registrationForm:true}});
     let component = shallow(<RegistrationFormContainer store={store} />);
     expect(component.find(RegistrationFormUI).prop("legalForms")).toEqual(
       undefined
