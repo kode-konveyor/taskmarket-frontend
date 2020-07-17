@@ -9,6 +9,8 @@ export const GetUserTestData = {
   LOGOUT,
   ERROR,
 
+  LOGOUT_TEXT: "Logout",
+
   ERROR_MSG: "error",
   REGISTERED_STATE: {
     user: { login: USER_LOGIN, isTermsAccepted: true },

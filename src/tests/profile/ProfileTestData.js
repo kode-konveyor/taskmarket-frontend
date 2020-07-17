@@ -1,6 +1,6 @@
 export const ProfileTestData = {
   MARKET_USER: {
-    login: "soros",
+    user: { login: "soros" },
     personalName: "György Soros",
     legalName: "Open Society Foundation",
     legalAddress: "123 Washington St NY, US",

@@ -6,7 +6,7 @@ import { PropTypes } from "prop-types";
 export default function ProfileAreaUI({ marketUser, onLoad }) {
   onLoad();
   const rows = [
-    { label: ProfileConstants.GITHUB, control: marketUser.login },
+    { label: ProfileConstants.GITHUB, control: marketUser.user.login },
     { label: ProfileConstants.NAME, control: marketUser.personalName },
     { label: ProfileConstants.LEGAL_NAME, control: marketUser.legalName },
     { label: ProfileConstants.ADDRESS, control: marketUser.legalAddress },

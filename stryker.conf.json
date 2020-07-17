@@ -1,7 +1,7 @@
 {
   "$schema": "https://raw.githubusercontent.com/stryker-mutator/stryker/master/packages/api/schema/stryker-core.json",
   "mutate": [
-    "src/**/*.js?(x)",
+    "src/**/*.ts?(x)",
     "!src/**/*@(.test|.spec|Spec).js?(x)",
     "!src/serviceWorker.js",
     "!src/react-auth0-spa.js",
@@ -9,7 +9,7 @@
     "!src/**/index.js",
     "!src/tests/**"
   ],
-  "mutator": "javascript",
+  "mutator": "typescript",
   "testRunner": "jest",
   "reporters": [
     "progress",

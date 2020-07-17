@@ -32,7 +32,7 @@ describe("/main/LoginUI", () => {
     );
   });
 
-  it("renders username when logged in", () => {
+  it("renders Logout when logged in", () => {
     const renderedComponent = shallow(
       <LoginUI
         loggedIn={true}
@@ -41,7 +41,7 @@ describe("/main/LoginUI", () => {
       />
     );
     expect(renderedComponent.find(Nav.Link).text()).toEqual(
-      GetUserTestData.USER_LOGIN
+      GetUserTestData.LOGOUT_TEXT
     );
   });
 

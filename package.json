@@ -23,7 +23,7 @@
     "redux": "^4.0.5",
     "redux-mock-store": "^1.5.4",
     "redux-thunk": "^2.3.0",
-    "typescript": "^3.9.6"
+    "typescript": "^3.9.7"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -58,6 +58,7 @@
     "@stryker-mutator/core": "^3.1.0",
     "@stryker-mutator/javascript-mutator": "^3.1.0",
     "@stryker-mutator/jest-runner": "^3.1.0",
+    "@stryker-mutator/typescript": "^3.3.1",
     "@testing-library/react-hooks": "^3.2.1",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",

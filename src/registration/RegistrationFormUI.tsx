@@ -1,8 +1,6 @@
-import React, { ChangeEvent, ComponentType, ReactElement } from "react";
-import PropTypes from "prop-types";
+import React, { ChangeEvent } from "react";
 import { Container } from 'react-bootstrap';
 import { MarketUser } from "./MarketUser";
-import { findRenderedComponentWithType } from "react-dom/test-utils";
 
 interface ValuedEventHandler {
   (value: string):void
@@ -16,8 +14,10 @@ function TextEntry (props: { className: string, value:string, onChange: ValuedEv
   return <input type="text" id="fname" name="fname" value={props.value} onChange={getValue}></input>;
 }
 
-function Selection (props: { className: string, selectionMap: string }): JSX.Element {
- return  <div></div>;
+function Selection (props: { className: string, selectionMap: string, onChange: ValuedEventHandler}): JSX.Element {
+ return  (<select onChange={(event: ChangeEvent<HTMLSelectElement>) => props.onChange(event.target.value)}>
+   <option value={1}>Dummy</option>
+ </select>)
 }
 
 
@@ -30,9 +30,9 @@ export default function RegistrationFormUI( props: {user: MarketUser, shown: boo
   if (!props.shown) return <Container>Loading...</Container>;
   return (
     <Container className={'registrationView'}>
-    	<TextEntry className="registrationView fullName" value={props.user.personalName} onChange={setState("user.fullName")} />
-    	<Selection className="registrationView legalForm" selectionMap="MapLegalFormsToSelectionsService"/> 
-    	<TextEntry className="registrationView companyName" value="user.personalName" onChange={setState("user.personalName")} />
+    	<TextEntry className="registrationView fullName" value={props.user.personalName} onChange={setState("user.personalName")} />
+    	<Selection className="registrationView legalForm" selectionMap="MapLegalFormsToSelectionsService" onChange={setState("user.legalForm")}/> 
+    	<TextEntry className="registrationView companyName" value="user.legalName" onChange={setState("user.legalName")} />
     </Container>
   );
 }

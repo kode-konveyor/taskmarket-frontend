@@ -18,7 +18,7 @@ describe("/profile/ProfileAreaUI", () => {
         .find(".profile-control")
         .map((control) => control.text())
     ).toEqual([
-      ProfileTestData.MARKET_USER.login,
+      ProfileTestData.MARKET_USER.user.login,
       ProfileTestData.MARKET_USER.personalName,
       ProfileTestData.MARKET_USER.legalName,
       ProfileTestData.MARKET_USER.legalAddress,

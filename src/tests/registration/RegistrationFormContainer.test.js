@@ -32,7 +32,12 @@ describe("/registration/RegistrationFormContainer", () => {
 
   it("fires an event if textentry is changed", () => {
     let component = mount(<RegistrationFormContainer store={store} />);
-    component.find("TextEntry.fullName").simulate("change", "hello");
+    component
+      .find("TextEntry.fullName")
+      .simulate("change", { target: { value: "hello" } });
+    expect(store.getActions()).toEqual([
+      { type: "user.personalName", value: "hello" },
+    ]);
   });
 
   it("maps undefined when state is not existing", () => {
