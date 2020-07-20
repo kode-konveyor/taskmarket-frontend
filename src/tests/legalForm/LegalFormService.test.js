@@ -1,5 +1,5 @@
-import LegalFormService from "../../registration/LegalFormService";
-import LegalFormActions from "../../registration/LegalFormActions";
+import LegalFormService from "../../legalForm/LegalFormService";
+import {LegalFormActionEnum} from "../../legalForm/LegalFormActionEnum";
 import { httpGet } from "../../api/http/GetRequest";
 import configureMockStore from "redux-mock-store";
 import thunk from "redux-thunk";
@@ -11,7 +11,7 @@ jest.mock("../../api/http/GetRequest");
 
 describe("/registration/LegalFormService", () => {
   const response = [{ id: 1, country: "US", legalFormName: "legalForm" }];
-  const action = { type: LegalFormActions.LIST, legalForms: response };
+  const action = { type: LegalFormActionEnum.LIST, legalForms: response };
   let store;
 
   beforeEach(() => {
@@ -32,6 +32,6 @@ describe("/registration/LegalFormService", () => {
   it("creates ERROR action on failure", async () => {
     httpGet.mockReturnValue(Promise.reject("ERROR"));
     await store.dispatch(LegalFormService());
-    expect(store.getActions()).toEqual([{ type: LegalFormActions.ERROR }]);
+    expect(store.getActions()).toEqual([{ type: LegalFormActionEnum.ERROR }]);
   });
 });

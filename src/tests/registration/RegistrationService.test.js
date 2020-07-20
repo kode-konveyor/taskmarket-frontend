@@ -1,4 +1,4 @@
-import RegistrationActions from "../../registration/RegistrationActions.json";
+import {RegistrationActionEnum} from "../../registration/RegistrationActionEnum";
 import { httpPost } from "../../api/http/PostRequest";
 import configureMockStore from "redux-mock-store";
 import thunk from "redux-thunk";
@@ -50,6 +50,6 @@ describe("/registration/RegistrationService", () => {
     await store.dispatch(
       RegistrationService(RegistrationTestData.EXPECTED_RESPONSE)
     );
-    expect(store.getActions()).toEqual([{ type: RegistrationActions.ERROR }]);
+    expect(store.getActions()).toEqual([{ type: RegistrationActionEnum.ERROR }]);
   });
 });

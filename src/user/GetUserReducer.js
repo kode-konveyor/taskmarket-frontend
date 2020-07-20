@@ -1,20 +1,20 @@
 import { LOGIN, LOGOUT } from "./GetUserActions";
-import RegistrationActions from "../registration/RegistrationActions";
+import {RegistrationActionEnum} from "../registration/RegistrationActionEnum";
 
 export default function GetUserReducer(
   state = { loggedIn: false, user: {} },
   action
 ) {
   switch (action.type) {
-    case LOGIN:
+    case RegistrationActionEnum.LOGIN:
       return {
         user: action.user,
         loggedIn: true,
         registered: action.user.isTermsAccepted,
       };
-    case LOGOUT:
+    case RegistrationActionEnum.LOGOUT:
       return { loggedIn: false, user: {} };
-    case RegistrationActions.SUBMIT:
+    case RegistrationActionEnum.SUBMIT:
       return { registered: true, loggedIn: true, user: state.user };
     default:
       return state;

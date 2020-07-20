@@ -1,13 +1,13 @@
 import GetUserReducer from "../../user/GetUserReducer";
 import { CommonTestData } from "../CommonTestData";
-import RegistrationActions from "../../registration/RegistrationActions";
+import {RegistrationActionEnum} from "../../registration/RegistrationActionEnum";
 import { GetUserTestData } from "./GetUserTestData";
 
 describe("/user/GetUserReducer", () => {
   it("sets login and loggedIn on LOGIN action", () => {
     expect(
       GetUserReducer(GetUserTestData.LOGGED_OUT_STATE, {
-        type: GetUserTestData.LOGIN,
+        type: RegistrationActionEnum.LOGIN,
         user: { login: GetUserTestData.USER_LOGIN, isTermsAccepted: true },
       })
     ).toEqual(GetUserTestData.REGISTERED_STATE);
@@ -16,7 +16,7 @@ describe("/user/GetUserReducer", () => {
   it("sets registeres on registration submit", () => {
     expect(
       GetUserReducer(GetUserTestData.NOT_REGISTERED_STATE, {
-        type: RegistrationActions.SUBMIT,
+        type: RegistrationActionEnum.SUBMIT,
       })
     ).toEqual(GetUserTestData.LOGGED_IN_STATE);
   });
@@ -24,7 +24,8 @@ describe("/user/GetUserReducer", () => {
   it("unsets login and loggedIn on LOGOUT action", () => {
     expect(
       GetUserReducer(GetUserTestData.LOGGED_IN_STATE, {
-        type: GetUserTestData.LOGOUT,
+        type: RegistrationActionEnum.LOGOUT,
+        user: {}
       })
     ).toEqual(GetUserTestData.LOGGED_OUT_STATE);
   });

@@ -1,4 +1,4 @@
-import RegistrationActions from "../../registration/RegistrationActions";
+import { RegistrationActionEnum } from "../../registration/RegistrationActionEnum";
 const EXPECTED_RESPONSE = { id: 1 };
 
 export const RegistrationTestData = {
@@ -7,7 +7,7 @@ export const RegistrationTestData = {
   CONVERTED_LEGAL_FORMS: [{ enum: [1], title: "name - US", type: "number" }],
   EXPECTED_RESPONSE,
   EXPECTED_ACTION: {
-    type: RegistrationActions.SUBMIT,
+    type: RegistrationActionEnum.SUBMIT,
     response: EXPECTED_RESPONSE,
   },
   LOADING: "Loading...",

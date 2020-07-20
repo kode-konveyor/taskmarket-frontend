@@ -1,12 +1,12 @@
-import LegalFormReducer from "../../registration/LegalFormReducer";
-import LegalFormActions from "../../registration/LegalFormActions";
+import LegalFormReducer from "../../legalForm/LegalFormReducer";
+import {LegalFormActionEnum} from "../../legalForm/LegalFormActionEnum";
 
 describe("/registration/LegalFormService", () => {
   const EXPECTED_LEAD_LIST = [
     { id: 1, country: "US", legalFormName: "legalForm" },
   ];
   const EXPECTED_ACTION = {
-    type: LegalFormActions.LIST,
+    type: LegalFormActionEnum.LIST,
     legalForms: EXPECTED_LEAD_LIST,
   };
 

@@ -9,23 +9,23 @@ function valueSetter (stateName:string, value:string):AnyAction {
   return({ type: stateName, value: value })
 }
 
-interface ITodoProps {
+interface IRegistrationProps {
   user: MarketUser,
   shown: boolean
 }
 
-interface ITodoActionProps {
+interface IRegistrationActionProps {
   valueSetter: (stateName: string, value:string) => void
 }
 
 
-function mapDispatchToProps(dispatch:ReduxDispatch):ITodoActionProps {
+function mapDispatchToProps(dispatch:ReduxDispatch):IRegistrationActionProps {
   return {
     valueSetter: (stateName: string, value:string) => dispatch(valueSetter(stateName, value))
   };
 }
 
-function mapStateToProps(state:GlobalState):ITodoProps {
+function mapStateToProps(state:GlobalState):IRegistrationProps {
   return {
     user: state.user,
     shown: state.visibility.registrationForm
@@ -33,4 +33,4 @@ function mapStateToProps(state:GlobalState):ITodoProps {
 }
 
 
-export default connect<ITodoProps, ITodoActionProps, {}, GlobalState>(mapStateToProps, mapDispatchToProps)(RegistrationFormUI);
+export default connect<IRegistrationProps, IRegistrationActionProps, {}, GlobalState>(mapStateToProps, mapDispatchToProps)(RegistrationFormUI);

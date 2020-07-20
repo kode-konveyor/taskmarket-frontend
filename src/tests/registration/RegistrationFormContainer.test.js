@@ -2,30 +2,30 @@ import React from "react";
 import { shallow, mount } from "enzyme";
 import RegistrationFormContainer from "../../registration/RegistrationFormContainer";
 import configureMockStore from "redux-mock-store";
-import RegistrationActions from "../../registration/RegistrationActions.json";
+import { RegistrationActionEnum } from "../../registration/RegistrationActionEnum";
 import RegistrationFormUI from "../../registration/RegistrationFormUI";
-import LegalFormActions from "../../registration/LegalFormActions";
-import LegalFormService from "../../registration/LegalFormService";
+import {LegalFormActionEnum} from "../../legalForm/LegalFormActionEnum";
+import LegalFormService from "../../legalForm/LegalFormService";
 import RegistrationService from "../../registration/RegistrationService";
 import { RegistrationTestData } from "./RegistrationTestData";
 
 const mockStore = configureMockStore();
 
-jest.mock("../../registration/LegalFormService");
+jest.mock("../../legalForm/LegalFormService");
 jest.mock("../../registration/RegistrationService");
 
 describe("/registration/RegistrationFormContainer", () => {
   let store;
 
   beforeEach(() => {
-    LegalFormService.mockReturnValue({ type: LegalFormActions.LIST });
+    LegalFormService.mockReturnValue({ type: LegalFormActionEnum.LIST });
     RegistrationService.mockReturnValue({
-      type: RegistrationActions.SUBMIT,
+      type: RegistrationActionEnum.SUBMIT,
       formData: RegistrationTestData.FORM_DATA,
     });
 
     store = mockStore({
-      user: "user",
+      user: {id: 1, user: {login: "user"}, personalName: "User Béla"},
       visibility: { registrationForm: true },
     });
   });
