@@ -11,5 +11,11 @@
         "react": {
             "version": "detect"
         }
+    },
+    "plugins": [
+        "no-editor-code", "no-block-comments"
+    ],
+    "rules": {
+        "no-editor-code/no-region": "warn", "no-block-comments/rule-name": 2
     }
 }
