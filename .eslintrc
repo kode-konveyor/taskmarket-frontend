@@ -13,9 +13,11 @@
         }
     },
     "plugins": [
-        "no-editor-code", "no-block-comments"
+        "no-editor-code", 
+        "no-block-comments"
     ],
     "rules": {
-        "no-editor-code/no-region": "warn", "no-block-comments/rule-name": 2
+        "no-editor-code/no-region": "warn", 
+        "no-block-comments/no-block-comments": 2
     }
 }
