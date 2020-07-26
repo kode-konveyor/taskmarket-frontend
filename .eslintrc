@@ -10,6 +10,12 @@
     "settings": {
         "react": {
             "version": "detect"
+        },
+        "plugins": [ 
+        "import"
+        ],
+        "rules": {
+        	"import/no-default-export": 2
         }
     }
 }
