@@ -11,5 +11,16 @@
         "react": {
             "version": "detect"
         }
+    },
+    "rules": {
+    "react/jsx-no-literals": [<enabled>, {"noStrings": true, "allowedStrings": [0,1,"describe", "it"], "ignoreProps": false}]
+    },
+    "overrides": [
+    {
+      "files": ["*.test.js"],
+      "rules": {
+        "react/jsx-no-literals": [<enabled>, {"noStrings": true, "allowedStrings": [0,1,"describe", "it"], "ignoreProps": false}]
+      }
     }
+  ]
 }
