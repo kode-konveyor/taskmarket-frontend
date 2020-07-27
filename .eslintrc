@@ -11,5 +11,10 @@
         "react": {
             "version": "detect"
         }
-    }
+    },
+    
+  "plugins": ["promise"],
+  "rules": {
+  	"promise/prefer-await-to-then": "error"
+  }
 }
