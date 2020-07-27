@@ -8,5 +8,5 @@ _site/**/*
 src/react-auth0-spa.js
 
 {
-"eslintIgnore": ["serviceworker.js"]
+"eslintIgnore": ["serviceWorker.js"]
 }
