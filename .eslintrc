@@ -13,6 +13,6 @@
         }
     },
     "rules": {
-    "react/jsx-no-literals": [2, {"noStrings": true, "allowedStrings": [0,1], "ignoreProps": false}]
+    "react/jsx-no-literals": [ 'error' , {"noStrings": true, "allowedStrings": [0,1], "ignoreProps": false}]
     }
 }
