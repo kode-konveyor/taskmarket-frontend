@@ -13,14 +13,6 @@
         }
     },
     "rules": {
-    "react/jsx-no-literals": [<enabled>, {"noStrings": true, "allowedStrings": [0,1,"describe", "it"], "ignoreProps": false}]
-    },
-    "overrides": [
-    {
-      "files": ["*.test.js"],
-      "rules": {
-        "react/jsx-no-literals": [<enabled>, {"noStrings": true, "allowedStrings": [0,1,"describe", "it"], "ignoreProps": false}]
-      }
+    "react/jsx-no-literals": [2, {"noStrings": true, "allowedStrings": [0,1], "ignoreProps": false}]
     }
-  ]
 }
