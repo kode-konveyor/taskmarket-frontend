@@ -17,7 +17,7 @@
         "no-block-comments"
     ],
     "rules": {
-        "no-editor-code/no-region": "warn", 
+        "no-editor-code/no-region": "error", 
         "no-block-comments/no-block-comments": 2
     }
 }
