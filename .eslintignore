@@ -6,7 +6,4 @@ build/**/*
 assets/**/*
 _site/**/*
 src/react-auth0-spa.js
-
-{
-"eslintIgnore": ["serviceWorker.js"]
-}
+src/serviceWorker.js
