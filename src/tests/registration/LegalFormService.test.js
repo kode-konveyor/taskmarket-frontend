@@ -1,31 +1,37 @@
 import LegalFormService from "../../registration/LegalFormService";
 import LegalFormActions from "../../registration/LegalFormActions";
+import { httpGet } from "../../api/http/GetRequest";
+import configureMockStore from "redux-mock-store";
+import thunk from "redux-thunk";
+
+const middlewares = [thunk];
+const mockStore = configureMockStore(middlewares);
+
+jest.mock("../../api/http/GetRequest");
 
 describe("/registration/LegalFormService", () => {
   const response = [{ id: 1, country: "US", legalFormName: "legalForm" }];
   const action = { type: LegalFormActions.LIST, legalForms: response };
-  const errorAction = { type: LegalFormActions.ERROR };
+  let store;
 
-  it("keeps status when action doesn't match", () => {
-    const state = { data: "MyData" };
-    expect(LegalFormService(state, { type: "RANDOM_ACTION" })).toEqual(state);
+  beforeEach(() => {
+    httpGet.mockReset();
+    store = mockStore({});
   });
 
-  it("updates legalForms when it is empty", () => {
-    const state = {};
-    expect(LegalFormService(state, action)).toEqual({
-      legalForms: response,
-    });
+  it("creates LIST action", async () => {
+    httpGet.mockReturnValue(
+      Promise.resolve({
+        json: () => Promise.resolve(response),
+      })
+    );
+    await store.dispatch(LegalFormService());
+    expect(store.getActions()).toEqual([action]);
   });
 
-  it("returns empty object on fail", () => {
-    const state = {};
-    expect(LegalFormService(state, errorAction)).toEqual(state);
-  });
-
-  it("logs error on fail", () => {
-    const errorMock = jest.spyOn(console, "error");
-    LegalFormService({}, errorAction);
-    expect(errorMock).toHaveBeenCalledWith("Fetching Legal Forms failed");
+  it("creates ERROR action on failure", async () => {
+    httpGet.mockReturnValue(Promise.reject("ERROR"));
+    await store.dispatch(LegalFormService());
+    expect(store.getActions()).toEqual([{ type: LegalFormActions.ERROR }]);
   });
 });

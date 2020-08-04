@@ -3,8 +3,8 @@ import { shallow } from "enzyme";
 import ListLeadUI from "../../lead/ListLeadUI";
 import LeadUI from "../../lead/LeadUI";
 import { CSVLink } from "react-csv";
-import { LEAD_LIST } from "./LeadTestData";
 import PropTypes from "prop-types";
+import { LeadTestData } from "./LeadTestData";
 
 describe("/lead/ListLeadUI", () => {
   const expectedPropTypes = {
@@ -14,7 +14,7 @@ describe("/lead/ListLeadUI", () => {
   };
 
   const renderedComponent = shallow(
-    <ListLeadUI leadList={LEAD_LIST} loading={false} />
+    <ListLeadUI leadList={LeadTestData.LEAD_LIST} loading={false} />
   );
 
   it("renders the list of leads", () => {
@@ -22,42 +22,41 @@ describe("/lead/ListLeadUI", () => {
   });
 
   it("renders the header", () => {
-    expect(renderedComponent.find(".header").length).toBe(1);
+    expect(renderedComponent.find(LeadTestData.HEADER_CLASS).length).toBe(1);
   });
 
   it("renders the reload button", () => {
-    expect(renderedComponent.find(".reload").length).toBe(1);
+    expect(renderedComponent.find(LeadTestData.RELOAD_CLASS).length).toBe(1);
   });
 
   it("renders the Export to CSV button", () => {
-    expect(renderedComponent.find(".export").length).toBe(1);
+    expect(renderedComponent.find(LeadTestData.EXPORT_CLASS).length).toBe(1);
   });
 
   it("downloads the CSV file with name kk_lead_list.csv", () => {
-    expect(renderedComponent.find(CSVLink).prop("filename")).toEqual(
-      "kk_lead_list.csv"
+    expect(renderedComponent.find(CSVLink).prop(LeadTestData.FILENAME)).toEqual(
+      LeadTestData.EXPECTED_FILENAME
     );
   });
 
   it("downloads the CSV file with actual data", () => {
-    const data =
-      "Bob,bob@unclebob.com,Working for KodeKonveyor\r\nMartin,martin@martinfowler.com,Working for KodeKonveyor";
-
-    expect(renderedComponent.find(CSVLink).prop("data")).toEqual(data);
+    expect(renderedComponent.find(CSVLink).prop(LeadTestData.DATA)).toEqual(
+      LeadTestData.EXPECTED_CSS
+    );
   });
 
   it("renders Loading... when loading", () => {
     const renderedComponent = shallow(
       <ListLeadUI leadList={[]} loading={true} onLoad={jest.fn()} />
     );
-    expect(renderedComponent.text()).toEqual("Loading...");
+    expect(renderedComponent.text()).toEqual(LeadTestData.LOADING_MESSAGE);
   });
 
   it("renders Loading... when loading is not set", () => {
     const renderedComponent = shallow(
       <ListLeadUI leadList={[]} onLoad={jest.fn()} />
     );
-    expect(renderedComponent.text()).toEqual("Loading...");
+    expect(renderedComponent.text()).toEqual(LeadTestData.LOADING_MESSAGE);
   });
 
   it("calls onLoad on loading", () => {
@@ -71,7 +70,9 @@ describe("/lead/ListLeadUI", () => {
     const renderedComponent = shallow(
       <ListLeadUI leadList={[]} loading={false} onLoad={onLoadMock} />
     );
-    renderedComponent.find(".reload").simulate("click");
+    renderedComponent
+      .find(LeadTestData.RELOAD_CLASS)
+      .simulate(LeadTestData.CLICK_EVENT);
     expect(onLoadMock).toHaveBeenCalled();
   });
 

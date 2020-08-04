@@ -1,10 +1,10 @@
 import React from "react";
 import { shallow } from "enzyme";
-import { loadLeadList } from "../../lead/LeadLoadService";
+import LeadLoadService from "../../lead/LeadLoadService";
 import ListLeadContainer from "../../lead/ListLeadContainer";
 import configureMockStore from "redux-mock-store";
 import ListLeadUI from "../../lead/ListLeadUI";
-import { LEAD_LIST, LOAD_ACTION } from "./LeadTestData";
+import { LeadTestData } from "./LeadTestData";
 
 jest.mock("../../lead/LeadLoadService");
 
@@ -14,17 +14,17 @@ describe("/lead/ListLeadContainer", () => {
   let renderedComponent;
 
   const store = mockStore({
-    LeadLoadService: { leadList: LEAD_LIST, loading: true },
+    LeadList: { leadList: LeadTestData.LEAD_LIST, loading: true },
   });
   beforeEach(() => {
-    loadLeadList.mockReset();
-    loadLeadList.mockReturnValue(LOAD_ACTION);
+    LeadLoadService.mockReset();
+    LeadLoadService.mockReturnValue(LeadTestData.LOAD_ACTION);
     renderedComponent = shallow(<ListLeadContainer store={store} />);
   });
 
   it("passes the lead list", () => {
     expect(renderedComponent.find(ListLeadUI).prop("leadList")).toEqual(
-      LEAD_LIST
+      LeadTestData.LEAD_LIST
     );
   });
 
@@ -34,6 +34,6 @@ describe("/lead/ListLeadContainer", () => {
 
   it("binds the onLoad method", () => {
     renderedComponent.find(ListLeadUI).simulate("load");
-    expect(store.getActions()).toEqual([LOAD_ACTION]);
+    expect(store.getActions()).toEqual([LeadTestData.LOAD_ACTION]);
   });
 });

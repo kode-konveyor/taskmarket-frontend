@@ -2,15 +2,11 @@ import React from "react";
 import { Row, Col, Button } from "react-bootstrap";
 import LeadUI from "./LeadUI";
 import { CSVLink } from "react-csv";
+import CSVExportService from "../common/CSVExportService";
 import PropTypes from "prop-types";
 
 export default function ListLeadUI({ leadList, loading = true, onLoad }) {
-  const exportCSV = () => {
-    const content = leadList
-      .map((lead) => lead.firstName + "," + lead.email + "," + lead.interest)
-      .join("\r\n");
-    return content;
-  };
+  const csvOrder = ["firstName", "email", "interest"];
   if (loading) {
     onLoad();
     return "Loading...";
@@ -22,10 +18,11 @@ export default function ListLeadUI({ leadList, loading = true, onLoad }) {
           <Button className="reload" onClick={onLoad}>
             Reload
           </Button>
-          <CSVLink data={exportCSV()} filename={"kk_lead_list.csv"}>
-            <Button className="export" onClick={exportCSV}>
-              Export to CSV
-            </Button>
+          <CSVLink
+            data={CSVExportService(leadList, csvOrder)}
+            filename={"kk_lead_list.csv"}
+          >
+            <Button className="export">Export to CSV</Button>
           </CSVLink>
         </Col>
       </Row>

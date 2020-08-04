@@ -1,14 +1,14 @@
 import { httpRequest, HTTP } from "../../../api/http/HttpRequest";
-
-const apiBaseRoot = "http://localhost/market";
+import { HTTPTestData } from "./HTTPTestData";
 
 describe("/api/http/HttpRequest", () => {
-  const data = [{ _id: 1, name: "Janos Ader", role: "Poo with mustache" }];
-
-  let fetchMock = jest.spyOn(global, "fetch");
-  let localStorageMock = jest.spyOn(window.localStorage.__proto__, "getItem");
+  let fetchMock = jest.spyOn(global, HTTPTestData.FETCH);
+  let localStorageMock = jest.spyOn(
+    window.localStorage.__proto__,
+    HTTPTestData.GET_ITEM
+  );
   localStorageMock.mockReset();
-  localStorageMock.mockReturnValue(apiBaseRoot);
+  localStorageMock.mockReturnValue(HTTPTestData.API_BASE_ROOT);
 
   beforeEach(async () => {
     fetchMock.mockReset();
@@ -18,15 +18,21 @@ describe("/api/http/HttpRequest", () => {
       };
     });
 
-    await httpRequest(HTTP.POST, "/test", data).then();
+    await httpRequest(
+      HTTP.POST,
+      HTTPTestData.TARGET,
+      HTTPTestData.JSON_DATA
+    ).then();
   });
 
   it("calls the right url", () => {
-    expect(getParam(fetchMock).href).toBe(apiBaseRoot + "/test");
+    expect(getParam(fetchMock).href).toBe(
+      HTTPTestData.API_BASE_ROOT + HTTPTestData.TARGET
+    );
   });
 
   it("sends POST request", () => {
-    expect(getParam(fetchMock, 1).method).toBe("POST");
+    expect(getParam(fetchMock, 1).method).toBe(HTTPTestData.POST);
   });
 
   it("sends proper headers", () => {
@@ -38,11 +44,13 @@ describe("/api/http/HttpRequest", () => {
   });
 
   it("sends data in body", () => {
-    expect(getParam(fetchMock, 1).body).toBe(JSON.stringify(data));
+    expect(getParam(fetchMock, 1).body).toBe(
+      JSON.stringify(HTTPTestData.JSON_DATA)
+    );
   });
 
   it("queries BACKEND_URL", () => {
-    expect(localStorageMock).toHaveBeenCalledWith("BACKEND_URL");
+    expect(localStorageMock).toHaveBeenCalledWith(HTTPTestData.BACKEND_URL);
   });
 });
 

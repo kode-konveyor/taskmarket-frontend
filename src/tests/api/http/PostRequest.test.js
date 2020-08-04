@@ -1,14 +1,16 @@
 import { httpRequest } from "../../../api/http/HttpRequest";
 import { httpPost } from "../../../api/http/PostRequest";
+import { HTTPTestData } from "./HTTPTestData";
 
 jest.mock("../../../api/http/HttpRequest");
 
 describe("/api/http/PostRequest", () => {
-  const TARGET = "/test";
-  const DATA = { test: "DATA" };
-  const POST = "POST";
   it("calls HttpRequest with DELETE method", () => {
-    httpPost(TARGET, DATA);
-    expect(httpRequest).toHaveBeenCalledWith(POST, TARGET, DATA);
+    httpPost(HTTPTestData.TARGET, HTTPTestData.DATA);
+    expect(httpRequest).toHaveBeenCalledWith(
+      HTTPTestData.POST,
+      HTTPTestData.TARGET,
+      HTTPTestData.DATA
+    );
   });
 });

@@ -3,6 +3,7 @@ import { shallow } from "enzyme";
 import Form from "react-jsonschema-form";
 import PropTypes from "prop-types";
 import RegistrationFormUI from "../../registration/RegistrationFormUI";
+import { RegistrationTestData } from "./RegistrationTestData";
 
 describe("/registration/RegistrationFormUI", () => {
   let renderedComponent;
@@ -14,38 +15,13 @@ describe("/registration/RegistrationFormUI", () => {
     schema: PropTypes.object,
   };
 
-  const LOADING = "Loading...";
-
-  const schema = {
-    properties: {
-      email: { title: "E-mail", type: "string" },
-      isTermsAccepted: {
-        title: "Accept terms and consitions",
-        type: "boolean",
-      },
-      legalAddress: { title: "Address", type: "string" },
-      legalForm: {
-        anyOf: [{ enum: [1], title: "Freelance - Hungary", type: "number" }],
-        title: "Legal Form",
-        type: "number",
-      },
-      legalName: { title: "Company Name", type: "string" },
-      personalName: { title: "Full Name", type: "string" },
-    },
-    required: [
-      "personalName",
-      "legalForm",
-      "legalAddress",
-      "email",
-      "isTermsAccepted",
-    ],
-    type: "object",
-  };
-
   beforeEach(() => {
     onSubmitMock = jest.fn();
     renderedComponent = shallow(
-      <RegistrationFormUI onSubmit={onSubmitMock} schema={schema} />
+      <RegistrationFormUI
+        onSubmit={onSubmitMock}
+        schema={RegistrationTestData.SCHEMA}
+      />
     );
   });
 
@@ -54,18 +30,20 @@ describe("/registration/RegistrationFormUI", () => {
   });
 
   it("contains right schema", () => {
-    expect(renderedComponent.find(Form).prop("schema")).toEqual(schema);
+    expect(
+      renderedComponent.find(Form).prop(RegistrationTestData.SCHEMA_PROP)
+    ).toEqual(RegistrationTestData.SCHEMA);
   });
 
   it("renders Loading when schema is undefined", () => {
     const renderedComponent = shallow(
       <RegistrationFormUI onSubmit={onSubmitMock} />
     );
-    expect(renderedComponent.text()).toEqual(LOADING);
+    expect(renderedComponent.text()).toEqual(RegistrationTestData.LOADING);
   });
 
   it("forwards onSubmitEvent", () => {
-    renderedComponent.find(Form).simulate("submit");
+    renderedComponent.find(Form).simulate(RegistrationTestData.SUBMIT_EVENT);
     expect(onSubmitMock).toHaveBeenCalled();
   });
 
