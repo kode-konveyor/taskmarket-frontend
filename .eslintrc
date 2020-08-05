@@ -11,5 +11,8 @@
         "react": {
             "version": "detect"
         }
+    },
+    "rules": {
+    "react/jsx-no-literals": [ 'error' , {"noStrings": true, "allowedStrings": [0,1], "ignoreProps": false}]
     }
 }
